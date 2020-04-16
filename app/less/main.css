@@ -1,1 +1,1 @@
-h1{color:#92A0FF}html,body{background:#F7F8FC}.headerBar{background:#171717}.headerBar .navbar-brand{color:#fff}.mapWrapper{position:relative;width:100vw;height:calc(100vh - 71px)}
+h1{color:#92A0FF}html,body{background:#171B1C}.headerBar{background:#171717;border-bottom:1px solid #2b3535}.headerBar .navbar-brand{color:#647b7b}.mapWrapper{position:relative;width:100vw;height:calc(100vh - 71px)}.mapboxgl-ctrl-bottom-left,.mapboxgl-ctrl-bottom-right{display:none}
