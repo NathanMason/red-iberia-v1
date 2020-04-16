@@ -11,11 +11,10 @@
               socket.onMessage(function(message) {
                     collection.push(JSON.parse(message.data));
                     var data = JSON.parse(message.data);
-                    console.log(data);
 
                     // create markers
                     angular.forEach(data.units, function(unit) {
-
+                        console.log(unit);
                     })
 
               });
