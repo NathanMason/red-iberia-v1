@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="redIberia">
+
+    <head>
+
+
+      <meta charset="utf-8">
+      <base href="/">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="robots" content="noindex">
+      <meta name="Classification" content="Gaming">
+      <meta name="rating" content="General">
+      <meta name="subject" content="">
+      <title>Red Iberia</title>
+
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+
+      <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="/less/main.css">
+    </head>
+
+    <body class="ng-cloak" ng-cloak id="section_bodyWrapper">
+
+
+    <ng-include ng-cloak src="'ng/partials/headerBar.html'"></ng-include>
+
+      <div class="container-fluid pl-0 pr-0" id="viewWrapper" ng-cloak >
+            <div ng-view="" class="view"   ng-cloak ></div>
+      </div>
+
+      <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+      	 jQuery
+      -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+      <script src="/node_modules/jquery/jquery.min.js"></script>
+      <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+      <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+      	 BOWER AND NODE_MODULES
+      -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+      <script src="/node_modules/angular/angular.min.js"></script>
+      <script src="/node_modules/angular-route/angular-route.js"></script>
+      <script src="/node_modules/angular-websocket/dist/angular-websocket.min.js"></script>
+      <script src="app.js"></script>
+
+
+
+      <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+      	 CONTROLLERS
+      -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+      <script src="/ng/controllers/mainController.js"></script>
+       <script src="/ng/services/socketFactory.js"></script>
+
+
+    </body>
+
+</html>
