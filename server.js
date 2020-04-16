@@ -41,7 +41,7 @@ var socket = require('./server/socket.js');
 
 
 //////////////////////////////////////////////////////////////////////////
-///////// SETUP AND CREATE SOCKET
+///////// CLIENT CONNECTIONS
 //////////////////////////////////////////////////////////////////////////
 var server = websocket.createServer(function (conn) {
 
@@ -57,7 +57,7 @@ var server = websocket.createServer(function (conn) {
     });
 
     conn.on('message', function incoming(data) {
-      console.log(data);
+      // console.log(data);
       conn.clients.forEach(function each(client) {
           console.log(conn.clients);
         if (client.readyState === WebSocket.OPEN) {
@@ -72,7 +72,11 @@ var server = websocket.createServer(function (conn) {
 server.listen(config.serverlisten);
 
 //////////////////////////////////////////////////////////////////////////
+///////// DCS CONNECTION
+//////////////////////////////////////////////////////////////////////////
+socket(config, _, net)
+
+//////////////////////////////////////////////////////////////////////////
 ///////// LAUNCH THE SERVER
 //////////////////////////////////////////////////////////////////////////
 app.listen(config.webport);
-socket(config, _, net)
