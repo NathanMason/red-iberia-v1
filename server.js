@@ -65,12 +65,14 @@ var server = websocket.createServer(function (conn) {
         }
       })
     });
-
+    conn.on('error', function incoming(error) {
+      console.log('error  ' + error);
+    });
 });
 server.listen(config.serverlisten);
 
 //////////////////////////////////////////////////////////////////////////
 ///////// LAUNCH THE SERVER
 //////////////////////////////////////////////////////////////////////////
-app.listen(config.webport, config.address);
+app.listen(config.webport);
 socket(config, _, net)
