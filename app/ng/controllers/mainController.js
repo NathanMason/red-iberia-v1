@@ -43,7 +43,7 @@
 
                                     // add new markers to map
                                     geojson.features.forEach(function(marker) {
-                                          // create a DOM element for the marker
+                                        console.log(marker);
                                           var el = document.createElement('div');
                                           el.className = 'marker';
                                           el.style.backgroundImage = 'url(img/blue-c130.png)';
@@ -57,6 +57,7 @@
                                           // add marker to map
                                           new mapboxgl.Marker(el)
                                                 .setLngLat(marker.geometry.coordinates)
+                                                .setRotation(marker.data.unit.heading)
                                                 .addTo($rootScope.map);
                                     });
 
