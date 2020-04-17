@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("markerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http) {
+      angular.module("redIberia").factory("markerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http, $timeout) {
 
             var MarkerFactory = {};
 
@@ -58,15 +58,31 @@
                 MarkerFactory.updateMarker = function(e, cb){
 
                     var marker = $filter('filter')($rootScope.markers.features, (item) =>{
-                            console.log(item.properties.uid === e.unitID);
                             return item.properties.uid === e.unitID;
                     })[0];
-                    marker.geometry.coordinates = [e.lon, e.lat]
-                    marker.data.speed = e.speed;
-                    marker.data.heading =  e.heading;
-                    marker.data.alt =  e.alt;
+                    var promises = [];
+                    angular.forEach($rootScope.markers.features, function(i) {
 
-                    cb(200)
+                        var q = $q.defer();
+                        promises.push(q.promise);
+
+                          if (i.properties.uid == "logo_big") {
+                                $scope.resultObj = e.unitID;
+                                marker.geometry.coordinates = [e.lon, e.lat]
+                                marker.data.speed = e.speed;
+                                marker.data.heading =  e.heading;
+                                marker.data.alt =  e.alt;
+                            }
+                            q.resolve();
+                    })
+                    $q.all(promises).then(function() {
+
+                        cb(200)
+
+                    })
+
+
+
                 }
 
                 MarkerFactory.addMarker = function(unit, cb){
@@ -132,13 +148,15 @@
                                   .setRotation(feature.data.unit.heading)
                                   .addTo($rootScope.map);
 
-                            q.resolve();
+                                q.resolve();
+
+
+
+
 
                     });
                     $q.all(promises).then(function() {
-
-                        console.log('done');
-
+                        $rootScope.loadingAwacsData = false;
                     })
 
 

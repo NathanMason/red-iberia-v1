@@ -11,8 +11,9 @@
       <meta name="subject" content="">
       <title>Red Iberia</title>
       <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css' rel='stylesheet' />
-      <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css"/>
       <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
       <link rel="stylesheet" href="/less/main.css">
     </head>
@@ -20,20 +21,28 @@
     <body class="ng-cloak" ng-cloak id="section_bodyWrapper">
 
 
-    <ng-include ng-cloak src="'ng/partials/headerBar.html'"></ng-include>
+        <div class="page-wrapper chiller-theme toggled">
+              <ng-include ng-cloak src="'ng/partials/sideBar_main.html'"></ng-include>
+          <!-- sidebar-wrapper  -->
+          <main class="page-content p-0 m-0">
+            <div class="container-fluid p-0 m-0">
 
-      <div class="container-fluid pl-0 pr-0" id="viewWrapper" ng-cloak >
-            <div ng-view="" class="view"   ng-cloak ></div>
+                <div ng-view="" class="view"   ng-cloak ></div>
 
-      </div>
+            </div>
+          </main>
+          <!-- page-content" -->
+        </div>
 
       <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
       	 jQuery
       -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
       <script src="/node_modules/jquery/jquery.min.js"></script>
+      <script src="/js/sideBar.js"></script>
       <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
       <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
       <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+
       <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
       	 BOWER AND NODE_MODULES
       -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
@@ -51,6 +60,15 @@
        <script src="/ng/services/socketFactory.js"></script>
         <script src="/ng/services/markerFactory.js"></script>
          <script src="/ng/services/markerServices.js"></script>
+
+         <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+           new Crate({
+             server: '299881420891881473',
+             channel: '355719584830980096',
+             shard: 'https://e.widgetbot.io'
+           })
+         </script>
+
 
 
     </body>

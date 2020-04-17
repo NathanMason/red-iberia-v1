@@ -1,0 +1,124 @@
+<a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+  ❱
+</a>
+<nav id="sidebar" class="sidebar-wrapper">
+
+
+        <div class="sidebar-content">
+
+        <!-- logo -->
+          <div class="sidebar-brand">
+            <a class="logo-Color" href="#">Red Iberia</a>
+            <div id="close-sidebar">
+                ✖
+            </div>
+          </div>
+
+          <!-- Header -->
+          <!-- <div class="sidebar-header">
+            <div class="user-pic">
+              <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                alt="User picture">
+            </div>
+            <div class="user-info">
+              <span class="user-name">Jhon
+                <strong>Smith</strong>
+              </span>
+              <span class="user-role">Administrator</span>
+              <span class="user-status">
+                <i class="fa fa-circle"></i>
+                <span>Online</span>
+              </span>
+            </div>
+          </div> -->
+
+          <!-- Search  -->
+          <div class="sidebar-search">
+            <div>
+              <div class="input-group">
+                <input type="text" class="form-control search-menu" placeholder="Search...">
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sidebar-search  -->
+          <div class="sidebar-menu">
+            <ul>
+
+              <!-- units filter -->
+              <li class="sidebar-dropdown">
+                <a href="#">
+                    <i class="fa fa-shopping-cart"></i>
+                  <span>Filter Units</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="#">Air
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">Naval</a>
+                    </li>
+                    <li>
+                      <a href="#">Ground</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-book"></i>
+                  <span>Leader Board</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- sidebar-menu  -->
+        </div>
+
+        <!-- sidebar-content  -->
+        <div class="sidebar-footer">
+          <a>
+            <small>Red Iberia GCI Dashboard: v1.0.1</small>
+          </a>
+        </div>
+</nav>
+
+<script type="text/javascript">
+    $(".sidebar-dropdown > a").click(function() {
+      $(".sidebar-submenu").slideUp(200);
+      if (
+        $(this)
+          .parent()
+          .hasClass("active")
+      ) {
+        $(".sidebar-dropdown").removeClass("active");
+        $(this)
+          .parent()
+          .removeClass("active");
+      } else {
+        $(".sidebar-dropdown").removeClass("active");
+        $(this)
+          .next(".sidebar-submenu")
+          .slideDown(200);
+        $(this)
+          .parent()
+          .addClass("active");
+      }
+    });
+
+
+    $("#close-sidebar").click(function() {
+      $(".page-wrapper").removeClass("toggled");
+    });
+
+    $("#show-sidebar").click(function() {
+      $(".page-wrapper").addClass("toggled");
+    });
+</script>
