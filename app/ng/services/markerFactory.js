@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("markerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document) {
+      angular.module("redIberia").factory("markerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http) {
 
             var MarkerFactory = {};
 
@@ -8,13 +8,8 @@
                 // sort out what units need thier markers updated, deleted, or created
                 MarkerFactory.sortMarkers = function(e) {
 
-                    console.log(e);
-
                     var promises = [];
                     angular.forEach(e, function(unit, i) {
-
-
-                        console.log(unit);
 
                         var q = $q.defer();
                         promises.push(q.promise);
@@ -61,13 +56,11 @@
                 }
 
                 MarkerFactory.updateMarker = function(e, cb){
-                    console.log('updating marker');
 
                     var marker = $filter('filter')($rootScope.markers.features, (item) =>{
+                            console.log(item.properties.uid === e.unitID);
                             return item.properties.uid === e.unitID;
                     })[0];
-
-                    console.log(marker);
                     marker.geometry.coordinates = [e.lon, e.lat]
                     marker.data.speed = e.speed;
                     marker.data.heading =  e.heading;
@@ -77,8 +70,14 @@
                 }
 
                 MarkerFactory.addMarker = function(unit, cb){
-                    console.log('adding marker');
-                    var mkrData = {
+                    var mkrIcon;
+                    var mkrSize;
+                    MarkerFunctions.getMarkerImage(unit.coalition, unit.type, function(r){
+
+                        mkrIcon = r.src;
+                        mkrSize = r.size;
+
+                        var mkrData = {
                           type: 'Feature',
                           geometry: {
                                 type: 'Point',
@@ -86,7 +85,8 @@
                           },
                           properties: {
                                 icon: {
-                                      iconUrl: MarkerFunctions.getMarkerImage('red', unit.type)
+                                      iconUrl: mkrIcon,
+                                      iconSize: mkrSize
                                 },
                                 uid: unit.unitID
                           },
@@ -94,16 +94,12 @@
                                 unit
                           }
                     }
-
-                    $rootScope.markers.features.push(mkrData)
-                    cb(200)
-
-
-
+                        $rootScope.markers.features.push(mkrData)
+                        cb(200)
+                    })
                 }
 
                 MarkerFactory.printMarkers = function(){
-                    console.log('printing markers');
 
                     var promises = [];
                     angular.forEach($rootScope.markers.features, function(feature) {
@@ -114,7 +110,6 @@
                         // check to see if the same marker on the map exists already if it does destroy it
                         if ( angular.element('#' + feature.properties.uid).length ) {
                             var currentMkr = angular.element('#' + feature.properties.uid);
-                            console.log(currentMkr);
                             currentMkr[0].remove();
                         }
 
@@ -122,9 +117,11 @@
                             mkr.className = 'marker';
                             mkr.id = feature.properties.uid; // use this as a unique key
                             mkr.style.backgroundImage = feature.properties.icon.iconUrl;
-                            mkr.style.width = '10px'; // 40px if not testing
+                            mkr.style.backgroundRepeat = 'no-repeat';
+                            mkr.style.backgroundPosition = 'center center';    
+                            mkr.style.width = feature.properties.icon.iconSize; // 40px if not testing
                             mkr.style.backgroundSize = 'contain';
-                            mkr.style.height = '10px'; // 40px if not testing
+                            mkr.style.height = feature.properties.icon.iconSize; // 40px if not testing
 
                             mkr.addEventListener('click', function() {
                                   window.alert(JSON.stringify(feature.data));

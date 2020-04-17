@@ -55,8 +55,8 @@ var server = websocket.createServer(function (conn) {
     });
 
     conn.on('message', function incoming(data) {
-      // console.log(data);
-      conn.clients.forEach(function each(client) {
+
+    conn.clients.forEach(function each(client) {
           console.log(conn.clients);
         if (client.readyState === WebSocket.OPEN) {
           client.send(data);

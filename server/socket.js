@@ -45,9 +45,9 @@ module.exports = function(config, _, net){
             connOpen = true;
         });
 
-        client.on('error', () => {
+        client.on('error', (error) => {
             // rdebug('error!');
-
+            console.log(error);
             connOpen = true;
         });
 
