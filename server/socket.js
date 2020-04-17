@@ -6,7 +6,7 @@ module.exports = function(config, _, net){
 
 
     function connect(dataCallback) {
-        console.log('connecting');
+        console.log('ATTEMPTING TO connect TO DCS');
         var request = _.get(config.serverObject, 'requestArray[0]',"none")+"\r\n";
 
         const client = net.createConnection({host: config.address, port: config.port}, () => {
@@ -32,8 +32,6 @@ module.exports = function(config, _, net){
 
                 }
 
-
-
                 buffer = buffer.substring(i + 1);
 
             }
@@ -41,14 +39,15 @@ module.exports = function(config, _, net){
 
         client.on('close', () => {
             time = new Date();
-            rdebug(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' :: Reconnecting....');
+            // rdebug(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' :: Reconnecting....');
 			// ok we need a way to reset the data because DCS expects it to be clean if a connection is lost! so set the SERVER object list to 0 ie clean it out and wait.
-			serverObject.length = 0
+			config.serverObject.length = 0
             connOpen = true;
         });
 
         client.on('error', () => {
-            rdebug('error!');
+            // rdebug('error!');
+
             connOpen = true;
         });
 
