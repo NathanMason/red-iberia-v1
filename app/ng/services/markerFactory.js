@@ -10,7 +10,7 @@
 
                     var promises = [];
                     angular.forEach(e, function(unit, i) {
-
+                        console.log(e);
                         var q = $q.defer();
                         promises.push(q.promise);
 
@@ -118,7 +118,7 @@
                             mkr.id = feature.properties.uid; // use this as a unique key
                             mkr.style.backgroundImage = feature.properties.icon.iconUrl;
                             mkr.style.backgroundRepeat = 'no-repeat';
-                            mkr.style.backgroundPosition = 'center center';    
+                            mkr.style.backgroundPosition = 'center center';
                             mkr.style.width = feature.properties.icon.iconSize; // 40px if not testing
                             mkr.style.backgroundSize = 'contain';
                             mkr.style.height = feature.properties.icon.iconSize; // 40px if not testing
