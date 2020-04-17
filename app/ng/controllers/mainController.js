@@ -31,7 +31,7 @@
                               container: 'map',
                               center: [42, 42],
                               zoom: 7,
-                              style: 'mapbox://styles/boozer/ck8zc1c2t08u51iqv1dwjp2dr'
+                              style: 'mapbox://styles/boozer/ck948f65d1ckg1inhbtw2t1zc'
                         });
 
 
