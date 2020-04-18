@@ -4,3 +4,27 @@ html, body {
 
 
 }
+
+.custom-switch {
+
+            margin: 10px 0;
+}
+.custom-control-label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+    color: #b8bfce;
+    line-height: 23px;
+    padding-left: 7px;
+}
+
+.custom-control-label::before {
+    background-color: #202226;
+    border: 1px solid #31353D !important;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #007bff;
+    background-color: #CC243D;
+}
