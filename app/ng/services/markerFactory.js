@@ -3,14 +3,11 @@
 
             var MarkerFactory = {};
 
-
-
                 // sort out what units need thier markers updated, deleted, or created
                 MarkerFactory.sortMarkers = function(e) {
 
                     var promises = [];
                     angular.forEach(e, function(unit, i) {
-                        console.log(e);
                         var q = $q.defer();
                         promises.push(q.promise);
 
@@ -56,7 +53,7 @@
                 }
 
                 MarkerFactory.updateMarker = function(e, cb){
-
+                    console.log(e);
                     var marker = $filter('filter')($rootScope.markers.features, (item) =>{
                             return item.properties.uid === e.unitID;
                     })[0];
@@ -65,9 +62,7 @@
 
                         var q = $q.defer();
                         promises.push(q.promise);
-
-                          if (i.properties.uid == "logo_big") {
-                                $scope.resultObj = e.unitID;
+                          if (i.properties.uid == e.unitID) {
                                 marker.geometry.coordinates = [e.lon, e.lat]
                                 marker.data.speed = e.speed;
                                 marker.data.heading =  e.heading;
@@ -111,7 +106,7 @@
                           }
                     }
                         $rootScope.markers.features.push(mkrData)
-                        cb(200)
+                        cb()
                     })
                 }
 
@@ -147,16 +142,11 @@
                                   .setLngLat(feature.geometry.coordinates)
                                   .setRotation(feature.data.unit.heading)
                                   .addTo($rootScope.map);
-
                                 q.resolve();
-
-
-
-
 
                     });
                     $q.all(promises).then(function() {
-                        $rootScope.loadingAwacsData = false;
+                        // $rootScope.loadingAwacsData = false;
                     })
 
 

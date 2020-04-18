@@ -70,6 +70,13 @@
                                     }
                                     cb(data);
                                     break;
+                              case 'F-14B':
+                                          var data = {
+                                                src: 'url("../../img/' + side + 'f14.png")',
+                                                size: '22px'
+                                          }
+                                          cb(data);
+                                    break;
                               case 'F-15E':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
@@ -204,7 +211,6 @@
                                     }
                                     cb(data);
                                     break;
-
                                     // ground
                               default:
                                     var data = {
