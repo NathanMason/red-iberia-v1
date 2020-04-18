@@ -5,7 +5,7 @@
             .controller('mainController', ['$scope', '$rootScope', 'SocketFactory', '$timeout', 'markerFactory',
                   function($scope, $rootScope, SocketFactory, $timeout, markerFactory) {
 
-                      // $rootScope.loadingAwacsData = true;
+                      $rootScope.loadingAwacsData = true;
                       // create Marker scopes
                       $rootScope.markers = {
                           type: 'FeatureCollection',

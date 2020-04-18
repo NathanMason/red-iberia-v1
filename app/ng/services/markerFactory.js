@@ -75,9 +75,6 @@
                         cb(200)
 
                     })
-
-
-
                 }
 
                 MarkerFactory.addMarker = function(unit, cb){
@@ -146,7 +143,7 @@
 
                     });
                     $q.all(promises).then(function() {
-                        // $rootScope.loadingAwacsData = false;
+                        $rootScope.loadingAwacsData = false;
                     })
 
 
