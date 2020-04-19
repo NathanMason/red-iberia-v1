@@ -29,8 +29,8 @@
                         mapboxgl.accessToken = 'pk.eyJ1IjoiYm9vemVyIiwiYSI6ImNrOHpidzU3bzA0eGMza29sdTJ6cmdmcXMifQ.iNvCN8OHOmQr95a_OkNLUQ';
                         $rootScope.map = new mapboxgl.Map({
                               container: 'map',
-                              center: [42, 42],
-                              zoom: 7,
+                              center: [41.7, 42],
+                              zoom: 9,
                               style: 'mapbox://styles/boozer/ck948f65d1ckg1inhbtw2t1zc'
                         });
 
