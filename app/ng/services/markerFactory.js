@@ -8,7 +8,7 @@
 
                   var promises = [];
                   angular.forEach(e, function(unit, i) {
-                      console.log(unit.category);
+                      //console.log(unit.category);
                         var q = $q.defer();
                         promises.push(q.promise);
                         // create unit and add to markers scope.
@@ -20,7 +20,7 @@
 
                         // create unit and add to markers scope.
                         else if (unit.action == 'U') {
-                              // console.log(unit);
+                              // //console.log(unit);
                               MarkerFactory.updateMarker(unit, function(cb) {
                                     q.resolve();
                               })
@@ -60,7 +60,7 @@
                   })[0];
 
                   if (marker == undefined) {
-                      console.log('unit is U but not found');
+                      //console.log('unit is U but not found');
                       MarkerFactory.addMarker(e, function(cb) {
 
                       })
@@ -138,11 +138,11 @@
                         mkr.style.width = unit.properties.icon.iconSize;
                         mkr.style.backgroundSize = 'contain';
                         mkr.style.height = unit.properties.icon.iconSize;
-                        console.log($rootScope.selectedUnit);
+                        //console.log($rootScope.selectedUnit);
 
                         if ($rootScope.selectedUnit != undefined) {
-                            console.log(unit.properties.uid );
-                            console.log($rootScope.selectedUnit.unit );
+                            //console.log(unit.properties.uid );
+                            //console.log($rootScope.selectedUnit.unit );
                                 if (unit.properties.uid == $rootScope.selectedUnit.unit.unitID ) {
                                     $("#" + unit.properties.uid).addClass("selectedUnit");
                                 }
@@ -162,18 +162,19 @@
                             $rootScope.map.flyTo({ center: unit.geometry.coordinates });
                             $timeout(function(){
                                 var el = document.querySelectorAll('.selectedUnit');
-                                console.log(el);
+                                //console.log(el);
 
                                 el.forEach(element => {
                                   element.classList.toggle('selectedUnit');
                                 });
                                 $rootScope.selectedUnit = unit.data;
                                $rootScope.selectedUnit = unit.data;
+                               $rootScope.selectedUnit.latlong = mkr.getLatLng();
                                $("#" + unit.properties.uid).addClass("selectedUnit");
-
+                               //console.log($rootScope.selectedUnit);
                             }, 100);
 
-                              console.log($rootScope.selectedUnit);
+                              //console.log($rootScope.selectedUnit);
                                 if ($("#sidebar2").hasClass("closeRightSideBar")) {
                                     $("#sidebar2").toggleClass("closeRightSideBar");
                                 }
