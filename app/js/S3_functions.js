@@ -277,13 +277,16 @@ $(document).ready(function() {
     ];
     var usach = [ //us aircraft hours
       'FA-18C_hornet',
+	  'F-16C_50',
 	  'F-14B',
 	  'AV8BNA',
 	  'A-10C',
       'F-15C',
       'F-5E-3',
       'F-86F Sabre',
-      'P-51D'
+      'P-51D',
+	  'P-51D-30-NA',
+	  'TF-51D',
     ];
     var ruach = [ //ru aircraft hours
       'IL-76MD',
@@ -293,7 +296,10 @@ $(document).ready(function() {
       'MiG-29S',
       'Su-25',
       'Su-25T',
-      'Su-27'
+      'Su-27',
+	  'Su-33',
+	  'I-16',
+	  'Yak-52',
     ];
     var oach = [ //other aircraft hours
       'AJS37',
@@ -302,7 +308,10 @@ $(document).ready(function() {
       'L-39C',
       'L-39ZA',
       'M-2000C',
-      'SpitfireLFMkIX'
+      'SpitfireLFMkIX',
+	  'JF-17',
+	  'SpitfireLFMkIXCW',
+	  'FW-190A8',
     ];
     var killObjects = [
       'Ground Units',     // the web client will generate 2 columns,
