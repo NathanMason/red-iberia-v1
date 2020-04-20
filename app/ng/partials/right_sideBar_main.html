@@ -1,0 +1,43 @@
+<a id="show-sidebar2" class="btn btn-sm btn-dark" href="#">❰</a>
+<nav id="sidebar2" class="sidebar2-wrapper closeRightSideBar">
+
+        <div class="sidebar2-content">
+
+        <!-- IMAGE -->
+        <div class="sidebar2-brand">
+            <div id="close-sidebar2" style="position: absolute; top: 12px;">✖</div>
+        </div>
+
+         <!-- sidebar2  -->
+         <div class="sidebar2-menu">
+             <h2>{{selectedUnit.unit.displayname}}</h2>
+             <img style='width: 100%' src='../img/{{selectedUnit.unit.type}}.jpg' onError="this.src = '../img/404.png'">
+             <table class='table'>
+                 <tbody>
+                     <tr class="evan">
+                         <td>Pilot: </td>
+                         <td>
+                             <span ng-if="selectedUnit.unit.playername.length > 0">{{selectedUnit.unit.playername}}</span>
+                             <span ng-if="selectedUnit.unit.playername.length == 0">AI</span>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>Callsign: </td>
+                         <td>{{selectedUnit.unit.missionname}}</td>
+                     </tr>
+                     <tr class="evan">
+                         <td>Speed: </td>
+                         <td>{{selectedUnit.unit.speed}}</td>
+                     </tr>
+                     <tr>
+                         <td>HDG: </td>
+                         <td>{{selectedUnit.unit.heading}}</td>
+                     </tr>
+                     <tr class="evan">
+                         <td>Alt: </td>
+                         <td>{{selectedUnit.unit.alt}}</td>
+                     </tr>
+                 </tbody>
+             </table>
+        </div>
+</nav>

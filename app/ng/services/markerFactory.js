@@ -152,7 +152,16 @@
 
                         // add the units/markers click function.
                         mkr.addEventListener('click', function() {
-                              window.alert(JSON.stringify(unit.data));
+                            $timeout(function(){
+                                $rootScope.selectedUnit = unit.data;
+                               $rootScope.selectedUnit = unit.data;
+                            }, 100);
+
+                              console.log($rootScope.selectedUnit);
+                                if ($("#sidebar2").hasClass("closeRightSideBar")) {
+                                    $("#sidebar2").toggleClass("closeRightSideBar");
+                                }
+
                         });
 
                         // now print the mrker to the map
