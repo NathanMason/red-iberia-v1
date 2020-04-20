@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("markerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http, $timeout) {
+      angular.module("redIberia").factory("markerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http, $timeout, markerFilters) {
 
             var MarkerFactory = {};
 
@@ -8,9 +8,9 @@
 
                   var promises = [];
                   angular.forEach(e, function(unit, i) {
+                      console.log(unit.category);
                         var q = $q.defer();
                         promises.push(q.promise);
-                        console.log(unit);
                         // create unit and add to markers scope.
                         if (unit.action == 'C') {
                               MarkerFactory.addMarker(unit, function(cb) {
@@ -124,14 +124,14 @@
 
                     // create all new marker divs on the map.
                   angular.forEach($rootScope.markers.features, function(unit) {
-                      console.log(unit);
+
                         var q = $q.defer();
                         promises.push(q.promise);
 
                         // create a marker for the unit.
                         var mkr = document.createElement('div');
                         angular.element(document.getElementsByTagName('body')).append(mkr);
-                        mkr.className = 'marker';
+                        mkr.className = 'marker ' + unit.data.unit.category;
                         mkr.id = unit.properties.uid; // use this as a unique key
                         mkr.style.backgroundImage = unit.properties.icon.iconUrl;
                         mkr.style.backgroundRepeat = 'no-repeat';
@@ -139,6 +139,16 @@
                         mkr.style.width = unit.properties.icon.iconSize;
                         mkr.style.backgroundSize = 'contain';
                         mkr.style.height = unit.properties.icon.iconSize;
+
+                        // check marker filter status
+                        markerFilters.getFilterStatus(unit.data.unit.category, function(r){
+
+                            if (r == false) {
+                                mkr.classList.add('hideEl');
+                            }
+
+
+                        })
 
                         // add the units/markers click function.
                         mkr.addEventListener('click', function() {

@@ -22,7 +22,7 @@
 
 
         <div class="page-wrapper chiller-theme toggled">
-            <ng-include ng-cloak src="'ng/partials/sideBar_main.html'"></ng-include>
+            <ng-include ng-cloak ng-controller="sideBarController" src="'ng/partials/sideBar_main.html'"></ng-include>
             <!-- sidebar-wrapper  -->
             <main class="page-content p-0 m-0">
             <div class="container-fluid p-0 m-0">
@@ -52,14 +52,16 @@
       <script src="app.js"></script>
 
 
-
       <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
       	 CONTROLLERS
       -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
+      <script src="/ng/services/markerServices.js"></script>
+       <script src="/ng/services/markerFilters.js"></script>
       <script src="/ng/controllers/mainController.js"></script>
        <script src="/ng/services/socketFactory.js"></script>
         <script src="/ng/services/markerFactory.js"></script>
-         <script src="/ng/services/markerServices.js"></script>
+         <script src="/ng/controllers/sideBarController.js"></script>
+
 
          <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
            new Crate({
