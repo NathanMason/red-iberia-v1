@@ -12,22 +12,12 @@ var websocket = require('nodejs-websocket');
 ///////// SET EXPRESS
 //////////////////////////////////////////////////////////////////////////
 var app = express();
-
-//////////////////////////////////////////////////////////////////////////
-///////// TGW USER STATS APPLICATION (this will be merged into the app folder soon.)
-//////////////////////////////////////////////////////////////////////////
-// const API = require(path.join(__dirname, 'api/db_api.js'));
-// const CONFIG = require(path.join(__dirname, 'config.js'));
-// const LOGGER = require(path.join(__dirname, 'logger.js'));
-const e = 'error'; //vars for easy logging
-const t = 'task'; // const i = 'info';
-
-
+const CONFIG = require(path.join(__dirname, '/server/config.js'));
 //////////////////////////////////////////////////////////////////////////
 ///////// SET SOCKET
 //////////////////////////////////////////////////////////////////////////
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit:CONFIG.getPostJsonSizeLimit()}));
 app.set('view engine', 'html');
 
 //////////////////////////////////////////////////////////////////////////
@@ -35,10 +25,10 @@ app.set('view engine', 'html');
 //////////////////////////////////////////////////////////////////////////
 app.use('/', express.static(__dirname + '/app'));
 app.use('server', express.static(__dirname + '/server'));
-app.use('api', express.static(__dirname + '/api'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.set('views', __dirname + '/');
+
 
 //////////////////////////////////////////////////////////////////////////
 ///////// IMPORT MODULES
@@ -47,6 +37,7 @@ var config = require('./server/config'); // variables and constants
 require('./server/routes.js')(app); //server routes
 require('./server/debuger.js'); //server routes
 var socket = require('./server/socket.js');
+
 
 //////////////////////////////////////////////////////////////////////////
 ///////// CLIENT CONNECTIONS

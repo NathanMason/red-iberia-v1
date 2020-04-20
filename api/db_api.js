@@ -62,7 +62,7 @@ function updateTokens() {
   var db = new jsondb(DB, true, true);
   db.push('/token',CONFIG.getTokens());
 }
-// updateTokens(); //do it now
+updateTokens(); //do it now
 
 //helper function authorizeToken:
 //makes sure the update is valid
