@@ -44,7 +44,7 @@
             // delete markers that are returned with status: "D"
             MarkerFactory.deleteMarker = function(unit, cb) {
                   var marker = $filter('filter')($rootScope.markers.features, (item) => {
-                        return item.properties.uid === e.unitID;
+                        return item.properties.uid === unit.unitID;
                   })[0];
                   $rootScope.markers.features.splice(
                         $rootScope.markers.features.indexOf(marker), 1);
@@ -82,9 +82,8 @@
 
                    // get the markers image based on the coalition and unit type.
                   MarkerFunctions.getMarkerImage(unit.coalition, unit.type, function(r) {
-
-                        mkrIcon = r.src;
-                        mkrSize = r.size;
+                        var mkrIcon = r.src;
+                        var mkrSize = r.size;
 
                         // set the markers geo data
                         var mkrData = {
@@ -139,7 +138,15 @@
                         mkr.style.width = unit.properties.icon.iconSize;
                         mkr.style.backgroundSize = 'contain';
                         mkr.style.height = unit.properties.icon.iconSize;
+                        console.log($rootScope.selectedUnit);
 
+                        if ($rootScope.selectedUnit != undefined) {
+                            console.log(unit.properties.uid );
+                            console.log($rootScope.selectedUnit.unit );
+                                if (unit.properties.uid == $rootScope.selectedUnit.unit.unitID ) {
+                                    $("#" + unit.properties.uid).addClass("selectedUnit");
+                                }
+                        }
                         // check marker filter status
                         markerFilters.getFilterStatus(unit.data.unit.category, function(r){
 
@@ -152,15 +159,26 @@
 
                         // add the units/markers click function.
                         mkr.addEventListener('click', function() {
+                            $rootScope.map.flyTo({ center: unit.geometry.coordinates });
                             $timeout(function(){
+                                var el = document.querySelectorAll('.selectedUnit');
+                                console.log(el);
+
+                                el.forEach(element => {
+                                  element.classList.toggle('selectedUnit');
+                                });
                                 $rootScope.selectedUnit = unit.data;
                                $rootScope.selectedUnit = unit.data;
+                               $("#" + unit.properties.uid).addClass("selectedUnit");
+
                             }, 100);
 
                               console.log($rootScope.selectedUnit);
                                 if ($("#sidebar2").hasClass("closeRightSideBar")) {
                                     $("#sidebar2").toggleClass("closeRightSideBar");
                                 }
+
+
 
                         });
 
