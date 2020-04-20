@@ -3,152 +3,166 @@
 
             var MarkerFactory = {};
 
-                // sort out what units need thier markers updated, deleted, or created
-                MarkerFactory.sortMarkers = function(e) {
+            // sort out what units need thier markers updated, deleted, or created
+            MarkerFactory.sortMarkers = function(e) {
 
-                    var promises = [];
-                    angular.forEach(e, function(unit, i) {
+                  var promises = [];
+                  angular.forEach(e, function(unit, i) {
                         var q = $q.defer();
                         promises.push(q.promise);
-
+                        console.log(unit);
                         // create unit and add to markers scope.
                         if (unit.action == 'C') {
-                            MarkerFactory.addMarker(unit, function(cb){
-                                q.resolve();
-                            })
+                              MarkerFactory.addMarker(unit, function(cb) {
+                                    q.resolve();
+                              })
                         }
 
                         // create unit and add to markers scope.
                         else if (unit.action == 'U') {
-                            MarkerFactory.updateMarker(unit, function(cb){
-                                q.resolve();
-                            })
+                              // console.log(unit);
+                              MarkerFactory.updateMarker(unit, function(cb) {
+                                    q.resolve();
+                              })
                         }
 
                         // delete units markers.
                         else if (unit.action == 'D') {
-                            MarkerFactory.deleteMarker(unit, function(cb){
-                                q.resolve();
-                            })
+                              MarkerFactory.deleteMarker(unit, function(cb) {
+                                    q.resolve();
+                              })
                         }
 
-                    })
-                    $q.all(promises).then(function() {
+                  })
+                  $q.all(promises).then(function() {
 
                         MarkerFactory.printMarkers();
 
-                    })
+                  })
+            }
 
-                }
+            // delete markers that are returned with status: "D"
+            MarkerFactory.deleteMarker = function(unit, cb) {
+                  var marker = $filter('filter')($rootScope.markers.features, (item) => {
+                        return item.properties.uid === e.unitID;
+                  })[0];
+                  $rootScope.markers.features.splice(
+                        $rootScope.markers.features.indexOf(marker), 1);
+                  cb(200)
+            }
 
-                // to be tested
-                MarkerFactory.deleteMarker = function(unit, cb){
-                    var marker = $filter('filter')($rootScope.markers.features, (item) =>{
-                            return item.properties.uid === e.unitID;
-                    })[0];
-                    $rootScope.markers.features.splice(
-                        $rootScope.markers.features.indexOf(marker),
-                    1);
-                    cb(200)
-                }
+            // update markers that are returned with status: "U"
+            MarkerFactory.updateMarker = function(e, cb) {
 
-                MarkerFactory.updateMarker = function(e, cb){
-                    console.log(e);
-                    var marker = $filter('filter')($rootScope.markers.features, (item) =>{
-                            return item.properties.uid === e.unitID;
-                    })[0];
-                    var promises = [];
-                    angular.forEach($rootScope.markers.features, function(i) {
+                  // get the unit that needs updating FROM THE markers rootscope object
+                  var marker = $filter('filter')($rootScope.markers.features, (item) => {
+                        return item.properties.uid === e.unitID;
+                  })[0];
 
-                        var q = $q.defer();
-                        promises.push(q.promise);
-                          if (i.properties.uid == e.unitID) {
-                                marker.geometry.coordinates = [e.lon, e.lat]
-                                marker.data.speed = e.speed;
-                                marker.data.heading =  e.heading;
-                                marker.data.alt =  e.alt;
-                            }
-                            q.resolve();
-                    })
-                    $q.all(promises).then(function() {
+                  if (marker == undefined) {
+                      console.log('unit is U but not found');
+                      MarkerFactory.addMarker(e, function(cb) {
 
-                        cb(200)
+                      })
+                  } else {
 
-                    })
-                }
+                          // update the units geo data
+                          marker.geometry.coordinates = [e.lon, e.lat]
+                          marker.data.speed = e.speed;
+                          marker.data.heading = e.heading;
+                          marker.data.alt = e.alt;
+                          cb(200)
+                   }
+            }
 
-                MarkerFactory.addMarker = function(unit, cb){
-                    var mkrIcon;
-                    var mkrSize;
-                    MarkerFunctions.getMarkerImage(unit.coalition, unit.type, function(r){
+            MarkerFactory.addMarker = function(unit, cb) {
+
+                  var mkrIcon,
+                      mkrSize;
+
+                   // get the markers image based on the coalition and unit type.
+                  MarkerFunctions.getMarkerImage(unit.coalition, unit.type, function(r) {
 
                         mkrIcon = r.src;
                         mkrSize = r.size;
 
+                        // set the markers geo data
                         var mkrData = {
-                          type: 'Feature',
-                          geometry: {
-                                type: 'Point',
-                                coordinates: [unit.lon, unit.lat]
-                          },
-                          properties: {
-                                icon: {
-                                      iconUrl: mkrIcon,
-                                      iconSize: mkrSize
-                                },
-                                uid: unit.unitID
-                          },
-                          data: {
-                                unit
-                          }
-                    }
+                              type: 'Feature',
+                              geometry: {
+                                    type: 'Point',
+                                    coordinates: [unit.lon, unit.lat]
+                              },
+                              properties: {
+                                    icon: {
+                                          iconUrl: mkrIcon,
+                                          iconSize: mkrSize
+                                    },
+                                    uid: unit.unitID
+                              },
+                              data: {
+                                    unit,
+                                    heading: unit.heading
+                              }
+                        }
+
+                        // add the marker to the markers rootscope object.
                         $rootScope.markers.features.push(mkrData)
                         cb()
-                    })
-                }
+                  })
+            }
 
-                MarkerFactory.printMarkers = function(){
+            MarkerFactory.printMarkers = function() {
 
-                    var promises = [];
-                    angular.forEach($rootScope.markers.features, function(feature) {
+                // delete all existing marker divs from the map.
+                $rootScope.unitMarkers.forEach((marker) => marker.remove());
 
+                // clear the existing marker obj.
+                $rootScope.unitMarkers = [];
+
+                  var promises = [];
+
+                    // create all new marker divs on the map.
+                  angular.forEach($rootScope.markers.features, function(unit) {
+                      console.log(unit);
                         var q = $q.defer();
                         promises.push(q.promise);
 
-                        // check to see if the same marker on the map exists already if it does destroy it
-                        if ( angular.element('#' + feature.properties.uid).length ) {
-                            var currentMkr = angular.element('#' + feature.properties.uid);
-                            currentMkr[0].remove();
-                        }
-
+                        // create a marker for the unit.
                         var mkr = document.createElement('div');
-                            mkr.className = 'marker';
-                            mkr.id = feature.properties.uid; // use this as a unique key
-                            mkr.style.backgroundImage = feature.properties.icon.iconUrl;
-                            mkr.style.backgroundRepeat = 'no-repeat';
-                            mkr.style.backgroundPosition = 'center center';
-                            mkr.style.width = feature.properties.icon.iconSize; // 40px if not testing
-                            mkr.style.backgroundSize = 'contain';
-                            mkr.style.height = feature.properties.icon.iconSize; // 40px if not testing
+                        angular.element(document.getElementsByTagName('body')).append(mkr);
+                        mkr.className = 'marker';
+                        mkr.id = unit.properties.uid; // use this as a unique key
+                        mkr.style.backgroundImage = unit.properties.icon.iconUrl;
+                        mkr.style.backgroundRepeat = 'no-repeat';
+                        mkr.style.backgroundPosition = 'center center';
+                        mkr.style.width = unit.properties.icon.iconSize;
+                        mkr.style.backgroundSize = 'contain';
+                        mkr.style.height = unit.properties.icon.iconSize;
 
-                            mkr.addEventListener('click', function() {
-                                  window.alert(JSON.stringify(feature.data));
-                            });
+                        // add the units/markers click function.
+                        mkr.addEventListener('click', function() {
+                              window.alert(JSON.stringify(unit.data));
+                        });
 
-                            new mapboxgl.Marker(mkr)
-                                  .setLngLat(feature.geometry.coordinates)
-                                  .setRotation(feature.data.unit.heading)
-                                  .addTo($rootScope.map);
-                                q.resolve();
+                        // now print the mrker to the map
+                        var newUnit = new mapboxgl.Marker(mkr)
+                              .setLngLat(unit.geometry.coordinates)
+                              .setRotation(unit.data.heading) // not working if the unit is being updated
+                              .addTo($rootScope.map);
+                              $rootScope.unitMarkers.push(newUnit)
 
-                    });
-                    $q.all(promises).then(function() {
+
+                        q.resolve();
+
+                  });
+                  $q.all(promises).then(function() {
                         $rootScope.loadingAwacsData = false;
-                    })
+                  })
 
 
 
-                }
+            }
 
             return MarkerFactory;
 

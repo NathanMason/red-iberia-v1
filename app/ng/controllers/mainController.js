@@ -6,7 +6,10 @@
                   function($scope, $rootScope, SocketFactory, $timeout, markerFactory) {
 
                       $rootScope.loadingAwacsData = true;
-                      // create Marker scopes
+
+                      $rootScope.unitMarkers = [];
+
+                      // Marker scopes
                       $rootScope.markers = {
                           type: 'FeatureCollection',
                           features: []
@@ -22,7 +25,7 @@
                               });
 
                               socket.onOpen(function(message) {
-                                    console.log(message);
+                                    //console.log(message);
                               });
                         });
 
