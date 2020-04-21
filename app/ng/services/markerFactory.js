@@ -169,9 +169,27 @@
                                 });
                                 $rootScope.selectedUnit = unit.data;
                                $rootScope.selectedUnit = unit.data;
-                               $rootScope.selectedUnit.latlong = mkr.getLatLng();
+							   console.log("unit.data dump");
+							   console.log(unit.data);
+							   var lat = unit.data.unit.lat;
+							   lat = lat.toFixed(4);
+							   var lon = unit.data.unit.lon;
+							   lon = lon.toFixed(4);
+							   var uLatLon = "DDMS:" + lat + "," + lon + "";
+                               $rootScope.selectedUnit.latlong = uLatLon; // mkr.getlatlng was erroring this works
+							   var fixedalt = unit.data.unit.alt * 3.28084;
+							   fixedalt = fixedalt.toFixed(0);
+							   fixedalt = fixedalt.toString() + "ft";
+							   $rootScope.selectedUnit.fixedalt = fixedalt; // corrects the altitude to Ft.
+							   var fixedspeed = unit.data.unit.speed;
+							   fixedspeed = fixedspeed.toFixed(0);
+							   fixedspeed = fixedspeed.toString() + "kts TAS";
+							   var fixedheading = unit.data.unit.heading;
+							   var fixedheading = fixedheading.toFixed(0); // fixs altitude to 0 places
+							   $rootScope.selectedUnit.fixedheading = fixedheading; 
+							   $rootScope.selectedUnit.fixedspeed = fixedspeed; // corrects speed to TAS
                                $("#" + unit.properties.uid).addClass("selectedUnit");
-                               //console.log($rootScope.selectedUnit);
+                               console.log($rootScope.selectedUnit);
                             }, 100);
 
                               //console.log($rootScope.selectedUnit);
