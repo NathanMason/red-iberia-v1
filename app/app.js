@@ -16,6 +16,11 @@
                               controller: "mainController",
                               activePage: "welcome"
                         })
+                        .when('/leaderBoard', {
+                              templateUrl: "./ng/templates/leaderBoard.html",
+                              controller: "leaderBoardController",
+                              activePage: "leaderBoard"
+                        })
 
                         .otherwise({
                               redirectTo: '/'

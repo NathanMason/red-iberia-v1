@@ -41,10 +41,12 @@
 
             Logic.getLonLat= function(la, lo){
                 var lat = la;
-                var lon = lo;
-                var uLatLon = "" + lat + "," + lon + "";
                 lat = lat.toFixed(4);
+                var lon = lo;
                 lon = lon.toFixed(4);
+                var uLatLon = "" + lat + "," + lon + "";
+
+
 
                 return uLatLon;
 

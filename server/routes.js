@@ -1,5 +1,6 @@
 module.exports = function(app){
     require('./config.js');
+    var path = require('path');
     var API = require('../api/db_api.js');
     app.get('/', function(req, res) {
         res.header("Access-Control-Allow-Origin", "*");
@@ -8,7 +9,9 @@ module.exports = function(app){
         res.header('Access-Control-Allow-Headers', 'Content-Type');
       res.sendFile('index.html', {root : __dirname + '/app'});
     });
-
+    app.get('*', function (req, res, next) {
+    res.sendFile(path.resolve('app/index.html'));
+});
     //API for WEB View
     app.post('/api/web/fetch', (req, res) => {
       // rdebug('WEB Server Stats Requested: Sending the JSON object');

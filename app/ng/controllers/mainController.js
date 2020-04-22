@@ -23,7 +23,9 @@
                       SocketFactory.launchSocket(function(socket) {
 
                               socket.onMessage(function(message) {
+
                                     var data = JSON.parse(message.data);
+                                    console.log(data);
                                     markerFactory.sortMarkers(data.units);
                                     $rootScope.missiondata = data.missiondata; // we need the missiondata to be globally accessable
 

@@ -60,10 +60,16 @@
                 </div>
               </li>
               <li>
-                <a href="#">
+                <a ng-href="/">
                   <i class="fa fa-book"></i>
-                  <span>Leader Board</span>
+                  <span>GCI Map</span>
                 </a>
+              </li>
+              <li>
+                  <a ng-class="{ activeMenuItem: $route.current.activePage == 'leaderBoard' }"
+                     ng-href="leaderBoard">
+                     Documents
+                  </a>
               </li>
             </ul>
           </div>
