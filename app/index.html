@@ -23,7 +23,7 @@
 
         <div class="page-wrapper chiller-theme toggled">
             <ng-include ng-cloak ng-controller="sideBarController" src="'ng/partials/sideBar_main.html'"></ng-include>
-            <ng-include ng-cloak ng-controller="rightSideBarController" src="'ng/partials/right_sideBar_main.html'"></ng-include>
+            <ng-include ng-if="$route.current.activePage == 'welcome'" ng-cloak ng-controller="rightSideBarController" src="'ng/partials/right_sideBar_main.html'"></ng-include>
             <!-- sidebar-wrapper  -->
             <main class="page-content p-0 m-0">
             <div class="container-fluid p-0 m-0">

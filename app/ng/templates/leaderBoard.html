@@ -1,15 +1,28 @@
 <div class="mapWrapper" style="padding: 50px">
 
+
         <div class="row">
             <div class="col">
 
-                <table>
-                    <tbody>
-                        <tr ng-repeat="stat in stats">
-                            <td>{{stat.names[1]}}</td>
-                        </tr>
-                    </tbody>
+                <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col" width="50">Pos</th>
+                      <th >Pilot</th>
+                      <th >AA Kills</th>
+                      <th>Deaths</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="stat in pilotStatistics">
+                      <th scope="row">1</th>
+                      <td>{{stat.names[1]}}</td>
+                      <td>{{stat.kills.Planes.total}}</td>
+                      <td>{{stat.losses.pilotDeath}}</td>
+                    </tr>
+                  </tbody>
                 </table>
+                <button class="btn btn-primary btn-sm" ng-click="loadMore()">Load more</button>
             </div>
         </div>
 </div>

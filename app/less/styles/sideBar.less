@@ -70,7 +70,10 @@
 
 /*----------------toggeled sidebar----------------*/
 .page-wrapper.toggled {
-    padding-left: 270px;
+    padding-left: 260px;
+        .mapWrapper {
+        width: calc(~"100vw - 260px");
+    }
 }
 
 .page-wrapper.toggled .sidebar-wrapper {
@@ -79,7 +82,7 @@
 
 @media screen and (min-width: 768px) {
   .page-wrapper.toggled .page-content {
-    padding-left: 270px;
+    padding-left: 260px;
   }
 }
 /*----------------show sidebar button----------------*/
@@ -259,7 +262,7 @@
   background: 0 0;
   position: absolute;
   right: 15px;
-  top: 14px;
+  top: 9px;
 }
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {

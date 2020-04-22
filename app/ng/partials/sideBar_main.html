@@ -29,11 +29,21 @@
           <!-- sidebar-search  -->
           <div class="sidebar-menu">
             <ul>
-
+              <li>
+                <a ng-class="{ activeMenuItem: $route.current.activePage == 'welcome' }" ng-href="/">
+                  <span>GCI Map</span>
+                </a>
+              </li>
+              <li>
+                  <a ng-class="{ activeMenuItem: $route.current.activePage == 'leaderBoard' }"
+                     class=""
+                     ng-href="leaderBoard">
+                     leaderBoard
+                  </a>
+              </li>
               <!-- units filter -->
-              <li class="sidebar-dropdown">
+              <li ng-show="$route.current.activePage == 'welcome'" class="sidebar-dropdown">
                 <a href="#">
-                    <i class="fa fa-shopping-cart"></i>
                   <span>Filter Units</span>
                 </a>
                 <div class="sidebar-submenu">
@@ -58,18 +68,6 @@
                     </li>
                   </ul>
                 </div>
-              </li>
-              <li>
-                <a ng-href="/">
-                  <i class="fa fa-book"></i>
-                  <span>GCI Map</span>
-                </a>
-              </li>
-              <li>
-                  <a ng-class="{ activeMenuItem: $route.current.activePage == 'leaderBoard' }"
-                     ng-href="leaderBoard">
-                     Documents
-                  </a>
               </li>
             </ul>
           </div>

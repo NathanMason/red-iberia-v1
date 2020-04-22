@@ -20,7 +20,7 @@ const CONFIG = require(path.join(__dirname, '/server/config.js'));
 //////////////////////////////////////////////////////////////////////////
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({limit:CONFIG.getPostJsonSizeLimit()}));
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 //////////////////////////////////////////////////////////////////////////
 ///////// FOLDER STRUCTURE
@@ -30,7 +30,6 @@ app.use('server', express.static(__dirname + '/server'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.set('views', __dirname + '/');
-
 
 //////////////////////////////////////////////////////////////////////////
 ///////// IMPORT MODULES

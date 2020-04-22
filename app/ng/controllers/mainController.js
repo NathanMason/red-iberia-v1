@@ -2,12 +2,13 @@
 
       angular.module('redIberia')
 
-            .controller('mainController', ['$scope', '$rootScope', 'SocketFactory', '$timeout', 'markerFactory', 'markerFilters',
-                  function($scope, $rootScope, SocketFactory, $timeout, markerFactory, markerFilters) {
+            .controller('mainController', ['$scope', '$rootScope', 'SocketFactory', '$timeout', 'markerFactory', 'markerFilters', '$route',
+                  function($scope, $rootScope, SocketFactory, $timeout, markerFactory, markerFilters, $route) {
 
                       // set scopes
                       $rootScope.loadingAwacsData = true;
                       $rootScope.unitMarkers = [];
+                      $rootScope.$route = $route;
                       $rootScope.markers = {
                           type: 'FeatureCollection',
                           features: []
