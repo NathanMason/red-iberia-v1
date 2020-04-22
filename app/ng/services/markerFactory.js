@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("markerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http, $timeout, markerFilters) {
+      angular.module("redIberia").factory("markerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http, $timeout, markerFilters, unitLogic) {
 
             var MarkerFactory = {};
 
@@ -138,15 +138,23 @@
                         mkr.style.width = unit.properties.icon.iconSize;
                         mkr.style.backgroundSize = 'contain';
                         mkr.style.height = unit.properties.icon.iconSize;
-                        //console.log($rootScope.selectedUnit);
 
+                        // update selected Unit
                         if ($rootScope.selectedUnit != undefined) {
-                            //console.log(unit.properties.uid );
-                            //console.log($rootScope.selectedUnit.unit );
+                            console.log($rootScope.selectedUnit);
+                            console.log(unit.data);
                                 if (unit.properties.uid == $rootScope.selectedUnit.unit.unitID ) {
                                     $("#" + unit.properties.uid).addClass("selectedUnit");
+                                    $rootScope.selectedUnit.fixedheading = unitLogic.getHeading(unit.data.heading)
+                                    $rootScope.selectedUnit.fixedspeed = unitLogic.getSpeed(unit.data.speed)
+                                    $rootScope.selectedUnit.fixedalt = unitLogic.getAlt(unit.data.alt)
+                                    $rootScope.selectedUnit.latlong = unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon)
+
+                                    console.log(unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon));
+
                                 }
                         }
+
                         // check marker filter status
                         markerFilters.getFilterStatus(unit.data.unit.category, function(r){
 
@@ -154,57 +162,32 @@
                                 mkr.classList.add('hideEl');
                             }
 
-
                         })
 
                         // add the units/markers click function.
                         mkr.addEventListener('click', function() {
                             $rootScope.map.flyTo({ center: unit.geometry.coordinates });
                             $timeout(function(){
-                                var el = document.querySelectorAll('.selectedUnit');
-                                //console.log(el);
 
+                                var el = document.querySelectorAll('.selectedUnit');
                                 el.forEach(element => {
                                   element.classList.toggle('selectedUnit');
                                 });
-                               $rootScope.selectedUnit = unit.data;
-							                 var lat = unit.data.unit.lat;
-							                 lat = lat.toFixed(4);
-							                 var lon = unit.data.unit.lon;
-							                 lon = lon.toFixed(4);
-							                 var uLatLon = "" + lat + "," + lon + "";
-                               $rootScope.selectedUnit.latlong = uLatLon; // mkr.getlatlng was erroring this works
-							                 var fixedalt = unit.data.unit.alt * 3.28084;
-							                 fixedalt = fixedalt.toFixed(0);
-							                 fixedalt = fixedalt.toString() + "ft";
-							                 $rootScope.selectedUnit.fixedalt = fixedalt; // corrects the altitude to Ft.
-							                 var fixedspeed = unit.data.unit.speed;
-							                 fixedspeed = fixedspeed.toFixed(0);
-							                 fixedspeed = fixedspeed.toString() + "kts TAS";
-							                 var fixedheading = unit.data.unit.heading;
-                               var magdec = $rootScope.missiondata.magdec
-                               var magheading = (fixedheading + magdec);
-                               magheading = magheading.toFixed(0);
-							                 fixedheading = fixedheading.toFixed(0); // fixs altitude to 0 places
-                               if (magheading > 360 )
-                               {
-                                 magheading = magheading - 360;
-                               }
-                               else if (magheading < 0 )
-                               {
-                                 magheading = magheading + 360;
-                               }
-							                 $rootScope.selectedUnit.fixedheading = fixedheading + "True, " + magheading + "Magnetic";
-							                 $rootScope.selectedUnit.fixedspeed = fixedspeed; // corrects speed to TAS
+
+                                $rootScope.selectedUnit = unit.data;
+                                $rootScope.selectedUnit.fixedheading = unitLogic.getHeading(unit.data.unit.heading)
+                                $rootScope.selectedUnit.fixedspeed = unitLogic.getSpeed(unit.data.unit.speed)
+                                $rootScope.selectedUnit.fixedalt = unitLogic.getAlt(unit.data.unit.alt)
+                                $rootScope.selectedUnit.latlong = unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon)
+
                                $("#" + unit.properties.uid).addClass("selectedUnit");
-                               console.log($rootScope.selectedUnit); // Information is correct but HTML doesn't update??!!
+
                             }, 100);
 
                               //console.log($rootScope.selectedUnit);
                             if ($("#sidebar2").hasClass("closeRightSideBar")) {
                                 $("#sidebar2").toggleClass("closeRightSideBar");
                             }
-
 
 
                         });
