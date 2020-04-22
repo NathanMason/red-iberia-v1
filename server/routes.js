@@ -2,6 +2,10 @@ module.exports = function(app){
     require('./config.js');
     var API = require('../api/db_api.js');
     app.get('/', function(req, res) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header('Access-Control-Allow-Credentials', true);
+        res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+        res.header('Access-Control-Allow-Headers', 'Content-Type');
       res.sendFile('index.html', {root : __dirname + '/app'});
     });
 

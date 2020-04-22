@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////////
 const bodyParser = require('body-parser');
 const path = require('path');
+var cors = require('cors');
 var express = require('express');
 var log_stdout = process.stdout;
 var _ = require('lodash');
@@ -12,6 +13,7 @@ var websocket = require('nodejs-websocket');
 ///////// SET EXPRESS
 //////////////////////////////////////////////////////////////////////////
 var app = express();
+app.use(cors());
 const CONFIG = require(path.join(__dirname, '/server/config.js'));
 //////////////////////////////////////////////////////////////////////////
 ///////// SET SOCKET
