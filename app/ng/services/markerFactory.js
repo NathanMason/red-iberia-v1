@@ -167,17 +167,43 @@
                                 el.forEach(element => {
                                   element.classList.toggle('selectedUnit');
                                 });
-                                $rootScope.selectedUnit = unit.data;
                                $rootScope.selectedUnit = unit.data;
-                               $rootScope.selectedUnit.latlong = mkr.getLatLng();
+							                 var lat = unit.data.unit.lat;
+							                 lat = lat.toFixed(4);
+							                 var lon = unit.data.unit.lon;
+							                 lon = lon.toFixed(4);
+							                 var uLatLon = "" + lat + "," + lon + "";
+                               $rootScope.selectedUnit.latlong = uLatLon; // mkr.getlatlng was erroring this works
+							                 var fixedalt = unit.data.unit.alt * 3.28084;
+							                 fixedalt = fixedalt.toFixed(0);
+							                 fixedalt = fixedalt.toString() + "ft";
+							                 $rootScope.selectedUnit.fixedalt = fixedalt; // corrects the altitude to Ft.
+							                 var fixedspeed = unit.data.unit.speed;
+							                 fixedspeed = fixedspeed.toFixed(0);
+							                 fixedspeed = fixedspeed.toString() + "kts TAS";
+							                 var fixedheading = unit.data.unit.heading;
+                               var magdec = $rootScope.missiondata.magdec
+                               var magheading = (fixedheading + magdec);
+                               magheading = magheading.toFixed(0);
+							                 fixedheading = fixedheading.toFixed(0); // fixs altitude to 0 places
+                               if (magheading > 360 )
+                               {
+                                 magheading = magheading - 360;
+                               }
+                               else if (magheading < 0 )
+                               {
+                                 magheading = magheading + 360;
+                               }
+							                 $rootScope.selectedUnit.fixedheading = fixedheading + "True, " + magheading + "Magnetic";
+							                 $rootScope.selectedUnit.fixedspeed = fixedspeed; // corrects speed to TAS
                                $("#" + unit.properties.uid).addClass("selectedUnit");
-                               //console.log($rootScope.selectedUnit);
+                               console.log($rootScope.selectedUnit); // Information is correct but HTML doesn't update??!!
                             }, 100);
 
                               //console.log($rootScope.selectedUnit);
-                                if ($("#sidebar2").hasClass("closeRightSideBar")) {
-                                    $("#sidebar2").toggleClass("closeRightSideBar");
-                                }
+                            if ($("#sidebar2").hasClass("closeRightSideBar")) {
+                                $("#sidebar2").toggleClass("closeRightSideBar");
+                            }
 
 
 

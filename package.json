@@ -18,6 +18,11 @@
     "Robert Graham",
     "Nathan Mason aka BooZer"
   ],
+  "nodemonConfig": {
+   "ignore": [
+     "api/db/*.json"
+   ]
+ },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NathanMason/red-iberia/issues"

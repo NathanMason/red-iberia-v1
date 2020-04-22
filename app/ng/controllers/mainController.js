@@ -19,13 +19,13 @@
                           Ship: true
                       }
                       console.log($rootScope.filters);
+                      $rootScope.missioninfo = {};
                       SocketFactory.launchSocket(function(socket) {
 
                               socket.onMessage(function(message) {
-
                                     var data = JSON.parse(message.data);
                                     markerFactory.sortMarkers(data.units);
-
+                                    $rootScope.missiondata = data.missiondata; // we need the missiondata to be globally accessable
 
                               });
 
