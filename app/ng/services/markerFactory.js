@@ -194,7 +194,7 @@
 
                                 $rootScope.selectedUnit = unit.data;
                                 $rootScope.selectedUnit.fixedheading = unitLogic.getHeading(unit.data.unit.heading)
-                                $rootScope.selectedUnit.fixedspeed = unitLogic.getSpeed(unit.data.unit.speed,unit.data.alt
+                                $rootScope.selectedUnit.fixedspeed = unitLogic.getSpeed(unit.data.unit.speed,unit.data.alt)
                                 $rootScope.selectedUnit.fixedalt = unitLogic.getAlt(unit.data.unit.alt)
                                 $rootScope.selectedUnit.latlong = unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon)
 
