@@ -32,11 +32,15 @@
 
             }
 
-            Logic.getSpeed= function(speed){
-                var fixedspeed = speed;
-                fixedspeed = fixedspeed.toFixed(0);
-                fixedspeed = fixedspeed.toString() + "kts TAS";
-                return fixedspeed;
+            Logic.getSpeed= function(speed,alt){
+              var fixedspeed = speed;
+              var altft = alt * 3.28084;
+              var ias = speed / (1+(alt/1000 * 0.02));
+              ias = ias.toFixed(0);
+              fixedspeed = fixedspeed.toFixed(0);
+              fixedspeed = fixedspeed.toString() + "kts TAS";
+              fixedspeed = fixedspeed.toString() + "kts TAS, " + ias + "Kts IAS";
+              return fixedspeed;
             }
 
             Logic.getLonLat= function(la, lo){
