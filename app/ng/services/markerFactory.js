@@ -1,34 +1,38 @@
 (function() {
-      angular.module("redIberia").factory("markerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http, $timeout, markerFilters, unitLogic) {
+      angular.module("redIberia").factory("UnitMarkerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http, $timeout, markerFilters, unitLogic, AirbaseMarkerFactory) {
 
-            var MarkerFactory = {};
+            var UnitMarkerFactory = {};
 
             // sort out what units need thier markers updated, deleted, or created
-            MarkerFactory.sortMarkers = function(e) {
+            UnitMarkerFactory.sortMarkers = function(e) {
+
+                  var units = e.units;
+                  var airBases = e.airbases;
+                  var misisonData = e.misisondata;
 
                   var promises = [];
-                  angular.forEach(e, function(unit, i) {
-                      //console.log(unit.category);
+                  angular.forEach(units, function(unit, i) {
+                      //// console.log(unit.category);
                         var q = $q.defer();
                         promises.push(q.promise);
                         // create unit and add to markers scope.
                         if (unit.action == 'C') {
-                              MarkerFactory.addMarker(unit, function(cb) {
+                              UnitMarkerFactory.unitAddMarker(unit, function(cb) {
                                     q.resolve();
                               })
                         }
 
                         // create unit and add to markers scope.
                         else if (unit.action == 'U') {
-                              // //console.log(unit);
-                              MarkerFactory.updateMarker(unit, function(cb) {
+                              // //// console.log(unit);
+                              UnitMarkerFactory.unitUpdateMarker(unit, function(cb) {
                                     q.resolve();
                               })
                         }
 
                         // delete units markers.
                         else if (unit.action == 'D') {
-                              MarkerFactory.deleteMarker(unit, function(cb) {
+                              UnitMarkerFactory.unitDeleteMarker(unit, function(cb) {
                                     q.resolve();
                               })
                         }
@@ -36,13 +40,25 @@
                   })
                   $q.all(promises).then(function() {
 
-                        MarkerFactory.printMarkers();
+                        // print unit markers then update the airbases
+                        UnitMarkerFactory.printUnitMarkers( function(r){
+
+                            var data = {
+                                airbases: airBases,
+                                missiondata: misisonData
+                            }
+                            AirbaseMarkerFactory.sortAirbaseMarkers(data, function(r){
+
+                                return
+
+                            });
+                        });
 
                   })
             }
 
             // delete markers that are returned with status: "D"
-            MarkerFactory.deleteMarker = function(unit, cb) {
+            UnitMarkerFactory.unitDeleteMarker = function(unit, cb) {
                   var marker = $filter('filter')($rootScope.markers.features, (item) => {
                         return item.properties.uid === unit.unitID;
                   })[0];
@@ -52,7 +68,7 @@
             }
 
             // update markers that are returned with status: "U"
-            MarkerFactory.updateMarker = function(e, cb) {
+            UnitMarkerFactory.unitUpdateMarker = function(e, cb) {
 
                   // get the unit that needs updating FROM THE markers rootscope object
                   var marker = $filter('filter')($rootScope.markers.features, (item) => {
@@ -60,8 +76,8 @@
                   })[0];
 
                   if (marker == undefined) {
-                      //console.log('unit is U but not found');
-                      MarkerFactory.addMarker(e, function(cb) {
+                      //// console.log('unit is U but not found');
+                      UnitMarkerFactory.unitAddMarker(e, function(cb) {
 
                       })
                   } else {
@@ -75,7 +91,8 @@
                    }
             }
 
-            MarkerFactory.addMarker = function(unit, cb) {
+
+            UnitMarkerFactory.unitAddMarker = function(unit, cb) {
 
                   var mkrIcon,
                       mkrSize;
@@ -111,7 +128,8 @@
                   })
             }
 
-            MarkerFactory.printMarkers = function() {
+
+            UnitMarkerFactory.printUnitMarkers = function(cb) {
 
                 // delete all existing marker divs from the map.
                 $rootScope.unitMarkers.forEach((marker) => marker.remove());
@@ -138,11 +156,11 @@
                         mkr.style.width = unit.properties.icon.iconSize;
                         mkr.style.backgroundSize = 'contain';
                         mkr.style.height = unit.properties.icon.iconSize;
-
+                        mkr.style.cursor = 'pointer';
                         // update selected Unit
                         if ($rootScope.selectedUnit != undefined) {
-                            console.log($rootScope.selectedUnit);
-                            console.log(unit.data);
+                            // console.log($rootScope.selectedUnit);
+                            // console.log(unit.data);
                                 if (unit.properties.uid == $rootScope.selectedUnit.unit.unitID ) {
                                     $("#" + unit.properties.uid).addClass("selectedUnit");
                                     $rootScope.selectedUnit.fixedheading = unitLogic.getHeading(unit.data.heading)
@@ -150,7 +168,7 @@
                                     $rootScope.selectedUnit.fixedalt = unitLogic.getAlt(unit.data.alt)
                                     $rootScope.selectedUnit.latlong = unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon)
 
-                                    console.log(unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon));
+                                    // console.log(unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon));
 
                                 }
                         }
@@ -184,7 +202,7 @@
 
                             }, 100);
 
-                              //console.log($rootScope.selectedUnit);
+                              //// console.log($rootScope.selectedUnit);
                             if ($("#sidebar2").hasClass("closeRightSideBar")) {
                                 $("#sidebar2").toggleClass("closeRightSideBar");
                             }
@@ -205,13 +223,15 @@
                   });
                   $q.all(promises).then(function() {
                         $rootScope.loadingAwacsData = false;
+                        cb(200)
                   })
 
 
 
             }
 
-            return MarkerFactory;
+
+            return UnitMarkerFactory;
 
       });
 

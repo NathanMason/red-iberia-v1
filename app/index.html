@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="redIberia">
 
-    <head>
+<head>
       <meta charset="utf-8">
       <base href="/">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,27 +13,27 @@
       <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css' rel='stylesheet' />
       <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css"/>
-      <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" />
+      <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
       <link rel="stylesheet" href="/less/main.css">
-    </head>
+</head>
 
-    <body class="ng-cloak" ng-cloak id="section_bodyWrapper">
+<body class="ng-cloak" ng-cloak id="section_bodyWrapper">
 
 
-        <div class="page-wrapper chiller-theme toggled">
+      <div class="page-wrapper chiller-theme toggled">
             <ng-include ng-cloak ng-controller="sideBarController" src="'ng/partials/sideBar_main.html'"></ng-include>
             <ng-include ng-if="$route.current.activePage == 'welcome'" ng-cloak ng-controller="rightSideBarController" src="'ng/partials/right_sideBar_main.html'"></ng-include>
             <!-- sidebar-wrapper  -->
             <main class="page-content p-0 m-0">
-            <div class="container-fluid p-0 m-0">
+                  <div class="container-fluid p-0 m-0">
 
-                <div ng-view="" class="view"   ng-cloak ></div>
+                        <div ng-view="" class="view" ng-cloak></div>
 
-            </div>
+                  </div>
             </main>
-          <!-- page-content" -->
-        </div>
+            <!-- page-content" -->
+      </div>
 
       <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
       	 jQuery
@@ -55,28 +55,31 @@
       <script src="js/S3_functions.js"></script>
       <script src="js/S3_functions2.js"></script>
       <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-      	 CONTROLLERS
+      	 SERVICES
       -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
       <script src="/ng/services/markerServices.js"></script>
-       <script src="/ng/services/markerFilters.js"></script>
+      <script src="/ng/services/markerFilters.js"></script>
+      <script src="/ng/services/socketFactory.js"></script>
+      <script src="/ng/services/markerFactory.js"></script>
+      <script src="/ng/services/markerLogic.js"></script>
+      <script src="/ng/services/AirbaseMarkerFactory.js"></script>
+
+      <!--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+         	 CONTROLLERS
+         -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-->
       <script src="/ng/controllers/mainController.js"></script>
-     <script src="/ng/controllers/leaderBoardController.js"></script>
-       <script src="/ng/services/socketFactory.js"></script>
-        <script src="/ng/services/markerFactory.js"></script>
-         <script src="/ng/services/markerLogic.js"></script>
-         <script src="/ng/controllers/sideBarController.js"></script>
-          <script src="/ng/controllers/rightSideBarController.js"></script>
+      <script src="/ng/controllers/leaderBoardController.js"></script>
+      <script src="/ng/controllers/sideBarController.js"></script>
+      <script src="/ng/controllers/rightSideBarController.js"></script>
 
+      <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+            new Crate({
+                  server: '405145354170793984',
+                  channel: '530944035724984320',
+                  shard: 'https://e.widgetbot.io'
+            })
+      </script>
 
-         <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
-           new Crate({
-             server: '405145354170793984',
-             channel: '530944035724984320',
-             shard: 'https://e.widgetbot.io'
-           })
-         </script>
-
-
-    </body>
+</body>
 
 </html>

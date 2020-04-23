@@ -2,8 +2,8 @@
 
       angular.module('redIberia')
 
-            .controller('sideBarController', ['$scope', '$rootScope', '$timeout', 'markerFactory', 'markerFilters',
-                  function($scope, $rootScope, $timeout, markerFactory, markerFilters) {
+            .controller('sideBarController', ['$scope', '$rootScope', '$timeout', 'UnitMarkerFactory', 'markerFilters',
+                  function($scope, $rootScope, $timeout, UnitMarkerFactory, markerFilters) {
 
                         $scope.toggleFilter = function(i){
                             console.log('toggle');
