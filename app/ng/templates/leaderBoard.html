@@ -1,6 +1,5 @@
 <div class="mapWrapper" style="padding: 50px">
 
-
         <div class="row">
             <div class="col">
 
@@ -18,18 +17,20 @@
                 <table class="table table-dark">
                   <thead>
                     <tr>
-                      <th scope="col" width="50">Pos</th>
-                      <th >Pilot</th>
-                      <th >AA Kills</th>
+                      <th scope="col" width="50">Rating</th>
+                      <th>Pilot</th>
+                      <th>Kills</th>
                       <th>Deaths</th>
+                      <th>Friendly Incidents</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="stat in pilotStatistics">
-                      <th scope="row">1</th>
-                      <td>{{stat.names[1]}}</td>
-                      <td>{{stat.kills.Planes.total}}</td>
-                      <td>{{stat.losses.pilotDeath}}</td>
+                    <tr ng-repeat="pilot in pilotStatistics | orderBy: '-ranking' | filter: pilotfilter">
+                      <th scope="row">{{pilot.ranking}}</th>
+                      <td>{{pilot.callSign}}</td>
+                      <td>{{pilot.totalKills}}</td>
+                      <td>{{pilot.totalDeaths}}</td>
+                      <td>{{pilot.totalIncidents}}</td>
                     </tr>
                   </tbody>
                 </table>
