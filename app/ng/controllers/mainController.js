@@ -30,7 +30,7 @@
                       SocketFactory.launchSocket(function(socket) {
 
                               socket.onMessage(function(message) {
-
+                                    console.log('just got the DCS data');
                                     var data = JSON.parse(message.data);
                                     // console.log(data);
                                     UnitMarkerFactory.sortMarkers(data);

@@ -24,7 +24,7 @@ module.exports = function(config, _, net){
             buffer += data;
             while ((i = buffer.indexOf("\n")) >= 0) {
                 let data = JSON.parse(buffer.substring(0, i));
-                console.log("got data from DCS");
+                console.log("got data from DCS sending to clients now");
 
                 for (let connection in config.wsConnections){
                     console.log("sending to " + config.wsConnections[connection]);
