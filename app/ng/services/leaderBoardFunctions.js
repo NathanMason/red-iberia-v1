@@ -61,16 +61,15 @@
                       killCount++
                     });
                 }
-                 if (i.friendlyHits.hits == null) {
-                    hitCount = 0;
-                } else {
-                    angular.forEach(i.friendlyHits.hits, function(value, key) {
-                      hitCount++
-                    });
-                }
-                console.log(hitCount);
+                //  if (i.friendlyHits.hits == null) {
+                //     hitCount = 0;
+                // } else {
+                //     angular.forEach(i.friendlyHits.hits, function(value, key) {
+                //       hitCount++
+                //     });
+                // }
                 console.log(killCount);
-                return totalIncidents = killCount + hitCount;
+                return totalIncidents = killCount;
              }
 
             return LeaderBoardFunctions;
