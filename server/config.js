@@ -64,7 +64,7 @@ module.exports = {
     serverlisten: 8081, // our pass through for the webserver
     showsides: true, // do we show sides.
     onesecond: 1000, // how many milliseconds to 1 second.
-    refreshrate: 5, // our server refresh rate.logfile: 'nodeserver.log', // what do we set our log file for rdebug
+    refreshrate: 3, // our server refresh rate.logfile: 'nodeserver.log', // what do we set our log file for rdebug
     logfile: 'nodeserver.log', // what do we set our log file for rdebug
     forceconsole: false, // over rules local rdebug options and forces a console output
     serverObject: {},

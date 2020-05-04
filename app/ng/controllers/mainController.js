@@ -19,12 +19,14 @@
                           type: 'FeatureCollection',
                           features: []
                       };
+
                       // IDEA: store in localStorage to keep filters alive for the client.
                       $rootScope.filters = {
                           Air: true,
                           Ground: true,
                           Ship: true
                       }
+
                       // console.log($rootScope.filters);
                       $rootScope.missioninfo = {};
                       SocketFactory.launchSocket(function(socket) {

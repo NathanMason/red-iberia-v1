@@ -21,7 +21,7 @@
                                     q.resolve();
                               })
                         }
-
+                        // U
                         // create unit and add to markers scope.
                         else if (unit.action == 'U') {
                               // //// console.log(unit);
@@ -59,36 +59,61 @@
 
             // delete markers that are returned with status: "D"
             UnitMarkerFactory.unitDeleteMarker = function(unit, cb) {
-                  var marker = $filter('filter')($rootScope.markers.features, (item) => {
-                        return item.properties.uid === unit.unitID;
-                  })[0];
-                  $rootScope.markers.features.splice(
-                        $rootScope.markers.features.indexOf(marker), 1);
-                  cb(200)
+
+                    angular.forEach($rootScope.markers.features, function(i, index){
+                        var q = $q.defer();
+                         promises.push(q.promise);
+
+                        if (i.properties.uid == unit.unitID) {
+                            console.log('spliced');
+                            $rootScope.markers.features.splice(index, 1);
+                             q.resolve();
+                        } else {
+                             q.resolve();
+                        }
+                    })
+                    $q.all(promises).then(function() {
+
+                        cb(200)
+
+                    })
+
             }
 
             // update markers that are returned with status: "U"
             UnitMarkerFactory.unitUpdateMarker = function(e, cb) {
 
-                  // get the unit that needs updating FROM THE markers rootscope object
-                  var marker = $filter('filter')($rootScope.markers.features, (item) => {
-                        return item.properties.uid === e.unitID;
-                  })[0];
 
-                  if (marker == undefined) {
-                      //// console.log('unit is U but not found');
-                      UnitMarkerFactory.unitAddMarker(e, function(cb) {
+                  var found = false
+                  var promises = [];
+                  angular.forEach($rootScope.markers.features, function(marker, index){
 
-                      })
-                  } else {
 
-                          // update the units geo data
+                      var q = $q.defer();
+                      promises.push(q.promise);
+
+                      if (marker.properties.uid === e.unitID) {
+                          found = true;
                           marker.geometry.coordinates = [e.lon, e.lat]
                           marker.data.speed = e.speed;
                           marker.data.heading = e.heading;
                           marker.data.alt = e.alt;
-                          cb(200)
-                   }
+                          q.resolve();
+                          // cb(200)
+                      }
+                  })
+                  $q.all(promises).then(function() {
+
+                        if (!found) {
+                            UnitMarkerFactory.unitAddMarker(e, function(cb) {
+                                cb(200)
+                            })
+                        } else {
+                            cb(200)
+                        }
+
+                  })
+
             }
 
 
@@ -138,7 +163,7 @@
                 $rootScope.unitMarkers = [];
 
                   var promises = [];
-
+                  console.log($rootScope.markers.features);
                     // create all new marker divs on the map.
                   angular.forEach($rootScope.markers.features, function(unit) {
 
@@ -225,7 +250,6 @@
                         $rootScope.loadingAwacsData = false;
                         cb(200)
                   })
-
 
 
             }
