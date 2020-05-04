@@ -9,10 +9,10 @@
                   var units = e.units;
                   var airBases = e.airbases;
                   var misisonData = e.misisondata;
-
+                  console.log(units);
                   var promises = [];
                   angular.forEach(units, function(unit, i) {
-                      //// console.log(unit.category);
+
                         var q = $q.defer();
                         promises.push(q.promise);
                         // create unit and add to markers scope.
@@ -21,11 +21,12 @@
                                     q.resolve();
                               })
                         }
-                        // U
+
                         // create unit and add to markers scope.
                         else if (unit.action == 'U') {
-                              // //// console.log(unit);
+                              console.log('updating');
                               UnitMarkerFactory.unitUpdateMarker(unit, function(cb) {
+                                   console.log('updated');
                                     q.resolve();
                               })
                         }
@@ -39,10 +40,10 @@
 
                   })
                   $q.all(promises).then(function() {
-
+                      console.log('printing');
                         // print unit markers then update the airbases
                         UnitMarkerFactory.printUnitMarkers( function(r){
-
+                                console.log('printed');
                             var data = {
                                 airbases: airBases,
                                 missiondata: misisonData
@@ -59,7 +60,7 @@
 
             // delete markers that are returned with status: "D"
             UnitMarkerFactory.unitDeleteMarker = function(unit, cb) {
-
+                    var promises = [];
                     angular.forEach($rootScope.markers.features, function(i, index){
                         var q = $q.defer();
                          promises.push(q.promise);
@@ -85,30 +86,34 @@
 
 
                   var found = false
-                  var promises = [];
+                  var updaterPromises = [];
                   angular.forEach($rootScope.markers.features, function(marker, index){
 
-
-                      var q = $q.defer();
-                      promises.push(q.promise);
+                      var updaterQ = $q.defer();
+                      updaterPromises.push(updaterQ.promise);
 
                       if (marker.properties.uid === e.unitID) {
+
                           found = true;
                           marker.geometry.coordinates = [e.lon, e.lat]
                           marker.data.speed = e.speed;
                           marker.data.heading = e.heading;
                           marker.data.alt = e.alt;
-                          q.resolve();
-                          // cb(200)
+                          updaterQ.resolve();
+                          //cb(200)
+                      } else {
+                          updaterQ.resolve();
                       }
-                  })
-                  $q.all(promises).then(function() {
 
-                        if (!found) {
+                  })
+                  $q.all(updaterPromises).then(function() {
+                        console.log('found ' + found);
+                        if (found == false) {
                             UnitMarkerFactory.unitAddMarker(e, function(res) {
                                 cb(200)
                             })
                         } else {
+                            console.log('updating done');
                             cb(200)
                         }
 
@@ -158,12 +163,15 @@
 
                 // delete all existing marker divs from the map.
                 $rootScope.unitMarkers.forEach((marker) => marker.remove());
+                $("div.marker").remove();
+
 
                 // clear the existing marker obj.
                 $rootScope.unitMarkers = [];
 
                   var promises = [];
                   console.log($rootScope.markers.features);
+
                     // create all new marker divs on the map.
                   angular.forEach($rootScope.markers.features, function(unit) {
 
@@ -247,6 +255,7 @@
 
                   });
                   $q.all(promises).then(function() {
+                        console.log('done');
                         $rootScope.loadingAwacsData = false;
                         cb(200)
                   })
