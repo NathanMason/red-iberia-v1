@@ -105,7 +105,7 @@
                   $q.all(promises).then(function() {
 
                         if (!found) {
-                            UnitMarkerFactory.unitAddMarker(e, function(cb) {
+                            UnitMarkerFactory.unitAddMarker(e, function(res) {
                                 cb(200)
                             })
                         } else {
