@@ -135,17 +135,31 @@
 }
 
 /*--------------------sidebar-brand----------------------*/
-
+.close-sidebar {
+    z-index: 9999999;
+}
 .sidebar-wrapper .sidebar-brand {
         padding: 0;
         display: flex;
+        position: relative;
         align-items: center;
-        background: url(../../img/LOGO.png);
+        background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmI0PHo_dpQlgrFYQVPG91TapLmnH1Hb8gnvj4mtDIV0qr5rij&usqp=CAU);
         background-repeat: no-repeat;
         background-size: cover;
         height: 376.53px;
         width: 100%;
         background-position: center;
+
+         &:after {
+             position: absolute;
+             display: block;
+             background: rgba(204,36,61,0.7);
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;     
+             content: '';
+         }
 }
 
 .sidebar-wrapper .sidebar-brand > a {
