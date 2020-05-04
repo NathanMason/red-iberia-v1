@@ -7,7 +7,7 @@
 
             MarkerFilter.getFilterStatus = function(category, cb) {
 
-                    var filterGroup = $rootScope.filters[category];
+                    var filterGroup = $rootScope.keyData.filters[category];
 
                     cb(filterGroup)
 
@@ -15,7 +15,7 @@
             }
             // edits a units filter status
             MarkerFilter.setUnitFilter = function(e, val) {
-                $rootScope.filters[e] = $rootScope.filters[e]  ? false : true;
+                $rootScope.keyData.filters[e] = $rootScope.keyData.filters[e]  ? false : true;
 
                 var el = document.querySelectorAll('.' + e);
                 console.log(el);

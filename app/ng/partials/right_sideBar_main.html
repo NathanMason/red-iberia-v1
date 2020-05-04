@@ -9,36 +9,36 @@
 
          <!-- sidebar2  -->
          <div class="sidebar2-menu">
-             <h2>{{selectedUnit.unit.displayname}}</h2>
+             <h2>{{keyData.selectedUnit.unit.displayname}}</h2>
              <img style='width: 100%' src='../img/{{selectedUnit.unit.type}}.jpg' onError="this.src = '../img/404.png'">
              <table class='table'>
                  <tbody>
                      <tr class="evan">
                          <td>Pilot: </td>
                          <td>
-                             <span ng-if="selectedUnit.unit.playername.length > 0">{{selectedUnit.unit.playername}}</span>
+                             <span ng-if="selectedUnit.unit.playername.length > 0">{{keyData.selectedUnit.unit.playername}}</span>
                              <span ng-if="selectedUnit.unit.playername.length == 0">AI</span>
                          </td>
                      </tr>
                      <tr>
                          <td>Callsign: </td>
-                         <td>{{selectedUnit.unit.missionname}}</td>
+                         <td>{{keyData.selectedUnit.unit.missionname}}</td>
                      </tr>
                      <tr class="evan">
                          <td>Speed: </td>
-                         <td>{{selectedUnit.fixedspeed}}</td>
+                         <td>{{keyData.selectedUnit.fixedspeed}}</td>
                      </tr>
                      <tr>
                          <td>HDG: </td>
-                         <td>{{selectedUnit.fixedheading}}</td>
+                         <td>{{keyData.selectedUnit.fixedheading}}</td>
                      </tr>
                      <tr class="evan">
                          <td>Alt: </td>
-                         <td>{{selectedUnit.fixedalt}}</td>
+                         <td>{{keyData.selectedUnit.fixedalt}}</td>
                      </tr>
                      <tr>
                          <td>Pos: </td>
-                         <td>{{selectedUnit.latlong}}</td>
+                         <td>{{keyData.selectedUnit.latlong}}</td>
                      </tr>
                  </tbody>
              </table>

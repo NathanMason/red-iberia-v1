@@ -16,7 +16,7 @@
             Logic.getHeading= function(heading){
 
                 var fixedheading = heading;
-                var magdec = $rootScope.missiondata.magdec
+                var magdec = $rootScope.keyData.missiondata.magdec
                 var magheading = (fixedheading + magdec);
                 magheading = magheading.toFixed(0);
                 fixedheading = fixedheading.toFixed(0); // fixs altitude to 0 places
@@ -27,7 +27,7 @@
                       magheading = magheading + 360;
                 }
 
-                return fixedheading + "True, " + magheading + "Magnetic";
+                return fixedheading + "True,<br /> " + magheading + "Magnetic";
 
 
             }
@@ -38,8 +38,7 @@
               var ias = speed / (1+(alt/1000 * 0.02));
               ias = ias.toFixed(0);
               fixedspeed = fixedspeed.toFixed(0);
-              fixedspeed = fixedspeed.toString() + "kts TAS";
-              fixedspeed = fixedspeed.toString() + "kts TAS, " + ias + "Kts IAS";
+              fixedspeed = fixedspeed.toString() + "kts";
               return fixedspeed;
             }
 

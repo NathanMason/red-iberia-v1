@@ -6,26 +6,38 @@
                   function($scope, $rootScope, SocketFactory, $timeout, UnitMarkerFactory, markerFilters, $route) {
 
                       // set scopes
-                      $rootScope.loadingAwacsData = true;
-                      $rootScope.unitMarkers = [];
-                      $rootScope.airbaseMarkers = [];
-                      $rootScope.missionData = [];
                       $rootScope.$route = $route;
-                      $rootScope.markers = {
-                          type: 'FeatureCollection',
-                          features: []
-                      };
-                      $rootScope.airbases = {
-                          type: 'FeatureCollection',
-                          features: []
-                      };
+                      mapboxgl.accessToken = 'pk.eyJ1IjoiYm9vemVyIiwiYSI6ImNrOHpidzU3bzA0eGMza29sdTJ6cmdmcXMifQ.iNvCN8OHOmQr95a_OkNLUQ';
+                      $rootScope.keyData = {
+                              filters: {
+                                  Air: true,
+                                  Ground: true,
+                                  Ship: true
+                              },
+                              markers: {
+                                  type: 'FeatureCollection',
+                                  features: []
+                              },
+                              airbases: {
+                                  type: 'FeatureCollection',
+                                  features: []
+                              },
+                              loadingAwacsData: true,
+                              unitMarkers: [],
+                              popup: {},
+                              airbaseMarkers: [],
+                              missionData: [],
+                              map: new mapboxgl.Map({
+                                    container: 'map',
+                                    center: [42.422,41.600],
+                                    zoom: 7.38,
+                                    style: 'mapbox://styles/boozer/ck9c3ojrh06lv1ipcfjqffqiz'
+                              })
+                      }
+
+
 
                       // IDEA: store in localStorage to keep filters alive for the client.
-                      $rootScope.filters = {
-                          Air: true,
-                          Ground: true,
-                          Ship: true
-                      }
 
                       // console.log($rootScope.filters);
                       $rootScope.missioninfo = {};
@@ -36,7 +48,7 @@
                                     var data = JSON.parse(message.data);
                                     // console.log(data);
                                     UnitMarkerFactory.sortMarkers(data);
-                                    $rootScope.missiondata = data.missiondata; // we need the missiondata to be globally accessable
+                                    $rootScope.keyData.missiondata = data.missiondata; // we need the missiondata to be globally accessable
 
                               });
 
@@ -55,14 +67,6 @@
                             $(".airBaseData").removeClass("showAirBaseBar");
 
                         }
-
-                        mapboxgl.accessToken = 'pk.eyJ1IjoiYm9vemVyIiwiYSI6ImNrOHpidzU3bzA0eGMza29sdTJ6cmdmcXMifQ.iNvCN8OHOmQr95a_OkNLUQ';
-                        $rootScope.map = new mapboxgl.Map({
-                              container: 'map',
-                              center: [42.422,41.600],
-                              zoom: 7.38,
-                              style: 'mapbox://styles/boozer/ck9c3ojrh06lv1ipcfjqffqiz'
-                        });
 
                   }
             ]);

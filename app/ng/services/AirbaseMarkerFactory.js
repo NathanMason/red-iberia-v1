@@ -9,7 +9,7 @@
                   var airBases = e.airbases;
                   var misisonData = e.misisondata;
 
-                  $rootScope.airbases = {
+                  $rootScope.keyData.airbases = {
                       type: 'FeatureCollection',
                       features: []
                   };
@@ -41,7 +41,7 @@
                                     }
                               }
                               // console.log(mkrData);
-                              $rootScope.airbases.features.push(mkrData)
+                              $rootScope.keyData.airbases.features.push(mkrData)
                             }
 
 
@@ -59,13 +59,13 @@
             AirbaseMarkerFactory.printAirbaseMarkers = function(cb) {
 
                   // delete all existing marker divs from the map.
-                  $rootScope.airbaseMarkers.forEach((marker) => marker.remove());
-                  $rootScope.airbaseMarkers = [];
+                  $rootScope.keyData.airbaseMarkers.forEach((marker) => marker.remove());
+                  $rootScope.keyData.airbaseMarkers = [];
 
                   var promises = [];
 
                   // create all new marker divs on the map.
-                  angular.forEach($rootScope.airbases.features, function(airBase) {
+                  angular.forEach($rootScope.keyData.airbases.features, function(airBase) {
 
                         var q = $q.defer();
                         promises.push(q.promise);
@@ -88,13 +88,13 @@
 
                         // add the units/markers click function.
                         mkr.addEventListener('click', function() {
-                              $rootScope.map.flyTo({
+                              $rootScope.keyData.map.flyTo({
                                     center: airBase.geometry.coordinates
                               });
                               $timeout(function() {
 
-                                    $rootScope.selectedAirBase = airBase;
-      
+                                    $rootScope.keyData.selectedAirBase = airBase;
+
                                 $(".airBaseData").addClass("showAirBaseBar");
                               }, 100);
                         });
@@ -102,8 +102,8 @@
                         // now print the mrker to the map
                         var newMKR = new mapboxgl.Marker(mkr)
                               .setLngLat(airBase.geometry.coordinates)
-                              .addTo($rootScope.map);
-                        $rootScope.airbaseMarkers.push(newMKR)
+                              .addTo($rootScope.keyData.map);
+                        $rootScope.keyData.airbaseMarkers.push(newMKR)
 
 
                         q.resolve();

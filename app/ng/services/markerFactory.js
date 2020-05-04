@@ -2,14 +2,13 @@
       angular.module("redIberia").factory("UnitMarkerFactory", function($rootScope, $websocket, $q, MarkerFunctions, $filter, $document, $http, $timeout, markerFilters, unitLogic, AirbaseMarkerFactory) {
 
             var UnitMarkerFactory = {};
-
+            var customPopup;
             // sort out what units need thier markers updated, deleted, or created
             UnitMarkerFactory.sortMarkers = function(e) {
-
+                console.log(e);
                   var units = e.units;
                   var airBases = e.airbases;
-                  var misisonData = e.misisondata;
-                  console.log(units);
+                  var missiondata = e.missiondata;
                   var promises = [];
                   angular.forEach(units, function(unit, i) {
 
@@ -24,9 +23,9 @@
 
                         // create unit and add to markers scope.
                         else if (unit.action == 'U') {
-                              console.log('updating');
+
                               UnitMarkerFactory.unitUpdateMarker(unit, function(cb) {
-                                   console.log('updated');
+
                                     q.resolve();
                               })
                         }
@@ -40,13 +39,13 @@
 
                   })
                   $q.all(promises).then(function() {
-                      console.log('printing');
+
                         // print unit markers then update the airbases
                         UnitMarkerFactory.printUnitMarkers( function(r){
-                                console.log('printed');
+
                             var data = {
                                 airbases: airBases,
-                                missiondata: misisonData
+                                missiondata: missiondata
                             }
                             AirbaseMarkerFactory.sortAirbaseMarkers(data, function(r){
 
@@ -61,13 +60,13 @@
             // delete markers that are returned with status: "D"
             UnitMarkerFactory.unitDeleteMarker = function(unit, cb) {
                     var promises = [];
-                    angular.forEach($rootScope.markers.features, function(i, index){
+                    angular.forEach($rootScope.keyData.markers.features, function(i, index){
                         var q = $q.defer();
                          promises.push(q.promise);
 
                         if (i.properties.uid == unit.unitID) {
-                            console.log('spliced');
-                            $rootScope.markers.features.splice(index, 1);
+
+                            $rootScope.keyData.markers.features.splice(index, 1);
                              q.resolve();
                         } else {
                              q.resolve();
@@ -87,7 +86,7 @@
 
                   var found = false
                   var updaterPromises = [];
-                  angular.forEach($rootScope.markers.features, function(marker, index){
+                  angular.forEach($rootScope.keyData.markers.features, function(marker, index){
 
                       var updaterQ = $q.defer();
                       updaterPromises.push(updaterQ.promise);
@@ -107,13 +106,13 @@
 
                   })
                   $q.all(updaterPromises).then(function() {
-                        console.log('found ' + found);
+
                         if (found == false) {
                             UnitMarkerFactory.unitAddMarker(e, function(res) {
                                 cb(200)
                             })
                         } else {
-                            console.log('updating done');
+
                             cb(200)
                         }
 
@@ -153,7 +152,7 @@
                         }
 
                         // add the marker to the markers rootscope object.
-                        $rootScope.markers.features.push(mkrData)
+                        $rootScope.keyData.markers.features.push(mkrData)
                         cb()
                   })
             }
@@ -162,18 +161,16 @@
             UnitMarkerFactory.printUnitMarkers = function(cb) {
 
                 // delete all existing marker divs from the map.
-                $rootScope.unitMarkers.forEach((marker) => marker.remove());
+                $rootScope.keyData.unitMarkers.forEach((marker) => marker.remove());
                 $("div.marker").remove();
 
 
                 // clear the existing marker obj.
-                $rootScope.unitMarkers = [];
+                $rootScope.keyData.unitMarkers = [];
 
                   var promises = [];
-                  console.log($rootScope.markers.features);
-
                     // create all new marker divs on the map.
-                  angular.forEach($rootScope.markers.features, function(unit) {
+                  angular.forEach($rootScope.keyData.markers.features, function(unit) {
 
                         var q = $q.defer();
                         promises.push(q.promise);
@@ -181,6 +178,7 @@
                         // create a marker for the unit.
                         var mkr = document.createElement('div');
                         angular.element(document.getElementsByTagName('body')).append(mkr);
+
                         mkr.className = 'marker ' + unit.data.unit.category;
                         mkr.id = unit.properties.uid; // use this as a unique key
                         mkr.style.backgroundImage = unit.properties.icon.iconUrl;
@@ -191,18 +189,15 @@
                         mkr.style.height = unit.properties.icon.iconSize;
                         mkr.style.cursor = 'pointer';
                         // update selected Unit
-                        if ($rootScope.selectedUnit != undefined) {
-                            // console.log($rootScope.selectedUnit);
-                            // console.log(unit.data);
-                                if (unit.properties.uid == $rootScope.selectedUnit.unit.unitID ) {
+                        if ($rootScope.keyData.selectedUnit != undefined) {
+
+                                if (unit.properties.uid == $rootScope.keyData.selectedUnit.unit.unitID ) {
                                     $("#" + unit.properties.uid).addClass("selectedUnit");
-                                    $rootScope.selectedUnit.fixedheading = unitLogic.getHeading(unit.data.heading)
-                                    $rootScope.selectedUnit.fixedspeed = unitLogic.getSpeed(unit.data.speed,unit.data.alt)
-                                    $rootScope.selectedUnit.fixedalt = unitLogic.getAlt(unit.data.alt)
-                                    $rootScope.selectedUnit.latlong = unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon)
-
-                                    // console.log(unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon));
-
+                                    $rootScope.keyData.selectedUnit.fixedheading = unitLogic.getHeading(unit.data.heading)
+                                    $rootScope.keyData.selectedUnit.fixedspeed = unitLogic.getSpeed(unit.data.speed,unit.data.alt)
+                                    $rootScope.keyData.selectedUnit.fixedalt = unitLogic.getAlt(unit.data.alt)
+                                    $rootScope.keyData.selectedUnit.latlong = unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon)
+                                    $rootScope.keyData.popup.setLngLat(unit.geometry.coordinates)
                                 }
                         }
 
@@ -217,29 +212,48 @@
 
                         // add the units/markers click function.
                         mkr.addEventListener('click', function() {
-                            $rootScope.map.flyTo({ center: unit.geometry.coordinates });
+                            $rootScope.keyData.map.flyTo({ center: unit.geometry.coordinates });
+
+                            // if ($rootScope.keyData.popup != {}) {
+                            //
+                            //     $rootScope.keyData.popup.remove();
+                            //
+                            // }
+
+
                             $timeout(function(){
 
+
+                                $('.mapboxgl-popup').remove();
+                                
                                 var el = document.querySelectorAll('.selectedUnit');
                                 el.forEach(element => {
                                   element.classList.toggle('selectedUnit');
                                 });
 
-                                $rootScope.selectedUnit = unit.data;
-                                $rootScope.selectedUnit.fixedheading = unitLogic.getHeading(unit.data.unit.heading)
-                                $rootScope.selectedUnit.fixedspeed = unitLogic.getSpeed(unit.data.unit.speed,unit.data.alt)
-                                $rootScope.selectedUnit.fixedalt = unitLogic.getAlt(unit.data.unit.alt)
-                                $rootScope.selectedUnit.latlong = unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon)
+                                $rootScope.keyData.selectedUnit = unit.data;
+                                $rootScope.keyData.selectedUnit.fixedheading = unitLogic.getHeading(unit.data.unit.heading)
+                                $rootScope.keyData.selectedUnit.fixedspeed = unitLogic.getSpeed(unit.data.unit.speed,unit.data.alt)
+                                $rootScope.keyData.selectedUnit.fixedalt = unitLogic.getAlt(unit.data.unit.alt)
+                                $rootScope.keyData.selectedUnit.latlong = unitLogic.getLonLat(unit.data.unit.lat, unit.data.unit.lon)
 
                                $("#" + unit.properties.uid).addClass("selectedUnit");
 
+                               console.log($rootScope.keyData.selectedUnit.unit.missionname);
+                                                    $rootScope.defaultImage = '../../../img/404.png'
+                                                    $rootScope.keyData.popup = new mapboxgl.Popup({ closeOnClick: false })
+                                                    .setLngLat(unit.geometry.coordinates)
+                                                    .setHTML('<div class="pixel-popup-header"><strong>' + $rootScope.keyData.selectedUnit.unit.displayname +
+                                                    '</strong></div><img style="width: 100%; max-height: 117px;" src="../img/' + $rootScope.keyData.selectedUnit.unit.type +
+                                                    '.jpg" onError="this.src=\' ../../../img/404.png\'"><table class="table"><tr><td><strong>Unit type:</strong></td><td class="right">' + $rootScope.keyData.selectedUnit.unit.type +
+                                                    '</td></tr><tr><td><strong>Callsign:</strong></td><td class="right">' + $rootScope.keyData.selectedUnit.unit.missionname +
+                                                    '</td></tr><tr><td><strong>Speed:</strong></td><td class="right">' + $rootScope.keyData.selectedUnit.fixedspeed +
+                                                    '</td></tr><tr><td><strong>Altitude:</strong></td><td class="right">' + $rootScope.keyData.selectedUnit.fixedalt +
+                                                    '</td></tr><tr><td><strong>Heading:</strong></td><td class="right">' + $rootScope.keyData.selectedUnit.fixedheading  +
+                                                    '</td></tr></tr></table>')
+                                                    .addTo($rootScope.keyData.map);
+
                             }, 100);
-
-                              //// console.log($rootScope.selectedUnit);
-                            if ($("#sidebar2").hasClass("closeRightSideBar")) {
-                                $("#sidebar2").toggleClass("closeRightSideBar");
-                            }
-
 
                         });
 
@@ -247,16 +261,15 @@
                         var newUnit = new mapboxgl.Marker(mkr)
                               .setLngLat(unit.geometry.coordinates)
                               .setRotation(unit.data.heading) // not working if the unit is being updated
-                              .addTo($rootScope.map);
-                              $rootScope.unitMarkers.push(newUnit)
+                              .addTo($rootScope.keyData.map);
+                              $rootScope.keyData.unitMarkers.push(newUnit)
 
 
                         q.resolve();
 
                   });
                   $q.all(promises).then(function() {
-                        console.log('done');
-                        $rootScope.loadingAwacsData = false;
+                        $rootScope.keyData.loadingAwacsData = false;
                         cb(200)
                   })
 
