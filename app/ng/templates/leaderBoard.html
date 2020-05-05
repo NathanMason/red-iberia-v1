@@ -27,7 +27,7 @@
                   <tbody>
                     <tr ng-repeat="pilot in pilotStatistics | orderBy: '-ranking' | filter: pilotfilter">
                       <th scope="row">{{pilot.ranking}}</th>
-                      <td>{{pilot.callSign}}</td>
+                      <td><a href="#" ng-click="setPilot(pilot)" data-toggle="modal" data-target="#logBookModal">{{pilot.callSign}}</a></td>
                       <td>{{pilot.totalKills}}</td>
                       <td>{{pilot.totalDeaths}}</td>
                       <td>{{pilot.totalIncidents}}</td>
@@ -37,3 +37,6 @@
             </div>
         </div>
 </div>
+
+
+<ng-include ng-cloak ng-controller="sideBarController" src="'ng/partials/logbook.html'"></ng-include>

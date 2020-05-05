@@ -1,0 +1,132 @@
+.logBook {
+
+    // .modal-lg {
+    //     max-width: 90%;
+    //     width: 100%;
+    //     max-height: 90vh;
+    //     height: 100vh;
+    // }
+
+    .modal-body {
+        padding: 0  !important;
+        overflow: hidden;
+    }
+
+    .modal-content {
+        background-color: #202226;
+        border: 1px solid rgba(0,0,0,1);
+        border-radius: .3rem;
+        color: whitesmoke;
+
+
+        small {
+            color: rgba(255,255,255, 0.3)
+        }
+    }
+
+    .border-left {
+        border-left: 1px solid @ui_colors_border_color !important;
+    }
+
+    .modal-header {
+
+        background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQmI0PHo_dpQlgrFYQVPG91TapLmnH1Hb8gnvj4mtDIV0qr5rij&usqp=CAU);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+         &:after {
+             position: absolute;
+             display: block;
+             background: rgba(24,24,24,0.9);
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             content: '';
+         }
+
+
+
+
+
+
+         color: whitesmoke;
+         padding: 30px 20px;
+         flex-direction: column;
+         border-bottom: 1px solid @ui_colors_border_color;
+         .close {
+             position: absolute;
+                 z-index: 99;
+                 right: 20px;
+                 top: 20px;
+                 color: #fff;
+         }
+
+          h1 {
+              color: @ui_colors__primary;
+              font-size: 30px;
+              z-index: 2;
+          }
+          h5 {
+              font-size: 20px;
+              z-index: 2;
+          }
+    }
+
+    .logBook_row {
+        border-top: 1px solid @ui_colors_border_color;
+        padding: 20px
+    }
+
+    .list-group-item {
+        position: relative;
+        display: block;
+        padding: .75rem 1.25rem;
+        background-color: #2C2E34;
+        border: 1px solid rgba(0,0,0,.125);
+    }
+
+    .tab-content {
+        background: #2C2E34;
+        padding: 20px
+    }
+
+    .nav-tabs {
+        border-bottom: 1px solid transparent;
+        .nav-link {
+            border: 1px solid #3a3f48;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            background: #343A40;
+        }
+        .nav-link.active {
+            color: #fff;
+            background-color: @ui_colors__primary;
+            border-color: @ui_colors__primary;
+        }
+    }
+
+
+
+
+}
+.table td, .table th {
+    border: 1px solid #3a3f48 !important;
+}
+
+thead {
+    tr {
+        th {
+            background: #202226
+        }
+    }
+}
+
+.mt-00 {
+    margin-top: -1px !important;
+}
+
+.pull-right {
+    float: right;
+}

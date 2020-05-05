@@ -19,7 +19,9 @@
                             pvp: { kills: pilot.PvP.kills, losses: pilot.PvP.losses },
                             friendlyHits: {kills: pilot.friendlyKills, hits: pilot.friendlyHits },
                             kills: {buildings: pilot.kills.Buildings, groundUnits: pilot.kills[ 'Ground Units' ], rotorUnits: pilot.kills.Helicopters },
-                            losses: {crash: pilot.losses.crash, eject: pilot.losses.eject, pilotDeath: pilot.losses.pilotDeath}
+                            losses: {crash: pilot.losses.crash, eject: pilot.losses.eject, pilotDeath: pilot.losses.pilotDeath},
+                            times: pilot.times,
+                            weapons: pilot.weapons
                             }
 
                             currentPilot.ranking = LeaderBoardFunctions.calcRank(currentPilot);

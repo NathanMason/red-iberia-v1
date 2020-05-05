@@ -1,0 +1,194 @@
+<div class="modal fade logBook" id="logBookModal" role="dialog" aria-labelledby="logBookModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logBookModalLabel">Red Iberia Pilot Logbook</h5>
+        <h1>{{pilot.callSign}}</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+
+          <div class="row logBook_header">
+              <div class="col-3 p-3  text-center">
+                  <small>Flight HRS</small>
+                  <h5>46.3hrs</h5>
+              </div>
+              <div class="col-3 p-3  text-center border-left">
+                  <small>Fav Aircraft</small>
+                  <h5>FA-18</h5>
+              </div>
+              <div class="col-3 p-3 text-center border-left">
+                  <small>Fav Weapon</small>
+                  <h5>AIM 120-C</h5>
+              </div>
+              <div class="col-3 p-3  text-center border-left">
+                  <small>A-A Kills</small>
+                  <h5>{{pilot.totalKills}}</h5>
+              </div>
+          </div>
+
+          <div class="row logBook_row p-0">
+
+              <div class="col-8 pt-3 pb-3">
+
+                  <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="tab1-tab" data-toggle="tab" data-target="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Flight Hours</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="tab2-tab" data-toggle="tab" data-target="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Kills</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="tab3-tab" data-toggle="tab" data-target="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Losses</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="tab4-tab" data-toggle="tab" data-target="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Weapons</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="tab5-tab" data-toggle="tab" data-target="#tab5" role="tab" aria-controls="tab5" aria-selected="false">PvP</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="tab6-tab" data-toggle="tab" data-target="#tab6" role="tab" aria-controls="tab6" aria-selected="false">Misc</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Aircraft</th>
+                                    <th scope="col">Hrs</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr ng-repeat="(key, value) in pilot.times">
+                                    <th scope="row">{{key}}</th>
+                                    <td>{{convertMinsToHrsMins(value.total)}} hrs</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+                    </div>
+                    <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+
+                        <table class="table m-00 mb-0">
+                            <thead>
+                              <tr>
+                                <th scope="col">Buildings</th>
+                              </tr>
+                            </thead>
+                         </table>
+                         <table class="table m-00 mb-0">
+                             <thead>
+                               <tr>
+                                 <th scope="col">Other</th>
+                                 <th scope="col">Static</th>
+                                 <th scope="col">Total</th>
+                               </tr>
+                             </thead>
+                             <tbody>
+                               <tr>
+                                 <th scope="row">{{pilot.kills.buildings.Other}}</th>
+                                 <td>{{pilot.kills.buildings.Static}}</td>
+                                 <td>{{pilot.kills.buildings.total}}</td>
+                               </tr>
+                             </tbody>
+                           </table>
+                           <div class="mt-3"></div>
+                           <table class="table  mb-0">
+                               <thead>
+                                 <tr>
+                                   <th scope="col">groundUnits <span class="pull-right">{{pilot.kills.groundUnits.total}}</span></th>
+                                 </tr>
+                               </thead>
+                            </table>
+                            <table class="table mt-00 mb-0">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">AAA</th>
+                                    <th scope="col">APCs</th>
+                                    <th scope="col">MLRS</th>
+                                    <th scope="col">EWR</th>
+                                    <th scope="col">Forts</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">{{pilot.kills.groundUnits.AAA}}</th>
+                                    <th scope="row">{{pilot.kills.groundUnits.APCs}}</th>
+                                    <th scope="row">{{pilot.kills.groundUnits.Arty/MLRS}}</th>
+                                    <th scope="row">{{pilot.kills.groundUnits.EWR}}</th>
+                                    <th scope="row">{{pilot.kills.groundUnits.Forts}}</th>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <table class="table mt-00">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">IFVs</th>
+                                      <th scope="col">Infantry</th>
+                                      <th scope="col">Other</th>
+                                      <th scope="col">SAM</th>
+                                      <th scope="col">Tanks</th>
+                                      <th scope="col">Unarmored</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">{{pilot.kills.groundUnits.IFVs}}</th>
+                                      <th scope="row">{{pilot.kills.groundUnits.Infantry}}</th>
+                                      <th scope="row">{{pilot.kills.groundUnits.Arty/Other}}</th>
+                                      <th scope="row">{{pilot.kills.groundUnits.SAM}}</th>
+                                      <th scope="row">{{pilot.kills.groundUnits.Tanks}}</th>
+                                      <th scope="row">{{pilot.kills.groundUnits.Unarmored}}</th>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                                <table class="table m-00 mb-0">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Rotor Units <span class="pull-right">{{pilot.kills.rotorUnits.total}}</span></th>
+                                      </tr>
+                                    </thead>
+                                 </table>
+                                 <table class="table m-00 mb-0">
+                                     <thead>
+                                       <tr>
+                                         <th scope="col">Attack</th>
+                                         <th scope="col">Other</th>
+                                         <th scope="col">Static</th>
+                                       </tr>
+                                     </thead>
+                                     <tbody>
+                                       <tr>
+                                         <th scope="row">{{pilot.kills.rotorUnits.Attack}}</th>
+                                         <td>{{pilot.kills.rotorUnits.Static}}</td>
+                                         <td>{{pilot.kills.rotorUnits.Other}}</td>
+                                       </tr>
+                                     </tbody>
+                                   </table>
+
+                    </div>
+                    <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">...</div>
+                    <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">...</div>
+                    <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">...</div>
+                  </div>
+
+
+
+              </div>
+
+              <div class="col-4 p-3 border-left">
+                  <h2>Medals</h2>
+              </div>
+
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
