@@ -69,8 +69,34 @@
                   </ul>
                 </div>
               </li>
+
+
+
+
             </ul>
           </div>
+
+          <!-- sidebar-search  -->
+          <div class="sidebar-menu">
+            <ul>
+              <li>
+                  <h3>Human Pilots</h3>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-href="#">
+                     {{i.name}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length == 0">
+                  <a class="text-center"
+                     ng-href="#">
+                     There are currently no human pilots deployed.
+                  </a>
+              </li>
+            </ul>
+          </div>
+
           <!-- sidebar-menu  -->
         </div>
 

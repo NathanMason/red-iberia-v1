@@ -1,5 +1,16 @@
-<div ng-if="loadingAwacsData"  class="radarContainer">
+<!-- <div class="mapData">
+        <div id="close-mapData" ng-click="close_mapData()" style="position: absolute; top: 10px; left: 12px; cursor: pointer">✖</div>
+        <ul class="list-inline m-0 p-0">
+            <li class="list-inline-item"><strong>{{keyData.missiondata.formattime}} : </strong></li>
+            <li class="list-inline-item pull-right">{{keyData.missiondata.missiondate}}</li>
+        </ul>
+</div> -->
+<div class="timeDate">
+    <h1>{{keyData.missiondata.formattime | limitTo:5}}</h1>
+    <h2>{{keyData.missiondata.missiondate}}</h2>
+</div>
 
+<div ng-if="loadingAwacsData"  class="radarContainer">
         <div  class="razar">
           <div class="ringbase ring1"></div>
           <div class="ringbase ring2"></div>
@@ -14,8 +25,8 @@
     <div class="airBaseData">
             <div id="close-airBaseData" ng-click="close_airBaseData()" style="position: absolute; top: 10px; left: 12px; cursor: pointer">✖</div>
             <ul class="list-inline m-0 p-0">
-                <li class="list-inline-item"><strong>{{selectedAirBase.properties.airbasename}} : </strong></li>
-                <li class="list-inline-item pull-right">{{selectedAirBase.properties.weatherstring}}</li>
+                <li class="list-inline-item"><strong>{{keyData.selectedAirBase.properties.airbasename}} : </strong></li>
+                <li class="list-inline-item pull-right">{{keyData.selectedAirBase.properties.weatherstring}}</li>
             </ul>
     </div>
 <div id="map" class="mapWrapper"></div>

@@ -14,6 +14,7 @@
                                   Ground: true,
                                   Ship: true
                               },
+                              humanPilots: [],
                               markers: {
                                   type: 'FeatureCollection',
                                   features: []
@@ -26,7 +27,7 @@
                               unitMarkers: [],
                               popup: {},
                               airbaseMarkers: [],
-                              missionData: [],
+                              missiondata: [],
                               map: new mapboxgl.Map({
                                     container: 'map',
                                     center: [42.422,41.600],

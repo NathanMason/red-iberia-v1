@@ -174,7 +174,7 @@
 
                         var q = $q.defer();
                         promises.push(q.promise);
-
+                        console.log(unit);
                         // create a marker for the unit.
                         var mkr = document.createElement('div');
                         angular.element(document.getElementsByTagName('body')).append(mkr);
@@ -188,6 +188,17 @@
                         mkr.style.backgroundSize = 'contain';
                         mkr.style.height = unit.properties.icon.iconSize;
                         mkr.style.cursor = 'pointer';
+
+                        if (unit.data.unit.playername != "") {
+                            var data = {
+                                name: unit.data.unit.playername,
+
+                            }
+                            $rootScope.keyData.humanPilots.push()
+                        }
+
+
+
                         // update selected Unit
                         if ($rootScope.keyData.selectedUnit != undefined) {
 
@@ -225,7 +236,7 @@
 
 
                                 $('.mapboxgl-popup').remove();
-                                
+
                                 var el = document.querySelectorAll('.selectedUnit');
                                 el.forEach(element => {
                                   element.classList.toggle('selectedUnit');
