@@ -20,16 +20,51 @@
                             friendlyHits: {kills: pilot.friendlyKills, hits: pilot.friendlyHits },
                             kills: {buildings: pilot.kills.Buildings, groundUnits: pilot.kills[ 'Ground Units' ], rotorUnits: pilot.kills.Helicopters },
                             losses: {crash: pilot.losses.crash, eject: pilot.losses.eject, pilotDeath: pilot.losses.pilotDeath},
-                            times: pilot.times,
-                            weapons: pilot.weapons
+                            times: [],
+                            weapons: pilot.weapons,
+                            favPlane: ''
                             }
 
-                            currentPilot.ranking = LeaderBoardFunctions.calcRank(currentPilot);
-                            currentPilot.totalDeaths = LeaderBoardFunctions.getTotalDeaths(currentPilot);
-                            currentPilot.totalKills = LeaderBoardFunctions.getTotalKills(currentPilot);
-                            currentPilot.totalIncidents = LeaderBoardFunctions.getTotalIncidents(currentPilot);
-                        stats.push(currentPilot)
-                        q.resolve();
+                            var promises2 = [];
+                            var prev = 0;
+                            var e;
+
+                            angular.forEach(pilot.times, function(i, key, index){
+                                var q2 = $q.defer();
+                                promises.push(q.promise);
+                                var math1 = i.total / 3600;
+                                var math2 = Math.floor(math1)
+
+                                if (prev == 0){
+                                    var math1 = i.total / 3600;
+                                    var math2 = Math.floor(math1)
+                                    i.total = math2
+                                    prev = math2;
+                                    e = key;
+                                    q2.resolve();
+                                }
+                                else if (prev < math2) {
+
+                                        prev = math2;
+
+                                    e = key;
+                                    q2.resolve();
+                                }
+                                else {
+                                    q2.resolve();
+                                }
+
+                            })
+                            $q.all(promises2).then(function() {
+
+                                  currentPilot.favPlane = e;
+                                  currentPilot.ranking = LeaderBoardFunctions.calcRank(currentPilot);
+                                  currentPilot.totalDeaths = LeaderBoardFunctions.getTotalDeaths(currentPilot);
+                                  currentPilot.totalKills = LeaderBoardFunctions.getTotalKills(currentPilot);
+                                  currentPilot.totalIncidents = LeaderBoardFunctions.getTotalIncidents(currentPilot);
+                              stats.push(currentPilot)
+                              q.resolve();
+                            })
 
                     });
 
@@ -70,7 +105,7 @@
                 //       hitCount++
                 //     });
                 // }
-                console.log(killCount);
+
                 return totalIncidents = killCount;
              }
 
