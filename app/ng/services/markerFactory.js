@@ -120,7 +120,6 @@
 
             }
 
-
             UnitMarkerFactory.unitAddMarker = function(unit, cb) {
 
                   var mkrIcon,
@@ -157,7 +156,6 @@
                   })
             }
 
-
             UnitMarkerFactory.printUnitMarkers = function(cb) {
 
                 // delete all existing marker divs from the map.
@@ -174,7 +172,7 @@
 
                         var q = $q.defer();
                         promises.push(q.promise);
-                        console.log(unit);
+
                         // create a marker for the unit.
                         var mkr = document.createElement('div');
                         angular.element(document.getElementsByTagName('body')).append(mkr);
@@ -189,15 +187,15 @@
                         mkr.style.height = unit.properties.icon.iconSize;
                         mkr.style.cursor = 'pointer';
 
+
+
                         if (unit.data.unit.playername != "") {
-                            var data = {
-                                name: unit.data.unit.playername,
-
+                            var check = $rootScope.keyData.humanPilots.some( i => i.playername === unit.data.unit.playername )
+                            console.log(check);
+                            if (check == false) {
+                                $rootScope.keyData.humanPilots.push(unit)
                             }
-                            $rootScope.keyData.humanPilots.push()
                         }
-
-
 
                         // update selected Unit
                         if ($rootScope.keyData.selectedUnit != undefined) {
@@ -221,9 +219,10 @@
 
                         })
 
+
                         // add the units/markers click function.
                         mkr.addEventListener('click', function() {
-                            $rootScope.keyData.map.flyTo({ center: unit.geometry.coordinates });
+                            $rootScope.keyData.map.flyTo({ center: unit.geometry.coordinates, essential: true, zoom: 12  });
 
                             // if ($rootScope.keyData.popup != {}) {
                             //
@@ -286,7 +285,6 @@
 
 
             }
-
 
             return UnitMarkerFactory;
 

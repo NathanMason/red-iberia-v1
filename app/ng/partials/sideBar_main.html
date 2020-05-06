@@ -75,17 +75,92 @@
 
             </ul>
           </div>
+          <div class="sidebar-menu"">
+              <ul>
+                    <li>
+                        <h3>Human Units</h3>
+                    </li>
+              </ul>
+          </div>
 
           <!-- sidebar-search  -->
-          <div class="sidebar-menu">
+          <div class="sidebar-menu" style="overflow-y: auto; max-height: 300px;">
             <ul>
-              <li>
-                  <h3>Human Units</h3>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
+                  </a>
               </li>
               <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
                   <a class=""
+                     ng-click="moveToUnit(i)"
                      ng-href="#">
-                     {{i.name}}
+                     {{i.data.unit.playername}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
+                  </a>
+              </li>
+              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+                  <a class=""
+                     ng-click="moveToUnit(i)"
+                     ng-href="#">
+                     {{i.data.unit.playername}}
                   </a>
               </li>
               <li ng-if="keyData.humanPilots.length == 0">
@@ -94,6 +169,7 @@
                      There are currently no human pilots deployed.
                   </a>
               </li>
+
             </ul>
           </div>
 

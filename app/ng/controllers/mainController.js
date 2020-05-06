@@ -36,7 +36,15 @@
                               })
                       }
 
+                      $rootScope.moveToUnit = function(i){
+                          console.log(i);
+                          $rootScope.keyData.map.flyTo({ center: i.geometry.coordinates, essential: true, zoom: 12 });
+                          var element = document.getElementById(i.properties.uid);
+                          $timeout(function(){
+                              element.click()
+                          }, 1500);
 
+                      }
 
                       // IDEA: store in localStorage to keep filters alive for the client.
 
