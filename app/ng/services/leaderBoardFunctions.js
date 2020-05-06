@@ -20,9 +20,10 @@
                             friendlyHits: {kills: pilot.friendlyKills, hits: pilot.friendlyHits },
                             kills: {buildings: pilot.kills.Buildings, groundUnits: pilot.kills[ 'Ground Units' ], rotorUnits: pilot.kills.Helicopters },
                             losses: {crash: pilot.losses.crash, eject: pilot.losses.eject, pilotDeath: pilot.losses.pilotDeath},
-                            times: [],
+                            times: pilot.times,
                             weapons: pilot.weapons,
-                            favPlane: ''
+                            favPlane: '',
+                            totalTime: 0
                             }
 
                             var promises2 = [];
@@ -33,7 +34,9 @@
                                 var q2 = $q.defer();
                                 promises.push(q.promise);
                                 var math1 = i.total / 3600;
-                                var math2 = Math.floor(math1)
+                                var math2 = Math.floor(math1);
+                                calculataTotalAirTime = currentPilot.totalTime + math2;
+                                currentPilot.totalTime = calculataTotalAirTime;
 
                                 if (prev == 0){
                                     var math1 = i.total / 3600;
@@ -44,7 +47,7 @@
                                     q2.resolve();
                                 }
                                 else if (prev < math2) {
-
+                                    i.total = math2
                                         prev = math2;
 
                                     e = key;

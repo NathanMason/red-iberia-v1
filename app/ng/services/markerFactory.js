@@ -222,7 +222,7 @@
 
                         // add the units/markers click function.
                         mkr.addEventListener('click', function() {
-                            $rootScope.keyData.map.flyTo({ center: unit.geometry.coordinates, essential: true, zoom: 12  });
+                            $rootScope.keyData.map.flyTo({ center: unit.geometry.coordinates, zoom: 12  });
 
                             // if ($rootScope.keyData.popup != {}) {
                             //
@@ -251,7 +251,7 @@
 
                                console.log($rootScope.keyData.selectedUnit.unit.missionname);
                                                     $rootScope.defaultImage = '../../../img/404.png'
-                                                    $rootScope.keyData.popup = new mapboxgl.Popup({ closeOnClick: false })
+                                                    $rootScope.keyData.popup = new mapboxgl.Popup({ closeOnClick: false} )
                                                     .setLngLat(unit.geometry.coordinates)
                                                     .setHTML('<div class="pixel-popup-header"><strong>' + $rootScope.keyData.selectedUnit.unit.displayname +
                                                     '</strong></div><img style="width: 100%; max-height: 117px;" src="../img/' + $rootScope.keyData.selectedUnit.unit.type +
@@ -268,7 +268,7 @@
                         });
 
                         // now print the mrker to the map
-                        var newUnit = new mapboxgl.Marker(mkr)
+                        var newUnit = new mapboxgl.Marker(mkr, {anchor: 'bottom'})
                               .setLngLat(unit.geometry.coordinates)
                               .setRotation(unit.data.heading) // not working if the unit is being updated
                               .addTo($rootScope.keyData.map);
