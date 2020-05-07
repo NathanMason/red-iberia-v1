@@ -10,16 +10,22 @@
                     var promises = [];
                     // calculate leaderboard positions
 
+                    var keyChecker = function(key){
+                        if (!key) {key = 0} else {key = key}
+                        return key
+                    }
+
+
                     angular.forEach(obj, function(pilot){
                         var q = $q.defer();
                         promises.push(q.promise);
 
                         var currentPilot = {
                             callSign: pilot.name,
-                            pvp: { kills: [pilot.PvP.kills || 0], losses: [pilot.PvP.losses || 0] },
-                            friendlyHits: {kills: [pilot.friendlyKills || 0], hits: [pilot.friendlyHits || 0] },
-                            kills: {buildings: [pilot.kills.Buildings || 0], groundUnits: [pilot.kills[ 'Ground Units' ] || 0], rotorUnits: [pilot.kills.Helicopters || 0] },
-                            losses: {crash: [pilot.losses.crash || 0], eject: [pilot.losses.eject || 0], pilotDeath: [pilot.losses.pilotDeath || 0]},
+                            pvp: { kills: keyChecker(pilot.PvP.kills), losses: keyChecker(pilot.PvP.losses)},
+                            friendlyHits: {kills: keyChecker(pilot.friendlyKills), hits: keyChecker(pilot.friendlyHits)},
+                            kills: {buildings: keyChecker(pilot.kills.Buildings), groundUnits: keyChecker(pilot.kills[ 'Ground Units' ]), rotorUnits: keyChecker(pilot.kills.Helicopters)},
+                            losses: {crash: keyChecker(pilot.losses.crash), eject: keyChecker(pilot.losses.eject), pilotDeath: keyChecker(pilot.losses.pilotDeath)},
                             times: pilot.times,
                             weapons: pilot.weapons,
                             favPlane: '',
@@ -84,11 +90,11 @@
 
              LeaderBoardFunctions.getTotalKills = function(i) {
 
-                return totalKills = [i.pvp.kills || 0] + [i.kills.buildings.total || 0] + [i.kills.groundUnits.total || 0] + [i.kills.rotorUnits.total || 0];
+                return totalKills = i.pvp.kills + i.kills.buildings.total + i.kills.groundUnits.total  + i.kills.rotorUnits.total;
              }
 
              LeaderBoardFunctions.getTotalDeaths = function(i) {
-                return totalDeaths = [i.pvp.losses || 0] + [i.losses.crash || 0] + [i.losses.eject || 0] + [i.losses.pilotDeath || 0];
+                return totalDeaths = i.pvp.losses + i.losses.crash + i.losses.eject + i.losses.pilotDeath;
              }
 
              LeaderBoardFunctions.getTotalIncidents = function(i) {
