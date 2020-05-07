@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("LeaderBoardFunctions", function($rootScope, $q) {
+      angular.module("redIberia").factory("LeaderBoardFunctions", function($rootScope, $q, converterFactory) {
 
             var LeaderBoardFunctions = {};
 
@@ -19,6 +19,11 @@
                     angular.forEach(obj, function(pilot){
                         var q = $q.defer();
                         promises.push(q.promise);
+
+                        if (pilot.name === '{TGW}BooZer | Agressor') {
+                            console.log(pilot);
+                        }
+
 
                         var currentPilot = {
                             callSign: pilot.name,
@@ -41,19 +46,16 @@
                                 promises.push(q.promise);
                                 var math1 = i.total / 3600;
                                 var math2 = Math.floor(math1);
+
                                 calculataTotalAirTime = currentPilot.totalTime + math2;
                                 currentPilot.totalTime = calculataTotalAirTime;
-
+                                i.total = converterFactory.timeConvert(i.total)
                                 if (prev == 0){
-                                    var math1 = i.total / 3600;
-                                    var math2 = Math.floor(math1)
-                                    i.total = math2
                                     prev = math2;
                                     e = key;
                                     q2.resolve();
                                 }
                                 else if (prev < math2) {
-                                    i.total = math2
                                         prev = math2;
 
                                     e = key;
