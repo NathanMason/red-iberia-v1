@@ -16,10 +16,10 @@
 
                         var currentPilot = {
                             callSign: pilot.name,
-                            pvp: { kills: (pilot.PvP.kills || 0), losses: (pilot.PvP.losses || 0) },
-                            friendlyHits: {kills: (pilot.friendlyKills || 0), hits: (pilot.friendlyHits || 0) },
-                            kills: {buildings: (pilot.kills.Buildings || 0), groundUnits: (pilot.kills[ 'Ground Units' ] || 0), rotorUnits: (pilot.kills.Helicopters || 0) },
-                            losses: {crash: (pilot.losses.crash || 0), eject: (pilot.losses.eject || 0), pilotDeath: (pilot.losses.pilotDeath || 0)},
+                            pvp: { kills: [pilot.PvP.kills || 0], losses: [pilot.PvP.losses || 0] },
+                            friendlyHits: {kills: [pilot.friendlyKills || 0], hits: [pilot.friendlyHits || 0] },
+                            kills: {buildings: [pilot.kills.Buildings || 0], groundUnits: [pilot.kills[ 'Ground Units' ] || 0], rotorUnits: [pilot.kills.Helicopters || 0] },
+                            losses: {crash: [pilot.losses.crash || 0], eject: [pilot.losses.eject || 0], pilotDeath: [pilot.losses.pilotDeath || 0]},
                             times: pilot.times,
                             weapons: pilot.weapons,
                             favPlane: '',
@@ -84,11 +84,11 @@
 
              LeaderBoardFunctions.getTotalKills = function(i) {
 
-                return totalKills = (i.pvp.kills || 0) + (i.kills.buildings.total || 0) + (i.kills.groundUnits.total || 0) + (i.kills.rotorUnits.total || 0);
+                return totalKills = [i.pvp.kills || 0] + [i.kills.buildings.total || 0] + [i.kills.groundUnits.total || 0] + [i.kills.rotorUnits.total || 0];
              }
 
              LeaderBoardFunctions.getTotalDeaths = function(i) {
-                return totalDeaths = (i.pvp.losses || 0) + (i.losses.crash || 0) + (i.losses.eject || 0) + (i.losses.pilotDeath || 0);
+                return totalDeaths = [i.pvp.losses || 0] + [i.losses.crash || 0] + [i.losses.eject || 0] + [i.losses.pilotDeath || 0];
              }
 
              LeaderBoardFunctions.getTotalIncidents = function(i) {
