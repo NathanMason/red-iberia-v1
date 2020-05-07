@@ -16,10 +16,10 @@
 
                         var currentPilot = {
                             callSign: pilot.name,
-                            pvp: { kills: pilot.PvP.kills, losses: pilot.PvP.losses },
-                            friendlyHits: {kills: pilot.friendlyKills, hits: pilot.friendlyHits },
-                            kills: {buildings: pilot.kills.Buildings, groundUnits: pilot.kills[ 'Ground Units' ], rotorUnits: pilot.kills.Helicopters },
-                            losses: {crash: pilot.losses.crash, eject: pilot.losses.eject, pilotDeath: pilot.losses.pilotDeath},
+                            pvp: { kills: (pilot.PvP.kills || 0), losses: (pilot.PvP.losses || 0) },
+                            friendlyHits: {kills: (pilot.friendlyKills || 0), hits: (pilot.friendlyHits || 0) },
+                            kills: {buildings: (pilot.kills.Buildings || 0), groundUnits: (pilot.kills[ 'Ground Units' ] || 0), rotorUnits: (pilot.kills.Helicopters || 0) },
+                            losses: {crash: (pilot.losses.crash || 0), eject: (pilot.losses.eject || 0), pilotDeath: (pilot.losses.pilotDeath || 0)},
                             times: pilot.times,
                             weapons: pilot.weapons,
                             favPlane: '',
@@ -84,11 +84,11 @@
 
              LeaderBoardFunctions.getTotalKills = function(i) {
 
-                return totalKills = i.pvp.kills + i.kills.buildings.total + i.kills.groundUnits.total + i.kills.rotorUnits.total;
+                return totalKills = (i.pvp.kills || 0) + (i.kills.buildings.total || 0) + (i.kills.groundUnits.total || 0) + (i.kills.rotorUnits.total || 0);
              }
 
              LeaderBoardFunctions.getTotalDeaths = function(i) {
-                return totalDeaths = i.pvp.losses + i.losses.crash + i.losses.eject + i.losses.pilotDeath;
+                return totalDeaths = (i.pvp.losses || 0) + (i.losses.crash || 0) + (i.losses.eject || 0) + (i.losses.pilotDeath || 0);
              }
 
              LeaderBoardFunctions.getTotalIncidents = function(i) {
@@ -101,13 +101,6 @@
                       killCount++
                     });
                 }
-                //  if (i.friendlyHits.hits == null) {
-                //     hitCount = 0;
-                // } else {
-                //     angular.forEach(i.friendlyHits.hits, function(value, key) {
-                //       hitCount++
-                //     });
-                // }
 
                 return totalIncidents = killCount;
              }

@@ -84,14 +84,14 @@
                                               <table class="table">
                                                     <thead>
                                                           <tr>
-                                                                <th scope="col">Kills</th>
-                                                                <th scope="col">Losses</th>
+                                                                <th ng-if="pilot.pvp.kills" scope="col">Kills</th>
+                                                                <th ng-if="pilot.pvp.losses" scope="col">Losses</th>
                                                           </tr>
                                                     </thead>
                                                     <tbody>
                                                           <tr>
-                                                                <th scope="row">{{pilot.pvp.kills}}</th>
-                                                                <td>{{pilot.pvp.losses}}</td>
+                                                                <th ng-if="pilot.pvp.kills" scope="row">{{pilot.pvp.kills}}</th>
+                                                                <td ng-if="pilot.pvp.losses" >{{pilot.pvp.losses}}</td>
                                                           </tr>
                                                     </tbody>
                                               </table>
@@ -207,23 +207,23 @@
                                               <table class="table mt-00">
                                                   <thead>
                                                         <tr>
-                                                              <th scope="col">Crash</th>
-                                                              <th scope="col">Ejections</th>
-                                                              <th scope="col">Deaths</th>
+                                                              <th ng-if="pilot.losses.crash" scope="col">Crash</th>
+                                                              <th ng-if="pilot.losses.eject" scope="col">Ejections</th>
+                                                              <th ng-if="pilot.losses.pilotDeath" scope="col">Deaths</th>
                                                         </tr>
                                                   </thead>
                                                   <tbody>
                                                         <tr>
-                                                              <th scope="row">{{pilot.losses.crash}}</th>
-                                                              <td>{{pilot.losses.eject}}</td>
-                                                              <td>{{pilot.losses.pilotDeath}}</td>
+                                                              <th ng-if="pilot.losses.crash" scope="row">{{pilot.losses.crash}}</th>
+                                                              <td ng-if="pilot.losses.eject">{{pilot.losses.eject}}</td>
+                                                              <td ng-if="pilot.losses.pilotDeath">{{pilot.losses.pilotDeath}}</td>
                                                         </tr>
                                                   </tbody>
                                               </table>
                                           </div>
                                           <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
 
-                                                <div class="" ng-repeat="(key, value) in pilot.weapons">
+                                                <div ng-if="pilot.weapons" class="" ng-repeat="(key, value) in pilot.weapons">
                                                         <table class="table mb-0 mt-3">
                                                             <thead>
                                                             <tr>
@@ -254,7 +254,7 @@
 
 
                                               <div class="list-group">
-                                                <a ng-repeat="i in pilot.friendlyHits.kills" href="#" style="background: #343A40" class="list-group-item list-group-item-action active">
+                                                <a ng-if="pilot.friendlyHits.kills" ng-repeat="i in pilot.friendlyHits.kills" href="#" style="background: #343A40" class="list-group-item list-group-item-action active">
                                                   <p class="mb-1">{{i.objTypeName}}</p>
                                                   <small>Destroyed with an {{i.weapon}}</small>
                                                 </a>
