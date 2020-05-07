@@ -30,8 +30,8 @@
                               missiondata: [],
                               map: new mapboxgl.Map({
                                     container: 'map',
-                                    center: [42.422,41.600],
-                                    zoom: 7.38,
+                                    center: [44.55,41.89],
+                                    zoom: 7,
                                     style: 'mapbox://styles/boozer/ck9c3ojrh06lv1ipcfjqffqiz'
                               })
                       }

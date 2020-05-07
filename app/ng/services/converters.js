@@ -10,8 +10,8 @@
                 var rhours = Math.floor(hours);
                 var minutes = (hours - rhours) * 60;
                 var rminutes = Math.round(minutes);
-                return rhours + " hour(s) and " + rminutes + " minute(s).";
 
+                return rhours + " hour(s) and " + rminutes + " minute(s).";
             }
 
             return Data;

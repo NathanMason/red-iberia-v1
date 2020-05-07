@@ -163,10 +163,16 @@
                 $("div.marker").remove();
 
 
+
                 // clear the existing marker obj.
                 $rootScope.keyData.unitMarkers = [];
-
+                    var currentClients = [];
                   var promises = [];
+
+                  $rootScope.keyData.map.on('click', function(evt){
+                      console.log(evt.lngLat);
+                  });
+
                     // create all new marker divs on the map.
                   angular.forEach($rootScope.keyData.markers.features, function(unit) {
 
@@ -193,7 +199,11 @@
                             var check = $rootScope.keyData.humanPilots.some( i => i.playername === unit.data.unit.playername )
                             console.log(check);
                             if (check == false) {
+
+                                $timeout(function(){
                                 $rootScope.keyData.humanPilots.push(unit)
+                                }, 100);
+
                             }
                         }
 
@@ -219,11 +229,10 @@
 
                         })
 
-
                         // add the units/markers click function.
-                        mkr.addEventListener('click', function() {
+                        mkr.addEventListener('click', function(evt) {
                             $rootScope.keyData.map.flyTo({ center: unit.geometry.coordinates, zoom: 12  });
-
+                            console.log(evt.lngLat);
                             // if ($rootScope.keyData.popup != {}) {
                             //
                             //     $rootScope.keyData.popup.remove();
@@ -253,7 +262,7 @@
                                                     $rootScope.defaultImage = '../../../img/404.png'
                                                     $rootScope.keyData.popup = new mapboxgl.Popup({ closeOnClick: false} )
                                                     .setLngLat(unit.geometry.coordinates)
-                                                    .setHTML('<div class="pixel-popup-header"><strong>' + $rootScope.keyData.selectedUnit.unit.displayname +
+                                                    .setHTML('<div class="pixel-popup-header"><strong>' + $rootScope.keyData.selectedUnit.unit.playername +
                                                     '</strong></div><img style="width: 100%; max-height: 117px;" src="../img/' + $rootScope.keyData.selectedUnit.unit.type +
                                                     '.jpg" onError="this.src=\' ../../../img/404.png\'"><table class="table"><tr><td><strong>Unit type:</strong></td><td class="right">' + $rootScope.keyData.selectedUnit.unit.type +
                                                     '</td></tr><tr><td><strong>Callsign:</strong></td><td class="right">' + $rootScope.keyData.selectedUnit.unit.missionname +
