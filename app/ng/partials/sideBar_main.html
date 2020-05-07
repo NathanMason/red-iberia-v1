@@ -75,7 +75,7 @@
 
             </ul>
           </div>
-          <div class="sidebar-menu"">
+          <div ng-show="$route.current.activePage == 'welcome'" class="sidebar-menu"">
               <ul>
                     <li>
                         <h3>Human Units</h3>
@@ -84,7 +84,7 @@
           </div>
 
           <!-- sidebar-search  -->
-          <div class="sidebar-menu" style="overflow-y: auto; max-height: 300px;">
+          <div ng-show="$route.current.activePage == 'welcome'" class="sidebar-menu" style="overflow-y: auto; max-height: 300px;">
             <ul>
               <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
                   <a class="font13"
