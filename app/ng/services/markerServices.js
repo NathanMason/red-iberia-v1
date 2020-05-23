@@ -724,31 +724,68 @@
                                     }
                                     cb(data);
                                     break;
+								case 'CVN_71':
+                                    var data = {
+                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          size: '30px'
+                                    }
+                                    cb(data);
+                                    break;
+								case 'CVN_72':
+                                    var data = {
+                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          size: '30px'
+                                    }
+                                    cb(data);
+                                    break;
+								case 'CVN_73':
+                                    var data = {
+                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          size: '30px'
+                                    }
+                                    cb(data);
+                                    break;
+								case 'CV_1143_5':
+                                    var data = {
+                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          size: '30px'
+                                    }
+                                    cb(data);
+                                    break;
+								case 'USS_Arleigh_Burke_IIa':
+                                    var data = {
+                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          size: '24px'
+                                    }
+                                    cb(data);
+                                    break;
+									
+										
 							    case 'Higgins_Boat':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '15px'
                                     }
                                     cb(data);
                                     break;
 								case 'LHA_Tarawa':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'navy.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'tnavy.png")',
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'LST_Mk2':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '15px'
                                     }
                                     cb(data);
                                     break;
 								case 'PERRY':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
@@ -762,14 +799,14 @@
 								case 'TICONDEROG':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '23px'
                                     }
                                     cb(data);
                                     break;
 								case 'USS_Samuel_Chase':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '25px'
                                     }
                                     cb(data);
                                     break;
@@ -782,43 +819,43 @@
                                     break;
 								case 'ALBATROS':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'gnavy.png")',
+                                          size: '25px'
                                     }
                                     cb(data);
                                     break;
 								case 'Dry-cargo ship-1':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'gnavy.png")',
+                                          size: '25px'
                                     }
                                     cb(data);
                                     break;
 								case 'Dry-cargo ship-2':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'gnavy.png")',
+                                          size: '25px'
                                     }
                                     cb(data);
                                     break;
 								case 'ELNYA':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'MOSCOW':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'KILO':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
@@ -832,42 +869,42 @@
 								case 'NEUSTRASH':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'MOLNIYA':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'PIOTR':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'REZKY':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'SOM':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'ZWEZDNY':
                                     var data = {
                                           src: 'url("../../img/' + side + 'snavy.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
