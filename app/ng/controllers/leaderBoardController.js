@@ -25,7 +25,7 @@
                                 $timeout(function(){
                                     console.log(r);
                                     $rootScope.pilotStatistics = r;
-                                    
+
                                 }, 1000);
 
 
@@ -49,6 +49,22 @@
                           m = m < 10 ? '0' + m : m;
                           return `${h}:${m}`;
                         }
+
+                        $scope.humanize = function(number) {
+
+                                if(number % 100 >= 11 && number % 100 <= 13){
+                                    return number + "th";
+                                }
+
+
+                                switch(number % 10) {
+                                    case 1: return number + "st";
+                                    case 2: return number + "nd";
+                                    case 3: return number + "rd";
+                                }
+                                console.log(number);
+                                return number + "th";
+                            }
 
                   }
             ]);

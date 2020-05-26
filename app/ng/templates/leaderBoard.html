@@ -33,7 +33,21 @@
                           </thead>
                           <tbody>
                             <tr ng-repeat="pilot in pilotStatistics | orderBy : 'position' | filter: pilotfilter track by $index">
-                              <td class="pos" scope="row"><span>{{pilot.position}}</span></td>
+                              <td class="pos" scope="row">
+                                  <span ng-if="pilot.position == 1">
+                                      <img width="40" src="../img/1st.png" alt="">
+                                  </span>
+                                  <span ng-if="pilot.position == 2">
+                                      <img width="40" src="../img/2nd.png" alt="">
+                                  </span>
+                                  <span ng-if="pilot.position == 3">
+                                      <img width="40" src="../img/3rd.png" alt="">
+                                  </span>
+                                  <span ng-if="pilot.position != 1 && pilot.position != 2 && pilot.position != 3">
+                                      {{pilot.position}}
+                                      <span ng-init="humanize(pilot.position)"></span>
+                                  </span>
+                              </td>
                               <td class="text-center" scope="row">{{pilot.ranking}}</td>
                               <td><a href="#">{{pilot.callSign}}</a></td>
                               <td class="text-center">{{pilot.aaKills}}</td>
