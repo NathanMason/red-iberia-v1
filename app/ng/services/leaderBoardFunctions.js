@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("LeaderBoardFunctions", function($rootScope, $q, converterFactory) {
+      angular.module("redIberia").factory("LeaderBoardFunctions", function($rootScope, $q, converterFactory, $filter) {
 
             var LeaderBoardFunctions = {};
 
@@ -7,7 +7,7 @@
             LeaderBoardFunctions.sortPilotStats = function(obj, cb) {
                     // create the pilot object
                     var stats = [];
-                    var promises = [];
+                    var allPilotpromises = [];
                     // calculate leaderboard positions
 
                     var keyChecker = function(key){
@@ -17,101 +17,148 @@
 
 
                     angular.forEach(obj, function(pilot){
-                        var q = $q.defer();
-                        promises.push(q.promise);
 
-                        if (pilot.name === '{TGW}BooZer | Agressor') {
+                        var allPilot_q = $q.defer();
+                        allPilotpromises.push(allPilot_q.promise);
+
+                        // set the pilot array
+                        var currentPilot = {
+                                callSign: pilot.name,
+                                allStats: pilot.times,
+                                deaths: 0,
+                                kills: 0,
+                                aaKills: 0,
+                                agKills: 0,
+                                pvpKills: 0,
+                                pvpLosses: 0,
+                                position: 0,
+                                flightHours: 0,
+                                ranking: 0,
+                                flightHours_converted: '',
+                                favAircraft: {
+                                    flightHours: 0,
+                                    frameName: '',
+                                    flightHours_converted: ''
+                                }
+
+                        }
+
+                        // just tests
+                        if (pilot.name == "{TGW}BooZer | Agressor") {
                             console.log(pilot);
                         }
 
+                        // make sure the pilot has aircraft stats to loop over
+                        if (pilot.times != null) {
 
-                        var currentPilot = {
-                            callSign: pilot.name,
-                            pvp: { kills: keyChecker(pilot.PvP.kills), losses: keyChecker(pilot.PvP.losses)},
-                            friendlyHits: {kills: keyChecker(pilot.friendlyKills), hits: keyChecker(pilot.friendlyHits)},
-                            kills: {buildings: keyChecker(pilot.kills.Buildings), groundUnits: keyChecker(pilot.kills[ 'Ground Units' ]), rotorUnits: keyChecker(pilot.kills.Helicopters)},
-                            losses: {crash: keyChecker(pilot.losses.crash), eject: keyChecker(pilot.losses.eject), pilotDeath: keyChecker(pilot.losses.pilotDeath)},
-                            times: pilot.times,
-                            weapons: pilot.weapons,
-                            favPlane: '',
-                            totalTime: 0
-                            }
-
-                            var promises2 = [];
-                            var prev = 0;
-                            var e;
-
+                            // now we loop over the times object to get the pilots stats
                             angular.forEach(pilot.times, function(i, key, index){
-                                var q2 = $q.defer();
-                                promises.push(q.promise);
-                                var math1 = i.total / 3600;
-                                var math2 = Math.floor(math1);
+                                console.log(i);
+                                    // get pilots kills
+                                    if (i.hasOwnProperty('kills')) {
 
-                                calculataTotalAirTime = currentPilot.totalTime + math2;
-                                currentPilot.totalTime = calculataTotalAirTime;
-                                i.total = converterFactory.timeConvert(i.total)
-                                if (prev == 0){
-                                    prev = math2;
-                                    e = key;
-                                    q2.resolve();
+                                            // get AA kills
+                                            if (i.kills.Planes) {
+
+                                                // add to pilots total kills
+                                                currentPilot.kills = currentPilot.kills + i.kills.Planes.total
+
+                                                // add to pilots AA kills
+                                                currentPilot.aaKills = currentPilot.aaKills + i.kills.Planes.total
+
+                                            }
+
+                                            // get AG kills
+                                            if (i.kills["Ground Units"]) {
+
+                                                // add to pilots total kills
+                                                currentPilot.kills = currentPilot.kills + i.kills["Ground Units"].total
+
+                                                // add to pilots AG kills
+                                                currentPilot.agKills = currentPilot.agKills + i.kills["Ground Units"].total
+
+                                            }
+
+                                        }
+
+                                    // get PvP stats
+                                    if (i.hasOwnProperty('pvp')) {
+
+                                            if (i.pvp.hasOwnProperty('kills')) {
+                                                // add to pilots total kills
+                                                currentPilot.kills = currentPilot.pvpKills + i.pvp.kills
+
+                                                // add to pilots pvp Kills
+                                                currentPilot.pvpKills = currentPilot.pvpKills + i.pvp.kills
+
+                                            }
+                                            if (i.pvp.hasOwnProperty('losses')) {
+                                                // add to pilots total deaths
+                                                currentPilot.deaths = currentPilot.deaths + i.pvp.losses
+
+                                                // add to pilots pvp deaths
+                                                currentPilot.pvpLosses = currentPilot.pvpLosses + i.pvp.losses
+
+                                            }
+
+                                    }
+
+                                    // get flight time
+                                    if (i.hasOwnProperty('inAir')) {
+                                        currentPilot.flightHours = currentPilot.flightHours + i.inAir
+                                        currentPilot.flightHours_converted = converterFactory.timeConvert(currentPilot.flightHours)
+
+                                        // get fav aircraft
+                                        if (i.inAir > currentPilot.favAircraft.flightHours) {
+                                            currentPilot.favAircraft.flightHours = i.inAir
+                                            currentPilot.favAircraft.flightHours_converted = currentPilot.flightHours_converted
+                                            currentPilot.favAircraft.frameName = key
+                                        }
+
+                                    }
+
+
+                                    // set pilots rank
+                                    currentPilot.ranking = currentPilot.kills - currentPilot.deaths;
+
+                                })
+
+                                if (currentPilot.callSign == "{TGW}BooZer | Agressor") {
+                                    console.log(currentPilot);
                                 }
-                                else if (prev < math2) {
-                                        prev = math2;
+                                stats.push(currentPilot)
+                                allPilot_q.resolve();
 
-                                    e = key;
-                                    q2.resolve();
-                                }
-                                else {
-                                    q2.resolve();
-                                }
 
-                            })
-                            $q.all(promises2).then(function() {
-
-                                  currentPilot.favPlane = e;
-                                  currentPilot.ranking = LeaderBoardFunctions.calcRank(currentPilot);
-                                  currentPilot.totalDeaths = LeaderBoardFunctions.getTotalDeaths(currentPilot);
-                                  currentPilot.totalKills = LeaderBoardFunctions.getTotalKills(currentPilot);
-                                  currentPilot.totalIncidents = LeaderBoardFunctions.getTotalIncidents(currentPilot);
-                              stats.push(currentPilot)
-                              q.resolve();
-                            })
+                        } else {
+                            stats.push(currentPilot)
+                            allPilot_q.resolve();
+                        }
 
                     });
 
-                    $q.all(promises).then(function() {
-                        cb(stats)
+                    $q.all(allPilotpromises).then(function() {
+
+
+                        // lets structure the standings
+                        var leaderBoard = $filter('orderBy')(stats, '-ranking');
+                        var result = [];
+                        var sortPromise = [];
+                        angular.forEach(leaderBoard, function(pilot, index){
+
+                            var sort_q = $q.defer();
+                            sortPromise.push(sort_q.promise);
+                            pilot.position = index+1
+                            result.push(pilot)
+                            sort_q.resolve();
+                        })
+                        $q.all(sortPromise).then(function() {
+                            cb(result)
+                        })
+
                     })
             }
 
-             LeaderBoardFunctions.calcRank = function(i) {
-
-                return rank = LeaderBoardFunctions.getTotalKills(i) - LeaderBoardFunctions.getTotalDeaths(i) - LeaderBoardFunctions.getTotalIncidents(i);
-
-             }
-
-             LeaderBoardFunctions.getTotalKills = function(i) {
-
-                return totalKills = i.pvp.kills + i.kills.buildings.total + i.kills.groundUnits.total  + i.kills.rotorUnits.total;
-             }
-
-             LeaderBoardFunctions.getTotalDeaths = function(i) {
-                return totalDeaths = i.pvp.losses + i.losses.crash + i.losses.eject + i.losses.pilotDeath;
-             }
-
-             LeaderBoardFunctions.getTotalIncidents = function(i) {
-                 var killCount = 0;
-                 var hitCount = 0;
-                 if (i.friendlyHits.kills == null) {
-                    killCount = 0
-                } else {
-                    angular.forEach(i.friendlyHits.kills, function(value, key) {
-                      killCount++
-                    });
-                }
-
-                return totalIncidents = killCount;
-             }
 
             return LeaderBoardFunctions;
 

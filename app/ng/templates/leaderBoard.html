@@ -8,7 +8,7 @@
                     <tr>
                       <th class="ml-0 pl-0" scope="row"><h2 class="m-0 p-0">Leaderboard</h2></th>
                       <td>
-                              <input style="width: 100%; max-width: 250px; float: right;" class="form-control mb-sm-0 mb-2" type="search" placeholder="Search" aria-label="Search" ng-model="pilotfilter">
+                              <input style="width: 100%; max-width: 250px; float: right;" class="form-control mb-sm-0 mb-2" type="search" placeholder="Search" ng-model="pilotfilter" aria-label="Search" >
                       </td>
                     </tr>
                   </tbody>
@@ -19,20 +19,30 @@
                         <table class="table table-dark LeaderBoardItem">
                           <thead>
                             <tr>
+                              <th class="sticky" scope="col" width="50">Pos</th>
                               <th class="sticky" scope="col" width="50">Points</th>
                               <th class="sticky">Pilot</th>
-                              <th class="sticky">Kills</th>
-                              <th class="sticky">Deaths</th>
-                              <th class="sticky">Friendly Incidents</th>
+                              <th class="sticky">AA Kills</th>
+                              <th class="sticky">AG Kills</th>
+                              <th class="sticky">PvP Kills</th>
+                              <th class="sticky">Total Kills</th>
+                              <th class="sticky">PvP Deaths</th>
+                              <th class="sticky">Total Deaths</th>
+                              <th class="sticky">Flight Hrs</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr ng-repeat="pilot in pilotStatistics | orderBy: '-ranking' | filter: pilotfilter">
+                            <tr ng-repeat="pilot in pilotStatistics | orderBy : 'position' | filter: pilotfilter track by $index">
+                              <td scope="row">{{pilot.position}}</td>
                               <td scope="row">{{pilot.ranking}}</td>
-                              <td><a href="#" ng-click="setPilot(pilot)" data-toggle="modal" data-target="#logBookModal">{{pilot.callSign}}</a></td>
-                              <td>{{pilot.totalKills}}</td>
-                              <td>{{pilot.totalDeaths}}</td>
-                              <td>{{pilot.totalIncidents}}</td>
+                              <td><a href="#">{{pilot.callSign}}</a></td>
+                              <td>{{pilot.aaKills}}</td>
+                              <td>{{pilot.agKills}}</td>
+                              <td>{{pilot.pvpKills}}</td>
+                              <td>{{pilot.kills}}</td>
+                              <td>{{pilot.pvpLosses}}</td>
+                              <td>{{pilot.deaths}}</td>
+                              <td>{{pilot.flightHours_converted}}</td>
                             </tr>
                           </tbody>
                         </table>

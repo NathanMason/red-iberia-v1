@@ -23,8 +23,10 @@
                             LeaderBoardFunctions.sortPilotStats(data[0].stats, function(r){
 
                                 $timeout(function(){
+                                    console.log(r);
                                     $rootScope.pilotStatistics = r;
-                                }, 100);
+                                    
+                                }, 1000);
 
 
                             })

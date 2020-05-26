@@ -10,7 +10,7 @@
                   </div>
                   <div class="modal-body p-0">
 
-                        <div class="row logBook_header">
+                        <!-- <div class="row logBook_header">
                               <div class="col-3 p-3  text-center">
                                     <small>Flight HRS</small>
                                     <h5>{{pilot.totalTime}} hrs</h5>
@@ -27,243 +27,34 @@
                                     <small>A-A Kills</small>
                                     <h5>{{pilot.totalKills}}</h5>
                               </div>
-                        </div>
+                        </div> -->
 
                         <div class="row logBook_row p-0">
 
                               <div class="col">
 
-                                    <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-                                          <li class="nav-item">
-                                                <a class="nav-link active" id="tab1-tab" data-toggle="tab" data-target="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Flight Hours</a>
-                                          </li>
-                                          <li class="nav-item">
-                                                <a class="nav-link" id="tab2-tab" data-toggle="tab" data-target="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Kills</a>
-                                          </li>
-                                          <li class="nav-item">
-                                                <a class="nav-link" id="tab3-tab" data-toggle="tab" data-target="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Losses</a>
-                                          </li>
-                                          <li class="nav-item">
-                                                <a class="nav-link" id="tab4-tab" data-toggle="tab" data-target="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Weapons</a>
-                                          </li>
-                                          <li class="nav-item">
-                                                <a class="nav-link" id="tab5-tab" data-toggle="tab" data-target="#tab5" role="tab" aria-controls="tab5" aria-selected="false">Blue on Blue</a>
-                                          </li>
-                                          <li class="nav-item">
-                                                <a class="nav-link" id="tab6-tab" data-toggle="tab" data-target="#tab6" role="tab" aria-controls="tab6" aria-selected="false">Awards</a>
-                                          </li>
-                                    </ul>
                                     <div class="tab-content" id="myTabContent">
                                           <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-
-                                                <table class="table">
-                                                      <thead>
-                                                            <tr>
-                                                                  <th scope="col">Aircraft</th>
-                                                                  <th scope="col">Hrs</th>
-                                                            </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                            <tr ng-repeat="(key, value) in pilot.times">
-                                                                  <th scope="row">{{key}}</th>
-                                                                  <td>{{value.total}}</td>
-                                                            </tr>
-                                                      </tbody>
-                                                </table>
-
-                                          </div>
-                                          <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                                              <!-- pvp -->
-                                              <table class="table">
-                                                    <thead>
-                                                          <tr>
-                                                                <th scope="col">PvP STATISTICS</th>
-                                                          </tr>
-                                                    </thead>
-                                              </table>
-                                              <table class="table">
-                                                    <thead>
-                                                          <tr>
-                                                                <th ng-if="pilot.pvp.kills" scope="col">Kills</th>
-                                                                <th ng-if="pilot.pvp.losses" scope="col">Losses</th>
-                                                          </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                          <tr>
-                                                                <th ng-if="pilot.pvp.kills" scope="row">{{pilot.pvp.kills}}</th>
-                                                                <td ng-if="pilot.pvp.losses" >{{pilot.pvp.losses}}</td>
-                                                          </tr>
-                                                    </tbody>
-                                              </table>
-                                              <hr>
-                                              <!-- AI -->
-                                              <table class="table">
-                                                    <thead>
-                                                          <tr>
-                                                                <th scope="col">AI KILLS</th>
-                                                          </tr>
-                                                    </thead>
-                                              </table>
-                                                <table class="table mb-0">
-                                                      <thead>
-                                                            <tr>
-                                                                  <th scope="col">Buildings</th>
-                                                            </tr>
-                                                      </thead>
-                                                </table>
-                                                <table class="table m-00 mb-0">
-                                                      <thead>
-                                                            <tr>
-                                                                  <th scope="col">Other</th>
-                                                                  <th scope="col">Static</th>
-                                                                  <th scope="col">Total</th>
-                                                            </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                            <tr>
-                                                                  <th scope="row">{{pilot.kills.buildings.Other}}</th>
-                                                                  <td>{{pilot.kills.buildings.Static}}</td>
-                                                                  <td>{{pilot.kills.buildings.total}}</td>
-                                                            </tr>
-                                                      </tbody>
-                                                </table>
-                                                <div class="mt-3"></div>
-                                                <table class="table  mb-0">
-                                                      <thead>
-                                                            <tr>
-                                                                  <th scope="col">groundUnits <span class="pull-right">{{pilot.kills.groundUnits.total}}</span></th>
-                                                            </tr>
-                                                      </thead>
-                                                </table>
-                                                <table class="table mt-00 mb-0">
-                                                      <thead>
-                                                            <tr>
-                                                                  <th scope="col">AAA</th>
-                                                                  <th scope="col">APCs</th>
-                                                                  <th scope="col">MLRS</th>
-                                                                  <th scope="col">EWR</th>
-                                                                  <th scope="col">Forts</th>
-                                                            </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                            <tr>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.AAA}}</th>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.APCs}}</th>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.Arty/MLRS}}</th>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.EWR}}</th>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.Forts}}</th>
-                                                            </tr>
-                                                      </tbody>
-                                                </table>
-                                                <table class="table mt-00">
-                                                      <thead>
-                                                            <tr>
-                                                                  <th scope="col">IFVs</th>
-                                                                  <th scope="col">Infantry</th>
-                                                                  <th scope="col">Other</th>
-                                                                  <th scope="col">SAM</th>
-                                                                  <th scope="col">Tanks</th>
-                                                                  <th scope="col">Unarmored</th>
-                                                            </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                            <tr>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.IFVs}}</th>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.Infantry}}</th>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.Arty/Other}}</th>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.SAM}}</th>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.Tanks}}</th>
-                                                                  <th scope="row">{{pilot.kills.groundUnits.Unarmored}}</th>
-                                                            </tr>
-                                                      </tbody>
-                                                </table>
-
-                                                <table class="table m-00 mb-0">
-                                                      <thead>
-                                                            <tr>
-                                                                  <th scope="col">Rotor Units <span class="pull-right">{{pilot.kills.rotorUnits.total}}</span></th>
-                                                            </tr>
-                                                      </thead>
-                                                </table>
-                                                <table class="table m-00 mb-0">
-                                                      <thead>
-                                                            <tr>
-                                                                  <th scope="col">Attack</th>
-                                                                  <th scope="col">Other</th>
-                                                                  <th scope="col">Static</th>
-                                                            </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                            <tr>
-                                                                  <th scope="row">{{pilot.kills.rotorUnits.Attack}}</th>
-                                                                  <td>{{pilot.kills.rotorUnits.Static}}</td>
-                                                                  <td>{{pilot.kills.rotorUnits.Other}}</td>
-                                                            </tr>
-                                                      </tbody>
-                                                </table>
-
-                                          </div>
-                                          <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-                                              <table class="table mt-00">
-                                                  <thead>
-                                                        <tr>
-                                                              <th ng-if="pilot.losses.crash" scope="col">Crash</th>
-                                                              <th ng-if="pilot.losses.eject" scope="col">Ejections</th>
-                                                              <th ng-if="pilot.losses.pilotDeath" scope="col">Deaths</th>
-                                                        </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                        <tr>
-                                                              <th ng-if="pilot.losses.crash" scope="row">{{pilot.losses.crash}}</th>
-                                                              <td ng-if="pilot.losses.eject">{{pilot.losses.eject}}</td>
-                                                              <td ng-if="pilot.losses.pilotDeath">{{pilot.losses.pilotDeath}}</td>
-                                                        </tr>
-                                                  </tbody>
-                                              </table>
-                                          </div>
-                                          <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
-
-                                                <div ng-if="pilot.weapons" class="" ng-repeat="(key, value) in pilot.weapons">
-                                                        <table class="table mb-0 mt-3">
-                                                            <thead>
-                                                            <tr>
-                                                                  <th scope="col">{{key}}</th>
-                                                            </tr>
-                                                            </thead>
-                                                       </table>
-                                                       <table class="table mt-00">
-                                                           <thead>
-                                                               <tr>
-                                                                     <th scope="col">Hits</th>
-                                                                     <th scope="col">Kills</th>
-                                                                     <th scope="col">Shot</th>
-                                                               </tr>
-                                                           </thead>
-                                                           <tbody>
-                                                               <tr>
-                                                                   <td>{{value.hit}}</td>
-                                                                   <td>{{value.kills}}</td>
-                                                                   <td>{{value.shot}}</td>
-                                                               </tr>
-                                                           </tbody>
-                                                        </table>
-                                                </div>
-
-                                          </div>
-                                          <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
-
-
-                                              <div class="list-group">
-                                                <a ng-if="pilot.friendlyHits.kills" ng-repeat="i in pilot.friendlyHits.kills" href="#" style="background: #343A40" class="list-group-item list-group-item-action active">
-                                                  <p class="mb-1">{{i.objTypeName}}</p>
-                                                  <small>Destroyed with an {{i.weapon}}</small>
-                                                </a>
+                                              <div class="" ng-repeat="(key, value1) in pilot.airframes">
+                                                  <table class="table">
+                                                        <thead>
+                                                              <tr>
+                                                                    <th scope="col">{{key}}</th>
+                                                              </tr>
+                                                        </thead>
+                                                  </table>
+                                                  <table class="table" ng-repeat="(key, value1) in pilot.airframes">
+                                                        <tbody>
+                                                              <tr ng-repeat="(key, value2) in value1">
+                                                                    <th scope="row">{{key}}</th>
+                                                                    <td>{{value2}}</td>
+                                                              </tr>
+                                                        </tbody>
+                                                  </table>
                                               </div>
 
 
                                           </div>
-                                          <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">...</div>
-                                          <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="tab7-tab">...</div>
                                     </div>
 
 

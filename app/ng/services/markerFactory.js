@@ -231,14 +231,7 @@
 
                         // add the units/markers click function.
                         mkr.addEventListener('click', function(evt) {
-                            $rootScope.keyData.map.flyTo({ center: unit.geometry.coordinates, zoom: 12  });
-                            console.log(evt.lngLat);
-                            // if ($rootScope.keyData.popup != {}) {
-                            //
-                            //     $rootScope.keyData.popup.remove();
-                            //
-                            // }
-
+                            $rootScope.keyData.map.flyTo({ center: unit.geometry.coordinates});
 
                             $timeout(function(){
 
