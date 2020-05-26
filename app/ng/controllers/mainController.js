@@ -31,18 +31,18 @@
                               map: new mapboxgl.Map({
                                     container: 'map',
                                     center: [44.55,41.89],
-                                    zoom: 7,
+                                    zoom: 7.4,
                                     style: 'mapbox://styles/boozer/ck9c3ojrh06lv1ipcfjqffqiz'
                               })
                       }
 
                       $rootScope.moveToUnit = function(i){
                           console.log(i);
-                          $rootScope.keyData.map.flyTo({ center: i.geometry.coordinates, zoom: 12 });
+                          $rootScope.keyData.map.flyTo({ center: i.geometry.coordinates});
                           var element = document.getElementById(i.properties.uid);
                           $timeout(function(){
                               element.click()
-                          }, 1500);
+                          }, 100);
 
                       }
 

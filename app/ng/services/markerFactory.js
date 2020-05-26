@@ -162,6 +162,8 @@
                 $rootScope.keyData.unitMarkers.forEach((marker) => marker.remove());
                 $("div.marker").remove();
 
+                // player new unit placeholder
+                var newHumanList = [];
 
 
                 // clear the existing marker obj.
@@ -194,17 +196,8 @@
                         mkr.style.cursor = 'pointer';
 
 
-
                         if (unit.data.unit.playername != "") {
-                            var check = $rootScope.keyData.humanPilots.some( i => i.playername === unit.data.unit.playername )
-                            console.log(check);
-                            if (check == false) {
-
-                                $timeout(function(){
-                                $rootScope.keyData.humanPilots.push(unit)
-                                }, 100);
-
-                            }
+                            newHumanList.push(unit)
                         }
 
                         // update selected Unit
@@ -282,6 +275,7 @@
                   });
                   $q.all(promises).then(function() {
                         $rootScope.keyData.loadingAwacsData = false;
+                        $rootScope.keyData.humanPilots = newHumanList
                         cb(200)
                   })
 
