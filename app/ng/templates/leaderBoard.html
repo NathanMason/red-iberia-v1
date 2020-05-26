@@ -19,36 +19,36 @@
                         <table class="table table-dark LeaderBoardItem">
                           <thead>
                             <tr>
-                              <th class="sticky" scope="col" width="50">Pos</th>
-                              <th class="sticky" scope="col" width="50">Points</th>
+                              <th class="sticky text-center" scope="col">Pos</th>
+                              <th class="sticky text-center" scope="col">Points</th>
                               <th class="sticky">Pilot</th>
-                              <th class="sticky">AA Kills</th>
-                              <th class="sticky">AG Kills</th>
-                              <th class="sticky">PvP Kills</th>
-                              <th class="sticky">Total Kills</th>
-                              <th class="sticky">PvP Deaths</th>
-                              <th class="sticky">Total Deaths</th>
+                              <th class="sticky text-center">AA Kills</th>
+                              <th class="sticky text-center">AG Kills</th>
+                              <th class="sticky text-center">PvP Kills</th>
+                              <th class="sticky bright text-center">Total Kills</th>
+                              <th class="sticky text-center">PvP Deaths</th>
+                              <th class="sticky bright text-center">Total Deaths</th>
                               <th class="sticky">Flight Hrs</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr ng-repeat="pilot in pilotStatistics | orderBy : 'position' | filter: pilotfilter track by $index">
-                              <td scope="row">{{pilot.position}}</td>
-                              <td scope="row">{{pilot.ranking}}</td>
+                              <td class="pos" scope="row"><span>{{pilot.position}}</span></td>
+                              <td class="text-center" scope="row">{{pilot.ranking}}</td>
                               <td><a href="#">{{pilot.callSign}}</a></td>
-                              <td>{{pilot.aaKills}}</td>
-                              <td>{{pilot.agKills}}</td>
-                              <td>{{pilot.pvpKills}}</td>
-                              <td>{{pilot.kills}}</td>
-                              <td>{{pilot.pvpLosses}}</td>
-                              <td>{{pilot.deaths}}</td>
+                              <td class="text-center">{{pilot.aaKills}}</td>
+                              <td class="text-center">{{pilot.agKills}}</td>
+                              <td class="text-center">{{pilot.pvpKills}}</td>
+                              <td class="text-center bright">{{pilot.kills}}</td>
+                              <td class="text-center">{{pilot.pvpLosses}}</td>
+                              <td class="text-center bright">{{pilot.deaths}}</td>
                               <td>{{pilot.flightHours_converted}}</td>
                             </tr>
                           </tbody>
                         </table>
                 </div>
                 <div class="row text-center">
-                    <small class="leaderboard-small" style="margin: 10px auto">Points formula: (Kills - Deaths - Friendly Incidents = Points) </small>
+                    <small class="leaderboard-small" style="margin: 10px auto">Points formula: (Kills - Deaths = Points) </small>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@
 .sticky {
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 
 .table.no-border td, .table.no-border th {
@@ -16,4 +17,40 @@
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
     padding: 20px 12px;
+}
+
+.bright {
+    background: #2C2E34;
+}
+.LeaderBoardItem tr:nth-child(even) {
+    background-color: #2C2E34;
+
+    .bright {
+        background: #202226;
+    }
+
+}
+
+.LeaderBoardItem tbody tr {
+    &:hover {
+        .bright {
+            background: #A34F4D ;
+        }
+        background: #A34F4D
+    }
+
+}
+
+
+.pos {
+    position: relative;
+    text-align: center;
+    font-size: 15px;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+    span {
+        font-weight: bold
+    }
+}
+.table td, .table th {
+    vertical-align: middle;
 }
