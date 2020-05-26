@@ -53,7 +53,6 @@
 
                             // now we loop over the times object to get the pilots stats
                             angular.forEach(pilot.times, function(i, key, index){
-                                console.log(i);
                                     // get pilots kills
                                     if (i.hasOwnProperty('kills')) {
 
@@ -123,9 +122,9 @@
 
                                 })
 
-                                if (currentPilot.callSign == "{TGW}BooZer | Agressor") {
-                                    console.log(currentPilot);
-                                }
+
+                                    console.log(currentPilot.favAircraft.frameName);
+                                
                                 stats.push(currentPilot)
                                 allPilot_q.resolve();
 

@@ -4,7 +4,7 @@
             var Data = {};
 
             Data.timeConvert = function(n) {
-                console.log(n);
+
                 var num = n;
                 var hours = (num / 3600);
                 var rhours = Math.floor(hours);

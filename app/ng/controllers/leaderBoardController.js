@@ -56,13 +56,12 @@
                                     return number + "th";
                                 }
 
-
                                 switch(number % 10) {
                                     case 1: return number + "st";
                                     case 2: return number + "nd";
                                     case 3: return number + "rd";
                                 }
-                                console.log(number);
+
                                 return number + "th";
                             }
 
