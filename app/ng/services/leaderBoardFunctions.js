@@ -71,7 +71,7 @@
                                             if (i.kills["Ground Units"]) {
 
                                                 // add to pilots total kills
-                                                currentPilot.kills = currentPilot.kills + i.kills["Ground Units"].total
+                                                currentPilot.kills = currentPilot.kills + ( i.kills["Ground Units"].total / 4)
 
                                                 // add to pilots AG kills
                                                 currentPilot.agKills = currentPilot.agKills + i.kills["Ground Units"].total
@@ -101,7 +101,25 @@
                                             }
 
                                     }
-
+                                    // get actions
+                                    if (i.hasOwnProperty('actions')) {
+                                      if (i.actions.hasOwnProperty('losses'))
+                                      {
+                                        //
+                                        if (i.actions.losses.hasOwnProperty('pilotDeath'))
+                                        {
+                                          currentPilot.deaths = currentPilot.deaths + i.actions.losses.pilotDeath
+                                        }
+                                        if (i.actions.losses.hasOwnProperty('crash'))
+                                        {
+                                          currentPilot.deaths = currentPilot.deaths + i.actions.losses.crash
+                                        }
+                                        if (i.actions.losses.hasOwnProperty('eject'))
+                                        {
+                                          currentPilot.deaths = currentPilot.deaths + i.actions.losses.eject / 2
+                                        }
+                                      }
+                                    }
                                     // get flight time
                                     if (i.hasOwnProperty('inAir')) {
                                         currentPilot.flightHours = currentPilot.flightHours + i.inAir
