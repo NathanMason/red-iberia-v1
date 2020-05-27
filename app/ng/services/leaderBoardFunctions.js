@@ -85,7 +85,7 @@
 
                                             if (i.pvp.hasOwnProperty('kills')) {
                                                 // add to pilots total kills
-                                                currentPilot.kills = currentPilot.pvpKills + i.pvp.kills
+                                                currentPilot.kills = currentPilot.kills + i.pvp.kills
 
                                                 // add to pilots pvp Kills
                                                 currentPilot.pvpKills = currentPilot.pvpKills + i.pvp.kills
@@ -124,7 +124,7 @@
 
 
                                     console.log(currentPilot.favAircraft.frameName);
-                                
+
                                 stats.push(currentPilot)
                                 allPilot_q.resolve();
 
