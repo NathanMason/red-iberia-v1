@@ -5,6 +5,33 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.pilotCard_tabButton {
+    border-radius: 0 !important;
+    cursor: pointer;
+    position: relative;
+    border-left: 1px solid @ui_colors_border_color;
+    border-right: 1px solid @ui_colors_border_color;
+}
+
+.pilotCard_tabButton.active {
+    border-radius: 0 !important;
+    cursor: pointer;
+    position: relative;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+        &:after {
+            content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid #007BFF;
+                position: absolute;
+                bottom: -8px;
+        }
+}
+
 input:focus {
   color: #495057;
 }
