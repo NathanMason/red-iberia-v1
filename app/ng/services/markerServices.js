@@ -17,34 +17,34 @@
                                case 'AJS37':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'AV8BNA':
                                     var data = {
                                           src: 'url("../../img/' + side + 'av8.png")',
-                                          size: '27px'
+                                          size: '18px'
                                     }
                                     cb(data);
                                     break;
 								case 'A-10A':
                                     var data = {
                                           src: 'url("../../img/' + side + 'A10.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'A-10C':
                                     var data = {
                                           src: 'url("../../img/' + side + 'A10.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'A-50':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
+                                          src: 'url("../../img/' + side + 'A50.png")',
                                           size: '27px'
                                     }
                                     cb(data);
@@ -67,7 +67,7 @@
 								case 'B-1B':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
@@ -81,28 +81,28 @@
 								case 'Bf-109K-4':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
 								case 'C-101CC':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'C-101EB':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'C-130':
                                     var data = {
                                           src: 'url("../../img/' + side + 'c130.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
@@ -127,24 +127,31 @@
                                     }
                                     cb(data);
                                     break;
+								case 'F-4E':
+									var data = {
+										  src: 'url("../../img/' + side + 'f4.png")',
+										  size: '23px'
+									}
+									cb(data);
+									break;
 								case 'F-5E-3':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '22px'
+                                          src: 'url("../../img/' + side + 'f5.png")',
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'F-5E':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '22px'
+                                          src: 'url("../../img/' + side + 'f5.png")',
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'F-14A':
                                     var data = {
                                           src: 'url("../../img/' + side + 'f14.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
@@ -157,92 +164,92 @@
                                     break;
 								case 'F-15C':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'f15.png")',
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'F-15E':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'f15.png")',
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'F-16A MLU':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'F-16A':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'F-16C bl.50':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'F-16C_50':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'F-16C bl.52d':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '30px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'FA-18A':
                                     var data = {
                                           src: 'url("../../img/' + side + 'f18.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'FA-18C_hornet':
                                     var data = {
                                           src: 'url("../../img/' + side + 'f18.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'F-86F Saber':
                                     var data = {
                                           src: 'url("../../img/' + side + 'saber.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
                                 case 'FW-190D9':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;    
 								case 'FW-190A8':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
 								case 'Hawk':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
@@ -263,14 +270,14 @@
 								case 'JF-17':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jf17.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
 								case 'I-16':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
@@ -298,139 +305,139 @@
 								case 'L-39C':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'L-39ZA':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'M-2000C':
                                     var data = {
                                           src: 'url("../../img/' + side + 'm2000.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'Mirage 2000-5':
                                     var data = {
                                           src: 'url("../../img/' + side + 'm2000.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-15bis':
                                     var data = {
                                           src: 'url("../../img/' + side + 'saber.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-19P':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-21Bis':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'mig21.png")',
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-23MLD':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-25PD':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-25RBT':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-27K':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-29A':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '24px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-29G':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '24px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-29S':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '24px'
                                     }
                                     cb(data);
                                     break;
 								case 'MiG-31':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '24px'
                                     }
                                     cb(data);
                                     break;
 								case 'RQ-1A Predator':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'P-51D':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
 								case 'P-51D-30-NA':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
 								case 'S-3B':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'S-3B Tanker':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
+                                          src: 'url("../../img/' + side + 's3.png")',
                                           size: '27px'
                                     }
                                     cb(data);
@@ -438,84 +445,84 @@
 								case 'SpitfireLFMkIX':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
 								case 'SpitfireLFMkIXCW':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
-                                          size: '27px'
+                                          size: '17px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-17M4':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-24M':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-24MR':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-25':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-25T':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-25TM':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-27':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'su27.png")',
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-30':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'su27.png")',
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-33':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'su27.png")',
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'Su-34':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'jet.png")',
-                                          size: '27px'
+                                          src: 'url("../../img/' + side + 'su27.png")',
+                                          size: '22px'
                                     }
                                     cb(data);
                                     break;
