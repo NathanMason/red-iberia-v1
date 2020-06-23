@@ -57,7 +57,7 @@ const backupDatabaseName = 'db_backup'; // default: 'db_backup'
 ///////// our constants, these never change unless done by the user
 //////////////////////////////////////////////////////////////////////////
 module.exports = {
-    port: 3001, // our port we listen to dcs on.
+    port: 3009, // our port we listen to dcs on.
     address: "127.0.0.1", // our address
     net: require('net'), // we need net
     webport: 8080, // our webport
