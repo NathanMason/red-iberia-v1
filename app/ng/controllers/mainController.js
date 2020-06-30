@@ -23,15 +23,30 @@
                                   type: 'FeatureCollection',
                                   features: []
                               },
+                              samTargets: {
+                                  type: 'FeatureCollection',
+                                  features: []
+                              },
+                              scudTargets: {
+                                  type: 'FeatureCollection',
+                                  features: []
+                              },
+                              staticTargets: {
+                                  type: 'FeatureCollection',
+                                  features: []
+                              },
                               loadingAwacsData: true,
                               unitMarkers: [],
                               popup: {},
                               airbaseMarkers: [],
+                              staticTargetsMarkers: [],
+                              samTargetsMarkers: [],
+                              scudTargetsMarkers: [],
                               missiondata: [],
                               map: new mapboxgl.Map({
                                     container: 'map',
-                                    center: [56.23,26.57],
-                                    zoom: 5.4,
+                                    center: [56.39,26.67],
+                                    zoom: 7.4,
                                     style: 'mapbox://styles/boozer/ck9c3ojrh06lv1ipcfjqffqiz'
                               })
                       }

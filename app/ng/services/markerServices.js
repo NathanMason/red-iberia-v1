@@ -63,7 +63,7 @@
                                     }
                                     cb(data);
                                     break;
-                              
+
 								case 'B-1B':
                                     var data = {
                                           src: 'url("../../img/' + side + 'jet.png")',
@@ -101,28 +101,28 @@
                                     break;
 								case 'C-130':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'c130.png")',
+                                          src: 'url("../../img/awacs_blue.png")',
                                           size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'C-17A':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'c17.png")',
+                                          src: 'url("../../img/awacs_blue.png")',
                                           size: '27px'
                                     }
                                     cb(data);
                                     break;
 								case 'E-2C':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'e2.png")',
+                                          src: 'url("../../img/awacs_blue.png")',
                                           size: '27px'
                                     }
                                     cb(data);
-                                    break;									
+                                    break;
 								case 'E-3A':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'e3.png")',
+                                          src: 'url("../../img/awacs_blue.png")',
                                           size: '27px'
                                     }
                                     cb(data);
@@ -238,7 +238,7 @@
                                           size: '17px'
                                     }
                                     cb(data);
-                                    break;    
+                                    break;
 								case 'FW-190A8':
                                     var data = {
                                           src: 'url("../../img/' + side + 'prop.png")',
@@ -437,7 +437,7 @@
                                     break;
 								case 'S-3B Tanker':
                                     var data = {
-                                          src: 'url("../../img/' + side + 's3.png")',
+                                          src: 'url("../../img/awacs_blue.png")',
                                           size: '27px'
                                     }
                                     cb(data);
@@ -673,7 +673,7 @@
                                           size: '27px'
                                     }
                                     cb(data);
-                                    break;	
+                                    break;
 								case 'SA342M':
                                     var data = {
                                           src: 'url("../../img/' + side + 'heli.png")',
@@ -726,142 +726,142 @@
                                     // naval
 								case 'Stennis':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          src: 'url("../../img/carrier.png")',
                                           size: '27px'
                                     }
                                     cb(data);
                                     break;
 								case 'CVN_71':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          src: 'url("../../img/carrier.png")',
                                           size: '30px'
                                     }
                                     cb(data);
                                     break;
 								case 'CVN_72':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          src: 'url("../../img/carrier.png")',
                                           size: '30px'
                                     }
                                     cb(data);
                                     break;
 								case 'CVN_73':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          src: 'url("../../img/carrier.png")',
                                           size: '30px'
                                     }
                                     cb(data);
                                     break;
 								case 'CV_1143_5':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          src: 'url("../../img/carrier.png")',
                                           size: '30px'
                                     }
                                     cb(data);
                                     break;
 								case 'USS_Arleigh_Burke_IIa':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '24px'
                                     }
                                     cb(data);
                                     break;
-									
-										
+
+
 							    case 'Higgins_Boat':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '15px'
                                     }
                                     cb(data);
                                     break;
 								case 'LHA_Tarawa':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'tnavy.png")',
+                                          src: 'url("../../img/carrier.png")',
                                           size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'LST_Mk2':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '15px'
                                     }
                                     cb(data);
                                     break;
 								case 'PERRY':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'speedboat':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '10px'
                                     }
                                     cb(data);
                                     break;
 								case 'TICONDEROG':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '23px'
                                     }
                                     cb(data);
                                     break;
 								case 'USS_Samuel_Chase':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '25px'
                                     }
                                     cb(data);
                                     break;
 								case 'VINSON':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'navy.png")',
+                                          src: '',
                                           size: '27px'
                                     }
                                     cb(data);
                                     break;
 								case 'ALBATROS':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'gnavy.png")',
+                                          src: '',
                                           size: '25px'
                                     }
                                     cb(data);
                                     break;
 								case 'Dry-cargo ship-1':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'gnavy.png")',
+                                          src: '',
                                           size: '25px'
                                     }
                                     cb(data);
                                     break;
 								case 'Dry-cargo ship-2':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'gnavy.png")',
+                                          src: '',
                                           size: '25px'
                                     }
                                     cb(data);
                                     break;
 								case 'ELNYA':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'MOSCOW':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '22px'
                                     }
                                     cb(data);
                                     break;
 								case 'KILO':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: '',
                                           size: '20px'
                                     }
                                     cb(data);
@@ -875,42 +875,42 @@
                                     break;
 								case 'NEUSTRASH':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: 'url("../../img/' + side + 'snavyw.png")',
                                           size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'MOLNIYA':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: 'url("../../img/' + side + 'snavyw.png")',
                                           size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'PIOTR':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: 'url("../../img/' + side + 'snavyw.png")',
                                           size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'REZKY':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: 'url("../../img/' + side + 'snavyw.png")',
                                           size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'SOM':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: 'url("../../img/' + side + 'snavyw.png")',
                                           size: '20px'
                                     }
                                     cb(data);
                                     break;
 								case 'ZWEZDNY':
                                     var data = {
-                                          src: 'url("../../img/' + side + 'snavy.png")',
+                                          src: 'url("../../img/' + side + 'snavyw.png")',
                                           size: '20px'
                                     }
                                     cb(data);

@@ -21,3 +21,39 @@
     padding: 10px
 
 }
+
+
+.target {
+  // position: absolute;
+  opacity: 1;
+}
+.target:hover {
+  opacity: 1;
+}
+.target:before, .target:after {
+  // position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 5px;
+  background-color: #333;
+}
+.target:before {
+  transform: rotate(45deg);
+}
+.target:after {
+  transform: rotate(-45deg);
+}
+.redBase, .redBase {
+    background-color: rgba(255,0,0,1) !important
+}
+.blueBase, .blueBase {
+    background-color: rgba(0, 128, 255, 1) !important
+}
+
+
+.staticTarget {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255,0,0,1)
+}

@@ -4,8 +4,8 @@
             var AirbaseMarkerFactory = {};
 
             // sort out what airbases need thier markers updated,  or created
-            AirbaseMarkerFactory.sortAirbaseMarkers = function(e, cb) {
-
+            AirbaseMarkerFactory.sortMarkers = function(e, cb) {
+                console.log(e);
                   var airBases = e.airbases;
                   var misisonData = e.misisondata;
 
@@ -13,14 +13,18 @@
                       type: 'FeatureCollection',
                       features: []
                   };
-
                   var promises = [];
                   angular.forEach(airBases, function(airBase, i) {
 
                         var q = $q.defer();
                         promises.push(q.promise);
-
+                        var iconToUse;
                             if (airBase.coalition == 1 || airBase.coalition == 2) {
+                                if (airBase.coalition == 1) {
+                                    iconToUse = 'url("../../img/airport_red.png")'
+                                } else {
+                                    iconToUse = 'url("../../img/airport_blue.png")'
+                                }
                               var mkrData = {
                                     type: 'Feature',
                                     geometry: {
@@ -28,6 +32,10 @@
                                           coordinates: [airBase.lon, airBase.lat]
                                     },
                                     properties: {
+                                          icon: {
+                                            iconUrl: iconToUse,
+                                            iconSize: '20px'
+                                          },
                                           airbasename: airBase.airbasename,
                                           coalition: airBase.coalition,
                                           pressure: airBase.pressure,
@@ -46,7 +54,7 @@
 
 
                         // now print the airbase markers
-                        AirbaseMarkerFactory.printAirbaseMarkers(function(cb) {
+                        AirbaseMarkerFactory.printMarkers(function(cb) {
                               q.resolve();
                         })
 
@@ -56,11 +64,11 @@
                   })
             }
 
-            AirbaseMarkerFactory.printAirbaseMarkers = function(cb) {
+            AirbaseMarkerFactory.printMarkers = function(cb) {
 
                   // delete all existing marker divs from the map.
                   $rootScope.keyData.airbaseMarkers.forEach((marker) => marker.remove());
-                  $rootScope.keyData.airbaseMarkers = [];
+
 
                   var promises = [];
 
@@ -73,18 +81,16 @@
                         // create a marker for the unit.
                         var mkr = document.createElement('div');
                         angular.element(document.getElementsByTagName('body')).append(mkr);
-                        mkr.className = 'marker ' + airBase.properties.airbasename;
-                        mkr.id = airBase.properties.airbasename + '_mkrID';
-                        mkr.style.width = '50px';
-                        mkr.style.height = '50px';
-                        mkr.style.borderRadius = '100px';
-                        mkr.style.opacity = '0.5';
+                        mkr.id = airBase.properties.airbasename.split(' ').join('') + '_mkrID';
+                        mkr.style.backgroundImage = airBase.properties.icon.iconUrl;
+                        mkr.style.backgroundRepeat = 'no-repeat';
+                        mkr.style.backgroundPosition = 'center center';
+                        mkr.style.width = airBase.properties.icon.iconSize;
+                        mkr.style.backgroundSize = 'contain';
+                        mkr.style.height = airBase.properties.icon.iconSize;
                         mkr.style.cursor = 'pointer';
-                        if (airBase.properties.coalition == 1) {
-                            mkr.style.backgroundColor = 'rgba(255,0,0,0.3)'
-                        } else {
-                            mkr.style.backgroundColor = 'rgba(	0, 128, 255,0.3)'
-                        }
+                        mkr.className = 'marker ' + airBase.properties.airbasename.split(' ').join('');
+
 
                         // add the units/markers click function.
                         mkr.addEventListener('click', function() {
