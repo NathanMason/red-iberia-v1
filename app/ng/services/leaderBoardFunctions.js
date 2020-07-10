@@ -71,7 +71,7 @@
                                             if (i.kills["Ground Units"]) {
 
                                                 // add to pilots total kills
-                                                currentPilot.kills = currentPilot.kills + ( i.kills["Ground Units"].total / 4)
+                                                currentPilot.kills = currentPilot.kills + ( i.kills["Ground Units"].total / 8)
 
                                                 // add to pilots AG kills
                                                 currentPilot.agKills = currentPilot.agKills + i.kills["Ground Units"].total
@@ -85,7 +85,7 @@
 
                                             if (i.pvp.hasOwnProperty('kills')) {
                                                 // add to pilots total kills
-                                                currentPilot.kills = currentPilot.kills + i.pvp.kills
+                                                currentPilot.kills = currentPilot.kills + (i.pvp.kills * 2)
 
                                                 // add to pilots pvp Kills
                                                 currentPilot.pvpKills = currentPilot.pvpKills + i.pvp.kills
@@ -108,15 +108,15 @@
                                         //
                                         if (i.actions.losses.hasOwnProperty('pilotDeath'))
                                         {
-                                          currentPilot.deaths = currentPilot.deaths + i.actions.losses.pilotDeath
+                                          currentPilot.deaths = currentPilot.deaths + (i.actions.losses.pilotDeath /2 )
                                         }
                                         if (i.actions.losses.hasOwnProperty('crash'))
                                         {
-                                          currentPilot.deaths = currentPilot.deaths + i.actions.losses.crash
+                                          currentPilot.deaths = currentPilot.deaths + (i.actions.losses.crash / 2)
                                         }
                                         if (i.actions.losses.hasOwnProperty('eject'))
                                         {
-                                          currentPilot.deaths = currentPilot.deaths + i.actions.losses.eject / 2
+                                          currentPilot.deaths = currentPilot.deaths + (i.actions.losses.eject / 4)
                                         }
                                       }
                                     }
