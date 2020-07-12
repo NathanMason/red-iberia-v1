@@ -42,7 +42,7 @@
                                 }
 
                         }
-
+						var cvalue = 0;
                         // just tests
                         if (pilot.name == "{TGW}BooZer | Agressor") {
                             console.log(pilot);
@@ -60,10 +60,10 @@
                                             if (i.kills.Planes) {
 
                                                 // add to pilots total kills
-                                                currentPilot.kills = currentPilot.kills + i.kills.Planes.total
-
+                                                currentPilot.kills = currentPilot.kills + i.kills.Planes.total;
+												cvalue = cvalue + i.kills.Planes.total;
                                                 // add to pilots AA kills
-                                                currentPilot.aaKills = currentPilot.aaKills + i.kills.Planes.total
+                                                currentPilot.aaKills = currentPilot.aaKills + i.kills.Planes.total;
 
                                             }
 
@@ -71,8 +71,8 @@
                                             if (i.kills["Ground Units"]) {
 
                                                 // add to pilots total kills
-                                                currentPilot.kills = currentPilot.kills + ( i.kills["Ground Units"].total / 8)
-
+                                                currentPilot.kills = currentPilot.kills + ( i.kills["Ground Units"].total)
+												cvalue = cvalue + i.kills["Ground Units"].total / 8;
                                                 // add to pilots AG kills
                                                 currentPilot.agKills = currentPilot.agKills + i.kills["Ground Units"].total
 
@@ -85,8 +85,8 @@
 
                                             if (i.pvp.hasOwnProperty('kills')) {
                                                 // add to pilots total kills
-                                                currentPilot.kills = currentPilot.kills + (i.pvp.kills * 2)
-
+                                                currentPilot.kills = currentPilot.kills + (i.pvp.kills)
+												cvalue = cvalue + (i.pvp.kills * 2)
                                                 // add to pilots pvp Kills
                                                 currentPilot.pvpKills = currentPilot.pvpKills + i.pvp.kills
 
@@ -136,8 +136,8 @@
 
 
                                     // set pilots rank
-                                    currentPilot.ranking = currentPilot.kills - currentPilot.deaths;
-
+                                    //currentPilot.ranking = currentPilot.kills - currentPilot.deaths;
+									currentPilot.ranking = cvalue - currentPilot.deaths;
                                 })
 
 
