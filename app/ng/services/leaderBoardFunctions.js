@@ -77,7 +77,13 @@
                                                 currentPilot.agKills = currentPilot.agKills + i.kills["Ground Units"].total
 
                                             }
+											if (i.kills.Helicopters) {
+												currentPilot.kills = (currentPilot.kills + i.kills.Helicopters.total /4 )
+												cvalue = cvalue + i.kills.Helicopters.total / 4;
+												
+												currentPilot.aaKills = (currentPilot.aaKills + i.kills.Helicopters.total / 4)
 
+											}
                                         }
 
                                     // get PvP stats
