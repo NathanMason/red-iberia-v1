@@ -22,7 +22,7 @@
                         promises.push(q.promise);
 
                         //we do not want ground units
-                        if (unit.category != "Ground" && unit.coalition == 2) {
+                        if (unit.displayname.includes('CVN')) {
 
 
                                 // create unit and add to markers scope.
@@ -33,13 +33,13 @@
                                 }
 
                                 // create unit and add to markers scope.
-                                else if (unit.action == 'U') {
-
-                                      UnitMarkerFactory.unitUpdateMarker(unit, function(cb) {
-
-                                            q.resolve();
-                                      })
-                                }
+                                // else if (unit.action == 'U') {
+                                //
+                                //       UnitMarkerFactory.unitUpdateMarker(unit, function(cb) {
+                                //
+                                //             q.resolve();
+                                //       })
+                                // }
 
                                 // delete units markers.
                                 else if (unit.action == 'D') {
@@ -63,37 +63,7 @@
 
                             AirbaseMarkerFactory.sortMarkers(airBase_data, function(r){
 
-                                var data_structureTargets = {
-                                    tgts: structureTargets,
-                                    missiondata: missiondata
-                                }
-
-                                StaticTargetsMarkerFactory.sortMarkers(data_structureTargets, function(r){
-                                    //
-                                    var data_samTargets = {
-                                        tgts: samTargets,
-                                        missiondata: missiondata
-                                    }
-
-                                    SamMarkersFactory.sortMarkers(data_samTargets, function(r){
-
-                                        var data_scudTargets = {
-                                            tgts: scudTargets,
-                                            missiondata: missiondata
-                                        }
-
-                                        ScudTargetsMarkerFactory.sortMarkers(data_scudTargets, function(r){
-                                            return
-                                        });
-
-
-
-                                    });
-
-
-
-                                });
-
+                                    return
 
                             });
                         });

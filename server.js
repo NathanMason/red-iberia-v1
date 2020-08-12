@@ -9,12 +9,24 @@ var log_stdout = process.stdout;
 var _ = require('lodash');
 const net = require('net')
 var websocket = require('nodejs-websocket');
+
 //////////////////////////////////////////////////////////////////////////
 ///////// SET EXPRESS
 //////////////////////////////////////////////////////////////////////////
 var app = express();
 app.use(cors());
+
+
+//////////////////////////////////////////////////////////////////////////
+///////// TGW Scripts
+//////////////////////////////////////////////////////////////////////////
 const CONFIG = require(path.join(__dirname, '/server/config.js'));
+var config = require('./server/config'); // variables and constants
+var gci = require(path.join(__dirname, '/server/gciData.js'));
+var dataSender = require(path.join(__dirname, '/server/dataSender.js'));
+var dcsSocket = require('./server/dcsSocket.js');
+var clientSockets = require('./server/clientSocket.js');
+
 //////////////////////////////////////////////////////////////////////////
 ///////// SET SOCKET
 //////////////////////////////////////////////////////////////////////////
@@ -34,47 +46,26 @@ app.set('views', __dirname + '/');
 //////////////////////////////////////////////////////////////////////////
 ///////// IMPORT MODULES
 //////////////////////////////////////////////////////////////////////////
-var config = require('./server/config'); // variables and constants
 require('./server/routes.js')(app); //server routes
 require('./server/debuger.js'); //server routes
-var socket = require('./server/socket.js');
 
-
-//////////////////////////////////////////////////////////////////////////
-///////// CLIENT CONNECTIONS
-//////////////////////////////////////////////////////////////////////////
-var server = websocket.createServer(function (conn) {
-
-    let time = new Date();
-    console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' :: <- Client connected');
-    config.wsConnections.push(conn);
-
-    conn.on("close", function (code, reason) {
-        config.wsConnections.splice(config.wsConnections.indexOf(conn), 1);
-        time = new Date();
-        console.log(' :: -> Client disconnected');
-        console.log(' +  '  + reason);
-    });
-
-    conn.on('message', function incoming(data) {
-
-    conn.clients.forEach(function each(client) {
-          console.log(conn.clients);
-        if (client.readyState === WebSocket.OPEN) {
-          client.send(data);
-        }
-      })
-    });
-    conn.on('error', function incoming(error) {
-      console.log('error  ' + error);
-    });
-});
-server.listen(config.serverlisten);
 
 //////////////////////////////////////////////////////////////////////////
 ///////// DCS CONNECTION
 //////////////////////////////////////////////////////////////////////////
-socket(config, _, net)
+dcsSocket(config, _, net)
+
+//////////////////////////////////////////////////////////////////////////
+///////// Client CONNECTION
+//////////////////////////////////////////////////////////////////////////
+clientSockets()
+
+
+//////////////////////////////////////////////////////////////////////////
+///////// Load the function that will send data to each connected client
+//////////////////////////////////////////////////////////////////////////
+dataSender();
+
 
 //////////////////////////////////////////////////////////////////////////
 ///////// LAUNCH THE SERVER

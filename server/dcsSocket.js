@@ -1,12 +1,15 @@
 module.exports = function(config, _, net){
     console.log('socket');
     require('./debuger.js');
+    var DataFactory = require('./dataFactory.js');
     var connOpen = true;
     let buffer;
-
+    var gci = require('./gciData'); // variables and constants
+    var time = new Date();
 
     function connect(dataCallback) {
-        console.log('ATTEMPTING TO connect TO DCS');
+
+        console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' ::  ATTEMPTING TO connect TO DCS');
         var request = _.get(config.serverObject, 'requestArray[0]',"none")+"\r\n";
 
         const client = net.createConnection({host: config.address, port: config.port}, () => {
@@ -16,20 +19,21 @@ module.exports = function(config, _, net){
             buffer = "";
         });
 
+        // our server just connected to DCS
         client.on('connect', function() {
             client.write("INIT"+"\n");
         });
 
+        // we just got data from DCS
         client.on('data', (data) => {
+            console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' ::  received data from DCS to node server');
             buffer += data;
             while ((i = buffer.indexOf("\n")) >= 0) {
-                let data = JSON.parse(buffer.substring(0, i));
-                console.log("got data from DCS sending to clients now");
 
-                for (let connection in config.wsConnections){
-                    console.log("sending to " + config.wsConnections[connection]);
-                    config.wsConnections[connection].send(JSON.stringify(data));
-                }
+                //lets buff the data
+                let data = JSON.parse(buffer.substring(0, i));
+                gci.status = 'ready';
+                DataFactory(data)
 
                 buffer = buffer.substring(i + 1);
 
@@ -37,16 +41,16 @@ module.exports = function(config, _, net){
         });
 
         client.on('close', () => {
-            time = new Date();
-            // rdebug(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' :: Reconnecting....');
-			// ok we need a way to reset the data because DCS expects it to be clean if a connection is lost! so set the SERVER object list to 0 ie clean it out and wait.
-			config.serverObject.length = 0
+
+            console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' ::  connection to DCS closed');
+			// ok we need a way to reset the data because DCS expects it to be clean if a connection is lost! so clear the SERVER object.
+			config.serverObject = {} // never manually change the length of an object, just clear the obj like this {}
             connOpen = true;
         });
 
         client.on('error', (error) => {
-            // rdebug('error!');
             console.log(error);
+            console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' ::  connection to DCS triggered an error');
             connOpen = true;
         });
 
