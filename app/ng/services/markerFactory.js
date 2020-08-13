@@ -5,11 +5,11 @@
             var customPopup;
             // sort out what units need thier markers updated, deleted, or created
             UnitMarkerFactory.sortMarkers = function(e) {
-                console.log(e);
+                $rootScope.keyData.scudTargets.features = [];
+                $rootScope.keyData.scudTargetsMarkers.forEach((marker) => marker.remove());
                   var units = e.units;
                   var airBases = e.airbases;
                   var missiondata = e.missiondata;
-
                   var structureTargets = e.iran;
                   var samTargets = e.sams;
                   var scudTargets = e.scud;
@@ -21,9 +21,6 @@
                         var q = $q.defer();
                         promises.push(q.promise);
 
-                        //we do not want ground units
-                        if (unit.displayname.includes('CVN')) {
-
 
                                 // create unit and add to markers scope.
                                 if (unit.action == 'C') {
@@ -32,41 +29,17 @@
                                       })
                                 }
 
-                                // create unit and add to markers scope.
-                                // else if (unit.action == 'U') {
-                                //
-                                //       UnitMarkerFactory.unitUpdateMarker(unit, function(cb) {
-                                //
-                                //             q.resolve();
-                                //       })
-                                // }
-
                                 // delete units markers.
                                 else if (unit.action == 'D') {
                                       UnitMarkerFactory.unitDeleteMarker(unit, function(cb) {
                                             q.resolve();
                                       })
                                 }
-                        } else {
-                            q.resolve();
-                        }
+
                   })
                   $q.all(promises).then(function() {
 
-                        // print unit markers then update the airbases
-                        UnitMarkerFactory.printUnitMarkers( function(r){
 
-                            var airBase_data = {
-                                airbases: airBases,
-                                missiondata: missiondata
-                            }
-
-                            AirbaseMarkerFactory.sortMarkers(airBase_data, function(r){
-
-                                    return
-
-                            });
-                        });
 
                   })
             }
@@ -198,7 +171,6 @@
 
                             // create a marker for the unit.
                             var mkr = document.createElement('div');
-                            angular.element(document.getElementsByTagName('body')).append(mkr);
 
                             mkr.className = 'marker ' + unit.data.unit.category;
                             mkr.id = unit.properties.uid; // use this as a unique key
@@ -285,6 +257,7 @@
 
                   });
                   $q.all(promises).then(function() {
+                      $rootScope.keyData.humanPilots = [];
                         $rootScope.keyData.loadingAwacsData = false;
                         $rootScope.keyData.humanPilots = newHumanList
                         cb(200)

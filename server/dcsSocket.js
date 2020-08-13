@@ -1,7 +1,7 @@
 module.exports = function(config, _, net){
     console.log('socket');
     require('./debuger.js');
-    var DataFactory = require('./dataFactory.js');
+    var dataFactory = require('./dataFactory.js');
     var connOpen = true;
     let buffer;
     var gci = require('./gciData'); // variables and constants
@@ -33,7 +33,7 @@ module.exports = function(config, _, net){
                 //lets buff the data
                 let data = JSON.parse(buffer.substring(0, i));
                 gci.status = 'ready';
-                DataFactory(data)
+                dataFactory(data)
 
                 buffer = buffer.substring(i + 1);
 

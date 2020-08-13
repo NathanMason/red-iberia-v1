@@ -55,7 +55,7 @@
             ScudMarkersFactory.printMarkers = function(cb) {
 
                   // delete all existing marker divs from the map.
-                  $rootScope.keyData.scudTargetsMarkers.forEach((marker) => marker.remove());
+
 
                   var promises = [];
 

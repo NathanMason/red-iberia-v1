@@ -1,5 +1,5 @@
 (function() {
-  angular.module('redIberia', ['ngRoute'])
+  angular.module('redIberia', ['ngRoute', 'lodash'])
 
     // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     // Routes

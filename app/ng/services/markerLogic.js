@@ -55,6 +55,27 @@
 
             }
 
+            Logic.icon = function(e){
+
+                    switch (e) {
+
+                            case 'sam':
+                                return 'url("../../img/sam_red.png")';
+                            break;
+
+                            case 'scud':
+                                return 'url("../../img/scud.png")';
+                            break;
+                            case 'struc':
+                                return 'url("../../img/iran.png")';
+                            break;
+                            case 'ew':
+                                return 'url("../../img/air.png")';
+                            break;
+                    }
+
+            }
+
             return Logic;
 
       });

@@ -4,27 +4,24 @@
             var AirbaseMarkerFactory = {};
 
             // sort out what airbases need thier markers updated,  or created
-            AirbaseMarkerFactory.sortMarkers = function(e, cb) {
-                console.log(e);
-                  var airBases = e.airbases;
-                  var misisonData = e.misisondata;
-
+            AirbaseMarkerFactory.createMkr = function(e, cb) {
+                    console.log(e);
                   $rootScope.keyData.airbases = {
-                      type: 'FeatureCollection',
-                      features: []
+                        type: 'FeatureCollection',
+                        features: []
                   };
                   var promises = [];
-                  angular.forEach(airBases, function(airBase, i) {
+                  angular.forEach(e, function(airBase, i) {
 
                         var q = $q.defer();
                         promises.push(q.promise);
                         var iconToUse;
-                            if (airBase.coalition == 1 || airBase.coalition == 2) {
-                                if (airBase.coalition == 1) {
+                        if (airBase.coalition == 1 || airBase.coalition == 2) {
+                              if (airBase.coalition == 1) {
                                     iconToUse = 'url("../../img/airport_red.png")'
-                                } else {
+                              } else {
                                     iconToUse = 'url("../../img/airport_blue.png")'
-                                }
+                              }
                               var mkrData = {
                                     type: 'Feature',
                                     geometry: {
@@ -33,8 +30,8 @@
                                     },
                                     properties: {
                                           icon: {
-                                            iconUrl: iconToUse,
-                                            iconSize: '20px'
+                                                iconUrl: iconToUse,
+                                                iconSize: '20px'
                                           },
                                           airbasename: airBase.airbasename,
                                           coalition: airBase.coalition,
@@ -50,7 +47,7 @@
                               }
                               // console.log(mkrData);
                               $rootScope.keyData.airbases.features.push(mkrData)
-                            }
+                        }
 
 
                         // now print the airbase markers
@@ -101,7 +98,7 @@
 
                                     $rootScope.keyData.selectedAirBase = airBase;
 
-                                $(".airBaseData").addClass("showAirBaseBar");
+                                    $(".airBaseData").addClass("showAirBaseBar");
                               }, 100);
                         });
 
