@@ -86,7 +86,7 @@
                                                                       $rootScope.defaultImage = '../../../img/404.png'
                                                                       $rootScope.keyData.popup = new mapboxgl.Popup({ closeOnClick: false} )
                                                                       .setLngLat(mkrData.geometry.coordinates)
-                                                                      .setHTML('<div class="pixel-popup-header"><strong>' + mkrData.data.unit.title + '</strong><p>' + mkrData.data.unit.description + '</p></div>')
+                                                                      .setHTML('<div class="pixel-popup-header"><strong>' + mkrData.data.unit.title + '</strong><p style=" color: #fff">' + mkrData.data.unit.description + '</p></div>')
                                                                       .addTo($rootScope.keyData.map);
 
                                               }, 100);
