@@ -8,7 +8,7 @@
                 $rootScope.keyData.humanPilots = [];
                 _.forEach(e, function(unit) {
 
-                    if (unit.playername != '') {
+                    if (unit.playername != undefined) {
 
                         // if ($rootScope.keyData.humanPilots.some(e => e.playername != unit.playername) == false) {
                             $rootScope.keyData.humanPilots.push({

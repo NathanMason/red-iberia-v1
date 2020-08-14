@@ -8,11 +8,13 @@ module.exports = function(){
         // save the new client connection
         config.wsConnections.push(conn);
         console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' :: New Client Connected');
+        console.log(gci.status);
 
         // send the first package to the client
-        if (gci.status = 'pending') {
+        if (gci.status == 'pending') {
             conn.send(JSON.stringify('pending'));
         } else {
+            console.log('sending');
             conn.send(JSON.stringify(gci.dataCollection));
         }
 

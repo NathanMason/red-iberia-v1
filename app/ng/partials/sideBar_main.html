@@ -76,7 +76,7 @@
           <!-- sidebar-search  -->
           <div ng-show="$route.current.activePage == 'welcome'" class="sidebar-menu" style="overflow-y: auto; max-height: 300px;">
             <ul>
-              <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
+              <li ng-repeat="i in keyData.humanPilots track by $index" ng-if="keyData.humanPilots.length > 0 && i.name != ''">
                   <a class="font13"  ng-class="{'redText': i.coalition == 1, 'blueText': i.coalition == 0 }">
                     {{i.airCraft}} - {{i.name}}
                   </a>
