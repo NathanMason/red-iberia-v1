@@ -67,6 +67,7 @@
                                           $rootScope.loadingAwacsData = false;
                                           $rootScope.keyData.missiondata = data.missiondata; // we need the missiondata to be globally accessable
 
+
                                           if (airbaseLoaded == false) {
                                               AirbaseMarkerFactory.createMkr(data.airbases, function(r){
                                                   airbaseLoaded = true;

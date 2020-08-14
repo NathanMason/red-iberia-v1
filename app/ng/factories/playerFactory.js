@@ -10,15 +10,11 @@
 
                     if (unit.playername != undefined) {
 
-                        // if ($rootScope.keyData.humanPilots.some(e => e.playername != unit.playername) == false) {
                             $rootScope.keyData.humanPilots.push({
                                 name: unit.playername,
                                 airCraft: unit.type,
                                 coalition: unit.coalition
                             })
-                        // }
-
-
 
                     }
 
