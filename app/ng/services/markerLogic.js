@@ -114,7 +114,7 @@
                 var longitude = toDegreesMinutesAndSeconds(lng);
                 var longitudeCardinal = lng >= 0 ? "E" : "W";
 
-                return "(" + latitudeCardinal + ") " + latitude + "\n (" + longitudeCardinal + ")  " + longitude;
+                return "(" + latitudeCardinal + ") " + latitude + "<br> (" + longitudeCardinal + ")  " + longitude;
 
             }
 
