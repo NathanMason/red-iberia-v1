@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("unitLogic", function($rootScope, $timeout) {
+      angular.module("redIberia").service("unitLogic", function($rootScope, $timeout) {
 
             var Logic = {};
 
@@ -70,11 +70,33 @@
                                 return 'url("../../img/iran.png")';
                             break;
                             case 'ew':
-                                return 'url("../../img/air.png")';
+                                return 'url("../../img/airport_red.png")';
                             break;
                     }
 
             }
+
+            Logic.getMisisonType = function(e){
+
+                    switch (e) {
+
+                            case 'sam':
+                                return 'Sead';
+                            break;
+                            case 'scud':
+                                return 'Scud';
+                            break;
+                            case 'struc':
+                                return 'Strike';
+                            break;
+                            case 'ew':
+                                return 'Awacs';
+                            break;
+                    }
+
+            }
+
+
 
             return Logic;
 

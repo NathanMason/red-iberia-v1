@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("MarkerFunctions", function($websocket, $q, $http, $window, $location) {
+      angular.module("redIberia").service("MarkerFunctions", function($websocket, $q, $http, $window, $location) {
 
             return {
                   getMarkerImage: function(i, e, cb) {

@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("markerFilters", function($rootScope) {
+      angular.module("redIberia").service("markerFilters", function($rootScope) {
 
             var MarkerFilter = {};
 
@@ -13,6 +13,7 @@
 
 
             }
+
             // edits a units filter status
             MarkerFilter.setUnitFilter = function(e, val) {
                 $rootScope.keyData.filters[e] = $rootScope.keyData.filters[e]  ? false : true;

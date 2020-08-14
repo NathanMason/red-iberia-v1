@@ -1,12 +1,12 @@
 (function() {
       angular.module("redIberia")
-        .factory("UnitMarkerFactory", [ '$rootScope', 'MarkerFunctions', 'unitLogic', '$q', '$timeout', 'LanguageFactory', function($rootScope, MarkerFunctions, unitLogic, $q, $timeout, LanguageFactory) {
+        .factory("UnitMarkerFactory", [ '$rootScope', 'MarkerFunctions', 'unitLogic', '$q', '$timeout', 'LanguageFactory', 'markerFilters', function($rootScope, MarkerFunctions, unitLogic, $q, $timeout, LanguageFactory, markerFilters) {
 
                 var Data = {};
 
                 Data.createMkr = function(o) {
 
-                            // lets remove any existing markers
+                            // lets reset all exisitng data
                             var promises = []
                             angular.forEach($rootScope.keyData.redMarkers.markerIds, function(i) {
 
@@ -16,6 +16,9 @@
                                 q.resolve();
                             });
 
+                            $rootScope.keyData.redMarkers.unitData = []
+                            $rootScope.keyData.redMarkers.markerIds = []
+
                             // now we can create the updated markers
                             $q.all(promises).then(function() {
                                 $rootScope.keyData.markers = [];
@@ -24,9 +27,9 @@
 
                                         //get the title
                                         unit.title = LanguageFactory.getUnitTitle(unit.type)
-                                        unit.description = LanguageFactory.getUnitDescription(unit.type)
-                                        // set the description
 
+                                        // set the description
+                                        unit.description = LanguageFactory.getUnitDescription(unit.type)
 
                                           // set the markers geo data
                                           var mkrData = {
@@ -55,7 +58,7 @@
                                           var mkr = document.createElement('div');
 
                                           // now style the marker
-                                          mkr.className = 'marker ' + mkrData.properties.uid;
+                                          mkr.className = 'marker ' + mkrData.properties.uid + ' ' + unitLogic.getMisisonType(unit.type);
                                           mkr.id = mkrData.properties.uid; // use this as a unique key
                                           mkr.style.backgroundImage = mkrData.properties.icon.iconUrl;
                                           mkr.style.backgroundRepeat = 'no-repeat';
@@ -64,6 +67,7 @@
                                           mkr.style.backgroundSize = 'contain';
                                           mkr.style.height = mkrData.properties.icon.iconSize;
                                           mkr.style.cursor = 'pointer';
+                                          mkr.style.borderRadius = '50px';
                                           mkr.addEventListener('click', function(evt) {
                                               $rootScope.keyData.map.flyTo({ center: mkrData.geometry.coordinates});
 
@@ -92,8 +96,10 @@
                                               }, 100);
 
                                           });
+
                                           // once styled we append the new div to the html body
                                           angular.element(document.getElementsByTagName('body')).append(mkr);
+
 
                                           var newUnit = new mapboxgl.Marker(mkr, {anchor: 'bottom'})
                                                 .setLngLat(mkrData.geometry.coordinates)
@@ -103,10 +109,10 @@
                                                 $rootScope.keyData.redMarkers.markerIds.push(mkrData.properties.uid)
 
                                 });
+
+                                return
                             })
                 }
-
-                Data.updateMkr = function(o) { }
 
                 return Data;
 

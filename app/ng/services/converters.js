@@ -1,5 +1,5 @@
 (function() {
-      angular.module("redIberia").factory("converterFactory", function($websocket) {
+      angular.module("redIberia").service("converterFactory", function($websocket) {
 
             var Data = {};
 

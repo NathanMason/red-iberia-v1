@@ -18,7 +18,7 @@
 
                   var dataStream = $websocket(wsURL);
 
-                  cb(dataStream)
+                  cb(dataStream) 
 
             }
 

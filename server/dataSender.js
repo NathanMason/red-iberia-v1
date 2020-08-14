@@ -5,16 +5,19 @@ module.exports = function(){
         sendCount = 0;
 
     setInterval(function(){
-        console.log(config.wsConnections.length + ' send cnt ' + sendCount);
-        sendCount++
-        if (sendCount > 5) {
-            sendCount = 0;
+        if (config.connectedToDCS && config.gotDCSdata) {
 
-                for (let connection in config.wsConnections){
-                    console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' :: Sending data to client #' + connection);
-                    config.wsConnections[connection].send(JSON.stringify(gci.dataCollection));
-                }
+            console.log(config.wsConnections.length + ' send cnt ' + sendCount);
+            sendCount++
+            if (sendCount > 5) {
+                sendCount = 0;
 
+                    for (let connection in config.wsConnections){
+                        console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' :: Sending data to client #' + connection);
+                        config.wsConnections[connection].send(JSON.stringify(gci.dataCollection));
+                    }
+
+            }
         }
     },1200); //60000
 

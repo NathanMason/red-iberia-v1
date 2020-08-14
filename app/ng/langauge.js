@@ -9,14 +9,13 @@
                     switch (o) {
 
                             case 'sam':
-                                return 'SEAD';
+                                return 'SEAD Mission';
                             break;
-
                             case 'scud':
                                 return 'Scud Hunting';
                             break;
                             case 'struc':
-                                return 'Strike';
+                                return 'Strategic Strike';
                             break;
                             case 'ew':
                                 return 'Radar Contact';
@@ -29,7 +28,7 @@
 
                     switch (o) {
                             case 'sam':
-                                return 'SEAD';
+                                return 'Reports of enemy SAM system within this vicinity. ';
                             break;
 
                             case 'scud':

@@ -2,30 +2,31 @@
 
       angular.module('redIberia')
 
-            .controller('mainController', ['$scope', '$rootScope', 'SocketFactory', '$timeout', 'UnitMarkerFactory', 'markerFilters', '$route', 'AirbaseMarkerFactory',
-                  function($scope, $rootScope, SocketFactory, $timeout, UnitMarkerFactory, markerFilters, $route, AirbaseMarkerFactory) {
+            .controller('mainController', ['$scope', '$rootScope', 'SocketFactory', '$timeout', 'UnitMarkerFactory', 'markerFilters', '$route', 'AirbaseMarkerFactory', 'PlayerFactory',
+                  function($scope, $rootScope, SocketFactory, $timeout, UnitMarkerFactory, markerFilters, $route, AirbaseMarkerFactory, PlayerFactory) {
 
                         // set scopes
                         $rootScope.$route = $route;
                         mapboxgl.accessToken = 'pk.eyJ1IjoiYm9vemVyIiwiYSI6ImNrOHpidzU3bzA0eGMza29sdTJ6cmdmcXMifQ.iNvCN8OHOmQr95a_OkNLUQ';
                         $rootScope.keyData = {
                               filters: {
-                                    Air: true,
-                                    Ground: true,
-                                    Ship: true
+                                    Sead: true,
+                                    Scud: true,
+                                    Awacs: true,
+                                    Strike: true
                               },
                               humanPilots: [],
                               redMarkers: {
                                   unitData: [],
                                   markerIds: []
-                              }, // storage to hold marker divs that are not airbases or humans
+                              },
                               airbases: {
                                     type: 'FeatureCollection',
                                     features: [],
                                     markers: []
-                              }, // storage for airbase data and markers
+                              },
                               loadingAwacsData: true,
-                              unitMarkers: [], // storage for human data and markers
+                              unitMarkers: [],
                               popup: {},
                               airbaseMarkers: [],
                               missiondata: [],
@@ -49,6 +50,8 @@
 
                         }
 
+                        var airbaseLoaded = false;
+
                         $rootScope.missioninfo = {};
                         $rootScope.gciPending = true;
                         $rootScope.loadingAwacsData = true;
@@ -57,21 +60,25 @@
                               socket.onMessage(function(message) {
                                     var data = JSON.parse(message.data);
                                     var dataStatus = JSON.stringify(data)
-                                    console.log(dataStatus);
+                                    console.log(data);
                                     if (data.missiondata) {
 
                                           $rootScope.gciPending = false;
                                           $rootScope.loadingAwacsData = false;
                                           $rootScope.keyData.missiondata = data.missiondata; // we need the missiondata to be globally accessable
 
-
-                                          AirbaseMarkerFactory.createMkr(data.airbases, function(r){});
+                                          if (airbaseLoaded == false) {
+                                              AirbaseMarkerFactory.createMkr(data.airbases, function(r){
+                                                  airbaseLoaded = true;
+                                              });
+                                          }
+                                          PlayerFactory.sortPlayers(data.units)
                                           UnitMarkerFactory.createMkr(data.ewintel);
                                           UnitMarkerFactory.createMkr(data.iran);
                                           UnitMarkerFactory.createMkr(data.sams);
                                           UnitMarkerFactory.createMkr(data.scud);
 
-
+                                          console.log($rootScope.keyData.humanPilots);
                                     }
                               });
                               socket.onOpen(function(message) {

@@ -3,28 +3,16 @@
 </a>
 <nav id="sidebar" class="sidebar-wrapper">
 
+        <div>
+            <div class="sidebar-content">
 
-        <div class="sidebar-content">
-
-        <!-- logo -->
-          <div class="sidebar-brand pb-5 pt-5">
-            <div id="close-sidebar" style="position: absolute; top: 12px;">✖</div>
-            <img src="../../img/LOGO2.png" alt="" style="width: 70%; margin: 0 auto; z-index: 9">
-          </div>
-
-          <!-- Search  -->
-          <!-- <div class="sidebar-search">
-            <div>
-              <div class="input-group">
-                <input type="text" class="form-control search-menu" placeholder="Search...">
-                <div class="input-group-append">
-                  <span class="input-group-text">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </span>
+                <!-- logo -->
+                <div class="sidebar-brand pb-5 pt-5">
+                    <div id="close-sidebar" style="position: absolute; top: 12px;">✖</div>
+                    <img src="../../img/LOGO2.png" alt="" style="width: 70%; margin: 0 auto; z-index: 9">
                 </div>
-              </div>
+
             </div>
-          </div> -->
 
           <!-- sidebar-search  -->
           <div class="sidebar-menu">
@@ -41,7 +29,6 @@
                      leaderBoard
                   </a>
               </li>
-              <!-- units filter -->
               <li ng-show="$route.current.activePage == 'welcome'" class="sidebar-dropdown">
                 <a href="#">
                   <span>Filter Units</span>
@@ -50,31 +37,34 @@
                   <ul>
                     <li>
                         <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" ng-model="keyData.filters.Air" ng-click="toggleFilter('Air')" id="filter-air-switch">
-                          <label class="custom-control-label" for="filter-air-switch">Air</label>
+                          <input type="checkbox" class="custom-control-input" ng-model="keyData.filters.Sead" ng-click="toggleFilter('Sead')" id="filter-Sead-switch" disabled ng-disbaled>
+                          <label class="custom-control-label" for="filter-Sead-switch">SEAD Missions</label>
                         </div>
                     </li>
                     <li>
                         <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" ng-model="keyData.filters.Ship" ng-click="toggleFilter('Ship')" id="filter-naval-switch">
-                          <label class="custom-control-label" for="filter-naval-switch">Ship</label>
+                          <input type="checkbox" class="custom-control-input" ng-model="keyData.filters.Scud" ng-click="toggleFilter('Scud')" id="filter-Scud-switch" disabled ng-disbaled>
+                          <label class="custom-control-label" for="filter-Scud-switch">Scud Hunting</label>
                         </div>
                     </li>
                     <li>
                         <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" ng-model="keyData.filters.Ground" ng-click="toggleFilter('Ground')"  id="filter-ground-switch">
-                          <label class="custom-control-label" for="filter-ground-switch">Ground</label>
+                          <input type="checkbox" class="custom-control-input" ng-model="keyData.filters.Strike" ng-click="toggleFilter('Strike')"  id="filter-Strike-switch" disabled ng-disbaled>
+                          <label class="custom-control-label" for="filter-Strike-switch">Strike Missions</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" ng-model="keyData.filters.Awacs" ng-click="toggleFilter('Awacs')"  id="filter-Awacs-switch" disabled ng-disbaled>
+                          <label class="custom-control-label" for="filter-Awacs-switch">AWACS Report</label>
                         </div>
                     </li>
                   </ul>
                 </div>
               </li>
-
-
-
-
             </ul>
           </div>
+
           <div ng-show="$route.current.activePage == 'welcome'" class="sidebar-menu"">
               <ul>
                     <li>
@@ -87,10 +77,8 @@
           <div ng-show="$route.current.activePage == 'welcome'" class="sidebar-menu" style="overflow-y: auto; max-height: 300px;">
             <ul>
               <li ng-if="keyData.humanPilots.length > 0" ng-repeat="i in keyData.humanPilots">
-                  <a class="font13"
-                     ng-click="moveToUnit(i)"
-                     ng-href="#">
-                     {{i.data.unit.playername}}
+                  <a class="font13"  ng-class="{'redText': i.coalition == 1, 'blueText': i.coalition == 0 }">
+                    {{i.airCraft}} - {{i.name}}
                   </a>
               </li>
               <li ng-if="keyData.humanPilots.length == 0">
@@ -108,7 +96,7 @@
         <!-- sidebar-content  -->
         <div class="sidebar-footer">
           <a>
-            <small>TGW: Persia Aflame GCI: v1.4.0</small>
+            <small>TGW: Persia Aflame GCI: v1.9.6</small>
           </a>
         </div>
 </nav>

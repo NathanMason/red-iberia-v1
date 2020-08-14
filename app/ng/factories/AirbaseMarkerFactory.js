@@ -18,9 +18,9 @@
                         var iconToUse;
                         if (airBase.coalition == 1 || airBase.coalition == 2) {
                               if (airBase.coalition == 1) {
-                                    iconToUse = 'url("../../img/airport_red.png")'
+                                    iconToUse = 'url("../../img/airport-red.png")'
                               } else {
-                                    iconToUse = 'url("../../img/airport_blue.png")'
+                                    iconToUse = 'url("../../img/airport-blue.png")'
                               }
                               var mkrData = {
                                     type: 'Feature',
@@ -31,7 +31,7 @@
                                     properties: {
                                           icon: {
                                                 iconUrl: iconToUse,
-                                                iconSize: '20px'
+                                                iconSize: '30px'
                                           },
                                           airbasename: airBase.airbasename,
                                           coalition: airBase.coalition,

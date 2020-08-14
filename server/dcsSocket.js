@@ -1,6 +1,7 @@
 module.exports = function(config, _, net){
     console.log('socket');
     require('./debuger.js');
+    var config = require('./config');
     var dataFactory = require('./dataFactory.js');
     var connOpen = true;
     let buffer;
@@ -17,6 +18,7 @@ module.exports = function(config, _, net){
             console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' :: Connected to DCS server!');
             connOpen = false;
             buffer = "";
+            config.connectedToDCS = true;
         });
 
         // our server just connected to DCS
@@ -33,6 +35,7 @@ module.exports = function(config, _, net){
                 //lets buff the data
                 let data = JSON.parse(buffer.substring(0, i));
                 gci.status = 'ready';
+                config.gotDCSdata = true;
                 dataFactory(data)
 
                 buffer = buffer.substring(i + 1);
@@ -41,7 +44,7 @@ module.exports = function(config, _, net){
         });
 
         client.on('close', () => {
-
+            config.connectedToDCS = false;
             console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' ::  connection to DCS closed');
 			// ok we need a way to reset the data because DCS expects it to be clean if a connection is lost! so clear the SERVER object.
 			config.serverObject = {} // never manually change the length of an object, just clear the obj like this {}
@@ -52,6 +55,7 @@ module.exports = function(config, _, net){
             console.log(error);
             console.log(time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds() + ' ::  connection to DCS triggered an error');
             connOpen = true;
+            config.connectedToDCS = false;
         });
 
     }
