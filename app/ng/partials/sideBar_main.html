@@ -20,6 +20,19 @@
           <div class="sidebar-menu">
             <ul>
                 <li>
+                  <a ng-class="{ activeMenuItem: $route.current.activePage == 'welcome' }" ng-href="/">
+                    <span>GCI Map</span>
+                  </a>
+                </li>
+                <li>
+                    <a ng-class="{ activeMenuItem: $route.current.activePage == 'leaderBoard' }"
+                       class=""
+                       ng-href="leaderBoard">
+                       leaderBoard
+                    </a>
+                </li>
+
+                <li>
                   <a ng-href="/" data-toggle="modal" data-target="#welcomeModal">
                     <span>Briefing</span>
                   </a>
@@ -34,18 +47,6 @@
                     <span>GCI Info</span>
                   </a>
                 </li>
-              <li>
-                <a ng-class="{ activeMenuItem: $route.current.activePage == 'welcome' }" ng-href="/">
-                  <span>GCI Map</span>
-                </a>
-              </li>
-              <li>
-                  <a ng-class="{ activeMenuItem: $route.current.activePage == 'leaderBoard' }"
-                     class=""
-                     ng-href="leaderBoard">
-                     leaderBoard
-                  </a>
-              </li>
               <li ng-show="$route.current.activePage == 'welcome'" class="sidebar-dropdown">
                 <a href="#">
                   <span>Filter Units</span>
@@ -99,7 +100,7 @@
             </ul>
           </div>
 
-          <div ng-show="$route.current.activePage == 'welcome'" class="sidebar-menu"">
+          <div ng-show="$route.current.activePage == 'welcome'" class="sidebar-menu">
               <ul>
                     <li>
                         <h3>Active Pilots</h3>
