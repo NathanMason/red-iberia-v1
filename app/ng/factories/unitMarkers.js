@@ -24,7 +24,7 @@
                                 $rootScope.keyData.markers = [];
                                 //now lets create the new unit markers.
                                 _.forEach(o, function(unit, key) {
-
+                                        console.log(unit);
                                         //get the title
                                         unit.title = LanguageFactory.getUnitTitle(unit.type)
 
@@ -36,7 +36,9 @@
                                                 type: 'Feature',
                                                 geometry: {
                                                       type: 'Point',
-                                                      coordinates: [unit.lon, unit.lat]
+                                                      coordinates: [unit.lon, unit.lat],
+                                                      dms: unitLogic.convertToDMS(unit.lon, unit.lat),
+                                                      height: unitLogic.getAlt(unit.alt),
                                                 },
                                                 properties: {
                                                       icon: {
@@ -90,8 +92,15 @@
                                                                       $rootScope.defaultImage = '../../../img/404.png'
                                                                       $rootScope.keyData.popup = new mapboxgl.Popup({ closeOnClick: false} )
                                                                       .setLngLat(mkrData.geometry.coordinates)
-                                                                      .setHTML('<div class="pixel-popup-header"><strong>' + mkrData.data.unit.title + '</strong><p style=" color: #fff">' + mkrData.data.unit.description + '</p></div>')
-                                                                      .addTo($rootScope.keyData.map);
+                                                                      .setHTML('<div class="pixel-popup-header">' +
+                                                                                    '<strong style="border-bottom: 1px solid;padding-bottom: 7px;line-height: 51px;">' + mkrData.data.unit.title + '</strong>' +
+                                                                                    '<p style=" color: #fff">' + mkrData.data.unit.description + '</p>' +
+                                                                                    '<strong style="border-bottom: 1px solid;padding-bottom: 7px;line-height: 51px;">Co-ords  </strong>' +
+                                                                                    '<p style="color: #ffffff">' + mkrData.geometry.dms + '</p> ' +
+                                                                                    '<strong style="border-bottom: 1px solid;padding-bottom: 7px;line-height: 51px;">Altitude  </strong>' +
+                                                                                    '<p style="color: #ffffff">' + mkrData.geometry.height + '</p> ' +
+                                                                                '</div>')
+                                                                        .addTo($rootScope.keyData.map);
 
                                               }, 100);
 
