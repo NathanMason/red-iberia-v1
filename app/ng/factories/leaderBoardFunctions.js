@@ -44,9 +44,7 @@
                         }
 						var cvalue = 0;
                         // just tests
-                        if (pilot.name == "{TGW}BooZer | Agressor") {
-                            console.log(pilot);
-                        }
+
 
                         // make sure the pilot has aircraft stats to loop over
                         if (pilot.times != null) {
@@ -80,7 +78,7 @@
 											if (i.kills.Helicopters) {
 												currentPilot.kills = (currentPilot.kills + i.kills.Helicopters.total /4 )
 												cvalue = cvalue + i.kills.Helicopters.total / 4;
-												
+
 												currentPilot.aaKills = (currentPilot.aaKills + i.kills.Helicopters.total / 4)
 
 											}
@@ -141,6 +139,7 @@
                                     }
 
 
+
                                     // set pilots rank
                                     //currentPilot.ranking = currentPilot.kills - currentPilot.deaths;
 									currentPilot.ranking = cvalue - currentPilot.deaths;
@@ -148,6 +147,17 @@
 
 
                                     console.log(currentPilot.favAircraft.frameName);
+
+                                    if (pilot.name.includes('Sock')) {
+                                        currentPilot.position = 99
+                                        currentPilot.ranking = -2500
+                                        currentPilot.pvpLosses = 369
+                                        currentPilot.aaKills = -69
+                                        currentPilot.callSign = '🖕🖕🖕💩 Sock 💩🖕🖕🖕'
+                                    }
+                                    if (pilot.name.includes('BooZer')) {
+                                        currentPilot.callSign = currentPilot.callSign + '🍺'
+                                    }
 
                                 stats.push(currentPilot)
                                 allPilot_q.resolve();
