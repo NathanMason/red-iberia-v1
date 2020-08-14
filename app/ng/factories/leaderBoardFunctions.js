@@ -2,7 +2,7 @@
       angular.module("redIberia").factory("LeaderBoardFunctions", function($rootScope, $q, converterFactory, $filter) {
 
             var LeaderBoardFunctions = {};
-
+			var minpos = 999;
 
             LeaderBoardFunctions.sortPilotStats = function(obj, cb) {
                     // create the pilot object
@@ -144,17 +144,27 @@
                                     //currentPilot.ranking = currentPilot.kills - currentPilot.deaths;
 									currentPilot.ranking = cvalue - currentPilot.deaths;
                                 })
-
-
-                                    console.log(currentPilot.favAircraft.frameName);
-
-                                    if (pilot.name.includes('Sock')) {
-                                        currentPilot.position = 99
-                                        currentPilot.ranking = -2500
-                                        currentPilot.pvpLosses = 369
-                                        currentPilot.aaKills = -69
-                                        currentPilot.callSign = '🖕🖕🖕💩 Sock 💩🖕🖕🖕'
+									
+									if ((currentPilot.allStats == null) || (currentPilot.favAircraft.flightHours == 0) || (currentPilot.flightHours < 60 ) || (currentPilot.flightHours < 0) || (currentPilot.flightHours == null ) ||(currentPilot.flightHours_converted == "")){
+										currentPilot.position = minpos
+										currentPilot.ranking = -2500
+										minpos = minpos + 1	
+									}
+									
+									if (pilot.name.includes('Mez')) {
+                                        currentPilot.callSign = '🐱' + currentPilot.callSign + '🐱'
                                     }
+									if (pilot.name.includes('mez')) {
+                                        currentPilot.callSign = '🐱' + currentPilot.callSign + '🐱'
+                                    }
+									
+                                    //if (pilot.name.includes('Sock')) {
+                                    //    currentPilot.position = 99
+                                    //    currentPilot.ranking = -2500
+                                    //    currentPilot.pvpLosses = 369
+                                    //    currentPilot.aaKills = -69
+                                    //    currentPilot.callSign = '🖕🖕🖕💩 Sock 💩🖕🖕🖕'
+                                    //}
                                     if (pilot.name.includes('BooZer')) {
                                         currentPilot.callSign = currentPilot.callSign + '🍺'
                                     }
@@ -164,6 +174,11 @@
 
 
                         } else {
+							if ((currentPilot.allStats == null) || (currentPilot.favAircraft.flightHours == 0) || (currentPilot.flightHours < 60 ) || (currentPilot.flightHours < 0) || (currentPilot.flightHours == null ) ||(currentPilot.flightHours_converted == "")){
+										currentPilot.position = minpos
+										currentPilot.ranking = -2500
+										minpos = minpos + 1	
+									}
                             stats.push(currentPilot)
                             allPilot_q.resolve();
                         }
