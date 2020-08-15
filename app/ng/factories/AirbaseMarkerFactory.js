@@ -31,7 +31,7 @@
                                     properties: {
                                           icon: {
                                                 iconUrl: iconToUse,
-                                                iconSize: '30px'
+                                                iconSize: '25px'
                                           },
                                           airbasename: airBase.airbasename,
                                           coalition: airBase.coalition,

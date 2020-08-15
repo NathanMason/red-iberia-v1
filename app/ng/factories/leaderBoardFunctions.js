@@ -144,20 +144,17 @@
                                     //currentPilot.ranking = currentPilot.kills - currentPilot.deaths;
 									currentPilot.ranking = cvalue - currentPilot.deaths;
                                 })
-									
+
 									if ((currentPilot.allStats == null) || (currentPilot.favAircraft.flightHours == 0) || (currentPilot.flightHours < 60 ) || (currentPilot.flightHours < 0) || (currentPilot.flightHours == null ) ||(currentPilot.flightHours_converted == "")){
 										currentPilot.position = minpos
 										currentPilot.ranking = -2500
-										minpos = minpos + 1	
+										minpos = minpos + 1
 									}
-									
-									if (pilot.name.includes('Mez')) {
+
+									if (pilot.name.includes('Mez') || pilot.name.includes('mez')) {
                                         currentPilot.callSign = '🐱' + currentPilot.callSign + '🐱'
                                     }
-									if (pilot.name.includes('mez')) {
-                                        currentPilot.callSign = '🐱' + currentPilot.callSign + '🐱'
-                                    }
-									
+
                                     //if (pilot.name.includes('Sock')) {
                                     //    currentPilot.position = 99
                                     //    currentPilot.ranking = -2500
@@ -177,7 +174,7 @@
 							if ((currentPilot.allStats == null) || (currentPilot.favAircraft.flightHours == 0) || (currentPilot.flightHours < 60 ) || (currentPilot.flightHours < 0) || (currentPilot.flightHours == null ) ||(currentPilot.flightHours_converted == "")){
 										currentPilot.position = minpos
 										currentPilot.ranking = -2500
-										minpos = minpos + 1	
+										minpos = minpos + 1
 									}
                             stats.push(currentPilot)
                             allPilot_q.resolve();
