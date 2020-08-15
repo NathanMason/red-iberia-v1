@@ -4,6 +4,7 @@
 <nav id="sidebar" class="sidebar-wrapper">
 
         <div>
+        <!-- logo -->
             <div class="sidebar-content">
 
                 <!-- logo -->
@@ -14,42 +15,77 @@
 
             </div>
 
-
-
           <!-- sidebar-search  -->
           <div class="sidebar-menu">
             <ul>
-                <li>
-                  <a ng-class="{ activeMenuItem: $route.current.activePage == 'welcome' }" ng-href="/">
-                    <span>GCI Map</span>
+                <li class="sidebar-dropdown">
+                  <a href="#">
+                    <span>Menu</span>
                   </a>
-                </li>
-                <li>
-                    <a ng-class="{ activeMenuItem: $route.current.activePage == 'leaderBoard' }"
-                       class=""
-                       ng-href="leaderBoard">
-                       leaderBoard
-                    </a>
+                  <div class="sidebar-submenu">
+                    <ul>
+                        <li>
+                          <a ng-class="{ activeMenuItem: $route.current.activePage == 'welcome' }" ng-href="/">
+                            <span>GCI Map</span>
+                          </a>
+                        </li>
+                        <li>
+                            <a ng-class="{ activeMenuItem: $route.current.activePage == 'leaderBoard' }"
+                               class=""
+                               ng-href="leaderBoard">
+                               leaderBoard
+                            </a>
+                        </li>
+
+                        <li>
+                          <a ng-href="/" data-toggle="modal" data-target="#welcomeModal">
+                            <span>Briefing</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a ng-href="/" data-toggle="modal" data-target="#commsModal">
+                            <span>Comms Card</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a ng-href="/" data-toggle="modal" data-target="#faqModal">
+                            <span>GCI Info</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a ng-href="https://taskgroupwarrior.info/2020/" target="_blank">
+                            <span>TGW Home</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a ng-href="" data-toggle="modal" data-target="#upcomingModal">
+                            <span>Upcoming Features</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a ng-href="" data-toggle="modal" data-target="#changelogModal">
+                            <span>Changelog</span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a ng-href="https://gitlab.com/overlord-bot/srs-bot/-/wikis/Interaction" target="_blank">
+                            <span>OVERLORD SRS BOT</span>
+                          </a>
+                        </li>
+
+                    </ul>
+                  </div>
                 </li>
 
-                <li>
-                  <a ng-href="/" data-toggle="modal" data-target="#welcomeModal">
-                    <span>Briefing</span>
-                  </a>
-                </li>
-                <li>
-                  <a ng-href="/" data-toggle="modal" data-target="#commsModal">
-                    <span>Comms Card</span>
-                  </a>
-                </li>
-                <li>
-                  <a ng-href="/" data-toggle="modal" data-target="#faqModal">
-                    <span>GCI Info</span>
-                  </a>
-                </li>
+
+
+
+
+
               <li ng-show="$route.current.activePage == 'welcome'" class="sidebar-dropdown">
                 <a href="#">
-                  <span>Filter Units</span>
+                  <span>Filters</span>
                 </a>
                 <div class="sidebar-submenu">
                   <ul>
@@ -80,26 +116,11 @@
                   </ul>
                 </div>
               </li>
-              <li>
-                <a ng-href="https://taskgroupwarrior.info/2020/" target="_blank">
-                  <span>TGW Home</span>
-                </a>
-              </li>
-              <li>
-                <a ng-href="" data-toggle="modal" data-target="#upcomingModal">
-                  <span>Upcoming Features</span>
-                </a>
-              </li>
-              <li>
-                <a ng-href="" data-toggle="modal" data-target="#changelogModal">
-                  <span>Changelog</span>
-                </a>
-              </li>
-
 
             </ul>
           </div>
 
+          <!-- players -->
           <div ng-show="$route.current.activePage == 'welcome'" class="sidebar-menu">
               <ul>
                     <li>
@@ -107,8 +128,6 @@
                     </li>
               </ul>
           </div>
-
-          <!-- sidebar-search  -->
           <div ng-show="$route.current.activePage == 'welcome'" class="sidebar-menu" style="overflow-y: auto; max-height: 300px;">
             <ul>
               <li ng-repeat="i in keyData.humanPilots track by $index" ng-if="keyData.humanPilots.length > 0 && i.name != ''">
@@ -128,10 +147,10 @@
           <!-- sidebar-menu  -->
         </div>
 
-        <!-- sidebar-content  -->
+        <!-- footer  -->
         <div class="sidebar-footer">
           <a>
-            <small>TGW: Persia Aflame GCI: v1.9.6</small>
+            <small>TGW: Persia Aflame GCI: v1.9.7</small>
           </a>
         </div>
 </nav>
