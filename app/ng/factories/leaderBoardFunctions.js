@@ -28,7 +28,9 @@
                                 deaths: 0,
                                 kills: 0,
                                 aaKills: 0,
+								heliKills: 0,
                                 agKills: 0,
+								shipKills: 0,
                                 pvpKills: 0,
                                 pvpLosses: 0,
                                 position: 0,
@@ -43,7 +45,8 @@
 
                         }
 						var cvalue = 0;
-                        // just tests
+                        var dvalue = 0;
+						// just tests
 
 
                         // make sure the pilot has aircraft stats to loop over
@@ -75,11 +78,20 @@
                                                 currentPilot.agKills = currentPilot.agKills + i.kills["Ground Units"].total
 
                                             }
+											 if (i.kills["Ships"]) {
+
+                                                // add to pilots total kills
+                                                currentPilot.kills = currentPilot.kills + ( i.kills["Ships"].total)
+												cvalue = cvalue + (i.kills["Ships"].total * 2);
+                                                // add to pilots AG kills
+                                                currentPilot.shipKills = currentPilot.shipKills + i.kills["Ships"].total
+
+                                            }
 											if (i.kills.Helicopters) {
-												currentPilot.kills = (currentPilot.kills + i.kills.Helicopters.total /4 )
+												currentPilot.kills = (currentPilot.kills + i.kills.Helicopters.total)
 												cvalue = cvalue + i.kills.Helicopters.total / 4;
 
-												currentPilot.aaKills = (currentPilot.aaKills + i.kills.Helicopters.total / 4)
+												currentPilot.heliKills = (currentPilot.heliKills + i.kills.Helicopters.total)
 
 											}
                                         }
@@ -112,15 +124,18 @@
                                         //
                                         if (i.actions.losses.hasOwnProperty('pilotDeath'))
                                         {
-                                          currentPilot.deaths = currentPilot.deaths + (i.actions.losses.pilotDeath /2 )
+                                          currentPilot.deaths = currentPilot.deaths + (i.actions.losses.pilotDeath)
+										  dvalue = dvalue + (i.actions.losses.pilotDeath /2 )
                                         }
                                         if (i.actions.losses.hasOwnProperty('crash'))
                                         {
-                                          currentPilot.deaths = currentPilot.deaths + (i.actions.losses.crash / 2)
+                                          currentPilot.deaths = currentPilot.deaths + (i.actions.losses.crash)
+										  dvalue = dvalue + (i.actions.losses.crash / 2)
                                         }
                                         if (i.actions.losses.hasOwnProperty('eject'))
                                         {
-                                          currentPilot.deaths = currentPilot.deaths + (i.actions.losses.eject / 4)
+                                          currentPilot.deaths = currentPilot.deaths + (i.actions.losses.eject)
+										  dvalue = dvalue + (i.actions.losses.eject / 4)
                                         }
                                       }
                                     }
@@ -142,7 +157,7 @@
 
                                     // set pilots rank
                                     //currentPilot.ranking = currentPilot.kills - currentPilot.deaths;
-									currentPilot.ranking = cvalue - currentPilot.deaths;
+									currentPilot.ranking = cvalue - dvalue;
                                 })
 
 									if ((currentPilot.allStats == null) || (currentPilot.favAircraft.flightHours == 0) || (currentPilot.flightHours < 60 ) || (currentPilot.flightHours < 0) || (currentPilot.flightHours == null ) ||(currentPilot.flightHours_converted == "")){
@@ -154,7 +169,12 @@
 									if (pilot.name.includes('Mez') || pilot.name.includes('mez')) {
                                         currentPilot.callSign = '🐱' + currentPilot.callSign + '🐱'
                                     }
-
+									if (pilot.name.includes('OceanOver') || pilot.name.includes('OceanOver')) {
+                                        currentPilot.callSign = '🦕' + currentPilot.callSign + '🦕'
+                                    }
+									if (pilot.name.includes('Sock') || pilot.name.includes('Sock')) {
+                                        currentPilot.callSign = '🦕🦕' + currentPilot.callSign + '🦕🦕'
+                                    }
                                     //if (pilot.name.includes('Sock')) {
                                     //    currentPilot.position = 99
                                     //    currentPilot.ranking = -2500

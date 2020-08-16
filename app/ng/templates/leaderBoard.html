@@ -23,7 +23,9 @@
                               <th class="sticky text-center" scope="col">Points</th>
                               <th class="sticky">Pilot</th>
                               <th class="sticky text-center">AA Kills</th>
+							  <th class="sticky text-center">Heli Kills</th>
                               <th class="sticky text-center">AG Kills</th>
+							  <th class="sticky text-center">Ship Kills</th>
                               <th class="sticky text-center">PvP Kills</th>
                               <th class="sticky bright text-center">Total Kills</th>
                               <th class="sticky text-center">PvP Deaths</th>
@@ -58,7 +60,9 @@
                                  </a>
                               </td>
                               <td class="text-center">{{pilot.aaKills}}</td>
+							  <td class="text-center">{{pilot.heliKills}}</td>
                               <td class="text-center">{{pilot.agKills}}</td>
+							  <td class="text-center">{{pilot.shipKills}}</td>
                               <td class="text-center">{{pilot.pvpKills}}</td>
                               <td class="text-center bright">{{pilot.kills}}</td>
                               <td class="text-center">{{pilot.pvpLosses}}</td>
@@ -69,7 +73,7 @@
                         </table>
                 </div>
                 <div class="row text-center">
-                    <small class="leaderboard-small" style="margin: 10px auto">Points formula: ( (#AA Kills + (#AG Kills / 8) + #PvP Kills * 2) - ((#Crashes/2) + (#Pilot Deaths/2) + (#ejections/4) + #pvp Deaths) = Points) <br> Be aware Helicopters only count as .5 of a AA Kill.</small>
+                    <small class="leaderboard-small" style="margin: 10px auto">Points formula: ( (#AA Kills + (#AG Kills / 8) + (ship kills * 2) + #PvP Kills * 2) - ((#Crashes/2) + (#Pilot Deaths/2) + (#ejections/4) + #pvp Deaths) = Points) <br> Be aware Helicopters only count as .5 of a AA Kill.</small>
                 </div>
             </div>
         </div>
