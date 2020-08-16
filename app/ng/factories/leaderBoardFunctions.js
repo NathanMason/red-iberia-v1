@@ -73,7 +73,7 @@
 
                                                 // add to pilots total kills
                                                 currentPilot.kills = currentPilot.kills + ( i.kills["Ground Units"].total)
-												cvalue = cvalue + i.kills["Ground Units"].total / 8;
+												cvalue = cvalue + i.kills["Ground Units"].total / 4;
                                                 // add to pilots AG kills
                                                 currentPilot.agKills = currentPilot.agKills + i.kills["Ground Units"].total
 
