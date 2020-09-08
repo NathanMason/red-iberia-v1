@@ -18,18 +18,32 @@
 
                         <table class="table table-dark LeaderBoardItem">
                           <thead>
+							<tr>
+                              <th class="sticky text-center" scope="col"></th>
+                              <th class="sticky text-center" scope="col"></th>
+                              <th class="sticky"></th>
+                              <th class="sticky text-center" colspan =6>Kills</th>
+							  <th class="sticky text-center" colspan =4>Deaths</th>
+                              <th class="sticky text-center" colspan =3>Total Costs of weapons and aircraft<br>in Million's USD</th>
+                              <th class="sticky"></th>
+                            </tr>
                             <tr>
                               <th class="sticky text-center" scope="col">Pos</th>
                               <th class="sticky text-center" scope="col">Points</th>
                               <th class="sticky">Pilot</th>
-                              <th class="sticky text-center">AA Kills</th>
-							  <th class="sticky text-center">Heli Kills</th>
-                              <th class="sticky text-center">AG Kills</th>
-							  <th class="sticky text-center">Ship Kills</th>
-                              <th class="sticky text-center">PvP Kills</th>
-                              <th class="sticky bright text-center">Total Kills</th>
-                              <th class="sticky text-center">PvP Deaths</th>
-                              <th class="sticky bright text-center">Total Deaths</th>
+                              <th class="sticky text-center">AA</th>
+							  <th class="sticky text-center">Heli</th>
+                              <th class="sticky text-center">AG</th>
+							  <th class="sticky text-center">Ship</th>
+                              <th class="sticky text-center">PvP</th>
+                              <th class="sticky bright text-center">Total</th>
+                              <th class="sticky text-center">PvP</th>
+							  <th class="sticky bright text-center">Pilot</th>
+							  <th class="sticky bright text-center">Ejects</th>
+                              <th class="sticky bright text-center">Crashes</th>
+							  <th class="sticky text-center">Wpns Hits</th>
+							  <th class="sticky text-center">Wpn Expended</th>
+							  <th class="sticky text-center">Aircraft & Pilot<br>Losses</th>
                               <th class="sticky">Flight Hrs</th>
                             </tr>
                           </thead>
@@ -67,6 +81,11 @@
                               <td class="text-center bright">{{pilot.kills}}</td>
                               <td class="text-center">{{pilot.pvpLosses}}</td>
                               <td class="text-center bright">{{pilot.deaths}}</td>
+							  <td class="text-center bright">{{pilot.ejects}}</td>
+							  <td class="text-center bright">{{pilot.crashes}}</td>
+							  <td class="text-center bright">{{pilot.spent}}</td>
+							  <td class="text-center bright">{{pilot.wpncost}}</td>
+							  <td class="text-center bright">{{pilot.wasted}}</td>
                               <td>{{pilot.flightHours_converted}}</td>
                             </tr>
                           </tbody>

@@ -2,5 +2,3728 @@
     "token": {
         "0": "token_for_server_0",
         "1": "token_for_server_1"
+    },
+    "server": {
+        "0": {
+            "id": 0,
+            "name": "TGW Dedicated",
+            "token": "token_for_server_0",
+            "stats": {
+                "1": {
+                    "times": {
+                        "F-14B": {
+                            "total": 3300.848,
+                            "inAir": 1524.88,
+                            "weapons": {
+                                "AIM_54A_Mk60": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 4,
+                                    "hit": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 2,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1
+                            }
+                        },
+                        "F-16C_50": {
+                            "total": 19216.606,
+                            "kills": {
+                                "Ground Units": {
+                                    "total": 1,
+                                    "SAM": 1
+                                },
+                                "Planes": {
+                                    "total": 5,
+                                    "Fighters": 2,
+                                    "Support": 1,
+                                    "Attack": 2
+                                }
+                            },
+                            "weapons": {
+                                "M-61": {
+                                    "kills": 1,
+                                    "shot": 82,
+                                    "hit": 0,
+                                    "gun": true,
+                                    "numHits": 18
+                                },
+                                "CBU-97/CBU-105 SFW": {
+                                    "numHits": 1,
+                                    "kills": 1,
+                                    "shot": 10,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 5,
+                                    "kills": 4,
+                                    "shot": 16,
+                                    "hit": 1
+                                }
+                            },
+                            "inAir": 12470.912,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 3,
+                                    "crash": 2,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "kills": 1
+                            }
+                        },
+                        "FA-18C_hornet": {
+                            "kills": {
+                                "Ground Units": {
+                                    "Tanks": 1,
+                                    "total": 1
+                                },
+                                "Planes": {
+                                    "total": 6,
+                                    "Fighters": 5,
+                                    "Attack": 1
+                                }
+                            },
+                            "total": 19784.399,
+                            "weapons": {
+                                "kamikaze": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "numHits": 0
+                                },
+                                "GBU-38": {
+                                    "numHits": 1,
+                                    "kills": 1,
+                                    "shot": 2,
+                                    "hit": 1
+                                },
+                                "AIM-120C": {
+                                    "numHits": 7,
+                                    "kills": 6,
+                                    "shot": 10,
+                                    "hit": 1
+                                }
+                            },
+                            "inAir": 15605.131,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 2,
+                                    "crash": 2,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1,
+                                "kills": 1
+                            }
+                        },
+                        "Ka-50": {
+                            "total": 19673.426,
+                            "weapons": {
+                                "Vikhr M": {
+                                    "numHits": 6,
+                                    "kills": 4,
+                                    "shot": 4,
+                                    "hit": 2
+                                },
+                                "S-8KOM": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 80,
+                                    "hit": 0
+                                },
+                                "2A42": {
+                                    "kills": 1,
+                                    "shot": 81,
+                                    "hit": 0,
+                                    "gun": true,
+                                    "numHits": 3
+                                }
+                            },
+                            "inAir": 12589.866,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 2,
+                                    "crash": 5,
+                                    "eject": 0
+                                }
+                            },
+                            "kills": {
+                                "Ground Units": {
+                                    "AAA": 1,
+                                    "SAM": 4,
+                                    "total": 5
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1592046415,
+                    "lastJoin": 1599228296,
+                    "id": 10,
+                    "names": {
+                        "1": "{TGW} SixtyCal",
+                        "2": "SHOGUN 1-1 | SixtyCal",
+                        "3": "KNIGHT 1-3 | TGW SixtyCal",
+                        "4": "Knight 1-3 | SixtyCal",
+                        "5": "Dodge 2-1 | TGW SixtyCal",
+                        "6": "Knight 1-1 | TGW SixtyCal"
+                    },
+                    "name": "Knight 1-1 | TGW SixtyCal"
+                },
+                "2": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 67782.904,
+                            "kills": {
+                                "Ground Units": {
+                                    "SAM": 12,
+                                    "total": 12
+                                },
+                                "Planes": {
+                                    "Support": 1,
+                                    "total": 9,
+                                    "Bombers": 1,
+                                    "Fighters": 7
+                                }
+                            },
+                            "weapons": {
+                                "AGM-88C": {
+                                    "numHits": 21,
+                                    "kills": 12,
+                                    "shot": 31,
+                                    "hit": 4
+                                },
+                                "M-61": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 50,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 6,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 11,
+                                    "kills": 9,
+                                    "shot": 55,
+                                    "hit": 4
+                                }
+                            },
+                            "inAir": 32386.734,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 12,
+                                    "crash": 16,
+                                    "eject": 4
+                                }
+                            },
+                            "pvp": {
+                                "losses": 2,
+                                "kills": 1
+                            }
+                        }
+                    },
+                    "joinDate": 1598171154,
+                    "lastJoin": 1599390177,
+                    "id": 232,
+                    "names": {
+                        "1": "Casperado"
+                    },
+                    "name": "Casperado"
+                },
+                "3": {
+                    "times": {
+                        "F-15C": {
+                            "inAir": 0,
+                            "total": 700.96
+                        }
+                    },
+                    "joinDate": 1598787264,
+                    "lastJoin": 1598919891,
+                    "id": 72,
+                    "names": {
+                        "1": "Choppa"
+                    },
+                    "name": "Choppa"
+                },
+                "4": {
+                    "times": null,
+                    "joinDate": 1599403238,
+                    "lastJoin": 1599403238,
+                    "id": 88,
+                    "names": {
+                        "1": "SPARKS"
+                    },
+                    "name": "SPARKS"
+                },
+                "5": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 43084.822,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 10,
+                                    "total": 10
+                                }
+                            },
+                            "weapons": {
+                                "AIM-7F": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 11,
+                                    "kills": 9,
+                                    "shot": 45,
+                                    "hit": 4
+                                },
+                                "AIM-120B": {
+                                    "numHits": 1,
+                                    "kills": 0,
+                                    "shot": 10,
+                                    "hit": 0
+                                },
+                                "AIM-7M": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 3,
+                                    "kills": 1,
+                                    "shot": 5,
+                                    "hit": 2
+                                },
+                                "M-61": {
+                                    "kills": 0,
+                                    "shot": 41,
+                                    "hit": 0,
+                                    "gun": true,
+                                    "numHits": 0
+                                }
+                            },
+                            "inAir": 28995.23,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 5,
+                                    "crash": 4,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 2,
+                                "kills": 3
+                            }
+                        }
+                    },
+                    "joinDate": 1594127376,
+                    "lastJoin": 1599222859,
+                    "id": 89,
+                    "names": {
+                        "1": "Vouzang",
+                        "2": "Capt_Crypt"
+                    },
+                    "name": "Capt_Crypt"
+                },
+                "6": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "inAir": 0,
+                            "total": 1977.686
+                        }
+                    },
+                    "joinDate": 1598617834,
+                    "lastJoin": 1598619815,
+                    "id": 53,
+                    "names": {
+                        "1": "redout"
+                    },
+                    "name": "redout"
+                },
+                "7": {
+                    "times": null,
+                    "joinDate": 1599276201,
+                    "lastJoin": 1599313295,
+                    "id": 85,
+                    "names": {
+                        "1": "Airborne"
+                    },
+                    "name": "Airborne"
+                },
+                "8": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "weapons": {
+                                "M-61": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 589,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                }
+                            },
+                            "total": 1250.965,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 680.485
+                        }
+                    },
+                    "joinDate": 1593838695,
+                    "lastJoin": 1599288374,
+                    "id": 112,
+                    "names": {
+                        "1": "Demonjib"
+                    },
+                    "name": "Demonjib"
+                },
+                "9": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 4030.005,
+                            "weapons": {
+                                "AIM-120B": {
+                                    "numHits": 1,
+                                    "kills": 1,
+                                    "shot": 5,
+                                    "hit": 0
+                                },
+                                "M-61": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 90,
+                                    "numHits": 0
+                                },
+                                "AIM-7M": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "numHits": 0
+                                }
+                            },
+                            "inAir": 2697.937,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 2,
+                                    "eject": 1
+                                }
+                            },
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 1,
+                                    "total": 1
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1598617439,
+                    "lastJoin": 1599358510,
+                    "id": 51,
+                    "names": {
+                        "1": "Flying devil"
+                    },
+                    "name": "Flying devil"
+                },
+                "10": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 2103.331,
+                            "weapons": {
+                                "AIM-120C": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 3,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 1582.364,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 1,
+                                    "total": 1
+                                }
+                            },
+                            "pvp": {
+                                "kills": 1
+                            }
+                        }
+                    },
+                    "joinDate": 1598612550,
+                    "lastJoin": 1598614701,
+                    "id": 48,
+                    "names": {
+                        "1": "=TaktLwG 66= Agathos"
+                    },
+                    "name": "=TaktLwG 66= Agathos"
+                },
+                "11": {
+                    "times": {
+                        "UH-1H": {
+                            "total": 4677.666,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 2625.331
+                        },
+                        "F-14B": {
+                            "inAir": 0,
+                            "total": 500.48
+                        }
+                    },
+                    "joinDate": 1598845994,
+                    "lastJoin": 1599201647,
+                    "id": 73,
+                    "names": {
+                        "1": "Danforth"
+                    },
+                    "name": "Danforth"
+                },
+                "12": {
+                    "times": null,
+                    "joinDate": 1598462713,
+                    "lastJoin": 1598462713,
+                    "id": 11,
+                    "names": {
+                        "1": "Fatboy"
+                    },
+                    "name": "Fatboy"
+                },
+                "13": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 1484.696,
+                            "inAir": 822.304,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "weapons": {
+                                "AGM-65E": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "numHits": 0
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1598516303,
+                    "lastJoin": 1598517814,
+                    "id": 35,
+                    "names": {
+                        "1": "Turtle (Trojan 1-1)"
+                    },
+                    "name": "Turtle (Trojan 1-1)"
+                },
+                "14": {
+                    "times": {
+                        "Su-33": {
+                            "total": 1054.162,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "inAir": 742.758
+                        },
+                        "F-16C_50": {
+                            "total": 1152.327,
+                            "inAir": 551.289,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "weapons": {
+                                "AIM-9M": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "numHits": 0
+                                },
+                                "AIM-120B": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 4,
+                                    "numHits": 0
+                                }
+                            }
+                        },
+                        "J-11A": {
+                            "total": 80.186,
+                            "inAir": 0
+                        }
+                    },
+                    "joinDate": 1598513863,
+                    "lastJoin": 1598516237,
+                    "id": 23,
+                    "names": {
+                        "1": "SERG260880"
+                    },
+                    "name": "SERG260880"
+                },
+                "15": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "inAir": 1811.511,
+                            "total": 4875.762,
+                            "weapons": {
+                                "AGM-88C": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 4,
+                                    "numHits": 0
+                                },
+                                "AIM-120C": {
+                                    "hit": 0,
+                                    "kills": 4,
+                                    "shot": 2,
+                                    "numHits": 4
+                                }
+                            },
+                            "kills": {
+                                "Ground Units": {
+                                    "SAM": 2,
+                                    "total": 2
+                                },
+                                "Planes": {
+                                    "Fighters": 2,
+                                    "total": 2
+                                }
+                            }
+                        },
+                        "F-14B": {
+                            "total": 10042.564,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 1,
+                                    "total": 1
+                                }
+                            },
+                            "inAir": 6814.13,
+                            "weapons": {
+                                "AIM_54A_Mk60": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "AIM_54C_Mk47": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                },
+                                "AIM_54A_Mk47": {
+                                    "hit": 1,
+                                    "kills": 1,
+                                    "shot": 1,
+                                    "numHits": 2
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 2,
+                                    "eject": 1
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1
+                            }
+                        }
+                    },
+                    "joinDate": 1598466662,
+                    "lastJoin": 1599270892,
+                    "id": 14,
+                    "names": {
+                        "1": "Renard 1-1 | Ren {TGW}"
+                    },
+                    "name": "Renard 1-1 | Ren {TGW}"
+                },
+                "16": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 1783.324,
+                            "inAir": 1281.624,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 0,
+                                    "eject": 0
+                                }
+                            },
+                            "weapons": {
+                                "AIM-120B": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "numHits": 0
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1598639685,
+                    "lastJoin": 1598641508,
+                    "id": 59,
+                    "names": {
+                        "1": "Shadow"
+                    },
+                    "name": "Shadow"
+                },
+                "17": {
+                    "times": {
+                        "M-2000C": {
+                            "inAir": 1034.468,
+                            "total": 1626.68,
+                            "weapons": {
+                                "DEFA 554": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 246,
+                                    "hit": 0
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1598530348,
+                    "lastJoin": 1598531974,
+                    "id": 43,
+                    "names": {
+                        "1": "sisco"
+                    },
+                    "name": "sisco"
+                },
+                "18": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "inAir": 0,
+                            "total": 20.040999999999
+                        }
+                    },
+                    "joinDate": 1598709040,
+                    "lastJoin": 1598709080,
+                    "id": 64,
+                    "names": {
+                        "1": "Viper"
+                    },
+                    "name": "Viper"
+                },
+                "19": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "inAir": 0,
+                            "total": 470.464
+                        }
+                    },
+                    "joinDate": 1598786601,
+                    "lastJoin": 1598787193,
+                    "id": 71,
+                    "names": {
+                        "1": "Sh0ty"
+                    },
+                    "name": "Sh0ty"
+                },
+                "20": {
+                    "times": null,
+                    "joinDate": 1598619446,
+                    "lastJoin": 1598619446,
+                    "id": 55,
+                    "names": {
+                        "1": "猛龙号"
+                    },
+                    "name": "猛龙号"
+                },
+                "21": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "inAir": 0,
+                            "total": 10.01
+                        }
+                    },
+                    "joinDate": 1598613466,
+                    "lastJoin": 1598613480,
+                    "id": 49,
+                    "names": {
+                        "1": "samvm1"
+                    },
+                    "name": "samvm1"
+                },
+                "22": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "inAir": 640.38,
+                            "total": 1020.652
+                        }
+                    },
+                    "joinDate": 1598868488,
+                    "lastJoin": 1598869784,
+                    "id": 75,
+                    "names": {
+                        "1": "LuckyPhil78"
+                    },
+                    "name": "LuckyPhil78"
+                },
+                "23": {
+                    "times": {
+                        "JF-17": {
+                            "total": 30688.287,
+                            "weapons": {
+                                "BRM-1_90MM": {
+                                    "numHits": 16,
+                                    "kills": 11,
+                                    "shot": 30,
+                                    "hit": 8
+                                },
+                                "CM-802AKG": {
+                                    "numHits": 4,
+                                    "kills": 4,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "GB-6-SFW": {
+                                    "hit": 0,
+                                    "kills": 53,
+                                    "shot": 28,
+                                    "numHits": 74
+                                },
+                                "SD-10": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "GSh-2-23": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 83,
+                                    "numHits": 0
+                                },
+                                "LS-6-500": {
+                                    "numHits": 12,
+                                    "kills": 9,
+                                    "shot": 14,
+                                    "hit": 4
+                                },
+                                "PL-5EII": {
+                                    "hit": 1,
+                                    "kills": 1,
+                                    "shot": 1,
+                                    "numHits": 2
+                                }
+                            },
+                            "inAir": 19102.479,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 6,
+                                    "crash": 6,
+                                    "eject": 1
+                                }
+                            },
+                            "kills": {
+                                "Buildings": {
+                                    "Static": 2,
+                                    "total": 2
+                                },
+                                "Ships": {
+                                    "Warships": 1,
+                                    "total": 1
+                                },
+                                "Ground Units": {
+                                    "AAA": 6,
+                                    "total": 74,
+                                    "EWR": 2,
+                                    "IFVs": 13,
+                                    "Tanks": 2,
+                                    "SAM": 51
+                                },
+                                "Planes": {
+                                    "Support": 1,
+                                    "total": 1
+                                }
+                            }
+                        },
+                        "M-2000C": {
+                            "inAir": 0,
+                            "total": 80.052
+                        },
+                        "A-10A": {
+                            "inAir": 0,
+                            "total": 310.838
+                        },
+                        "F-14B": {
+                            "total": 4849.853,
+                            "weapons": {
+                                "AIM_54A_Mk60": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 11,
+                                    "hit": 1
+                                }
+                            },
+                            "inAir": 2620.93,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 1,
+                                    "total": 1
+                                }
+                            },
+                            "pvp": {
+                                "kills": 1
+                            }
+                        },
+                        "Ka-50": {
+                            "total": 1532.661,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 351.001
+                        },
+                        "F-16C_50": {
+                            "inAir": 1461.524,
+                            "total": 4677.015
+                        },
+                        "UH-1H": {
+                            "inAir": 22798.2,
+                            "weapons": {
+                                "M60": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 11,
+                                    "hit": 0
+                                },
+                                "M134 Minigun": {
+                                    "numHits": 9,
+                                    "kills": 0,
+                                    "shot": 3189,
+                                    "hit": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 9,
+                                    "crash": 11,
+                                    "eject": 0
+                                }
+                            },
+                            "total": 31164.202
+                        },
+                        "AJS37": {
+                            "inAir": 0,
+                            "total": 100.077
+                        }
+                    },
+                    "joinDate": 1592046415,
+                    "lastJoin": 1599376734,
+                    "id": 22,
+                    "names": {
+                        "1": "The Handicap",
+                        "2": "",
+                        "3": "Carol Baskin",
+                        "4": "Joe Exotic",
+                        "5": "Donald J Trump",
+                        "6": "Karen from finance",
+                        "7": "A bus load of orphans",
+                        "8": "Chevallier 1-3 │ Handicap",
+                        "9": "Boozer stop, stop its me",
+                        "10": "Boozer stop, stop its me",
+                        "11": "Huey Lewis",
+                        "12": "Chevallier 1-3 | Handicap",
+                        "13": "Swagalaga dindong",
+                        "14": "Leviticus 18-22 | Handi"
+                    },
+                    "name": "Leviticus 18-22 | Handi"
+                },
+                "24": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 68436.335,
+                            "kills": {
+                                "Ground Units": {
+                                    "SAM": 8,
+                                    "total": 9,
+                                    "EWR": 1
+                                },
+                                "Planes": {
+                                    "Fighters": 6,
+                                    "total": 6
+                                }
+                            },
+                            "weapons": {
+                                "M-61": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 590,
+                                    "hit": 0
+                                },
+                                "AGM-88C": {
+                                    "numHits": 11,
+                                    "kills": 6,
+                                    "shot": 19,
+                                    "hit": 2
+                                },
+                                "AIM-120C": {
+                                    "numHits": 6,
+                                    "kills": 5,
+                                    "shot": 15,
+                                    "hit": 3
+                                },
+                                "Mk-82": {
+                                    "numHits": 5,
+                                    "kills": 3,
+                                    "shot": 18,
+                                    "hit": 0
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "hit": 1,
+                                    "kills": 1,
+                                    "shot": 2,
+                                    "numHits": 1
+                                }
+                            },
+                            "inAir": 40071.412,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 4,
+                                    "crash": 4,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1,
+                                "kills": 1
+                            }
+                        }
+                    },
+                    "joinDate": 1592046169,
+                    "lastJoin": 1599227130,
+                    "id": 5,
+                    "names": {
+                        "1": "TGW OceanOver | Aggressor",
+                        "2": "OceanOver | KNIGHT 1-2",
+                        "3": "KNIGHT 1-2 | OceanOver",
+                        "4": "Dodge 1-4 | OceanOver",
+                        "5": "Dodge 2-4 | OceanOver",
+                        "6": "Knight 1-2 | OceanOver"
+                    },
+                    "name": "Knight 1-2 | OceanOver"
+                },
+                "25": {
+                    "times": {
+                        "MiG-29S": {
+                            "inAir": 30.019,
+                            "total": 1101.585
+                        },
+                        "JF-17": {
+                            "total": 43653.256,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 6,
+                                    "Support": 2,
+                                    "total": 8
+                                },
+                                "Ground Units": {
+                                    "SAM": 36,
+                                    "Unarmored": 3,
+                                    "IFVs": 1,
+                                    "AAA": 2,
+                                    "EWR": 2,
+                                    "Infantry": 5,
+                                    "APCs": 3,
+                                    "total": 55,
+                                    "Tanks": 3
+                                },
+                                "Ships": {
+                                    "Warships": 4,
+                                    "total": 4
+                                }
+                            },
+                            "inAir": 25504.438,
+                            "weapons": {
+                                "C-802AK": {
+                                    "numHits": 6,
+                                    "kills": 3,
+                                    "shot": 34,
+                                    "hit": 3
+                                },
+                                "SD-10": {
+                                    "numHits": 15,
+                                    "kills": 12,
+                                    "shot": 37,
+                                    "hit": 5
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "GSh-2-23": {
+                                    "numHits": 5,
+                                    "kills": 2,
+                                    "shot": 190,
+                                    "hit": 0
+                                },
+                                "LD-10": {
+                                    "hit": 6,
+                                    "kills": 9,
+                                    "shot": 22,
+                                    "numHits": 9
+                                },
+                                "GB-6-SFW": {
+                                    "hit": 0,
+                                    "kills": 18,
+                                    "shot": 16,
+                                    "numHits": 30
+                                },
+                                "LS-6-500": {
+                                    "hit": 5,
+                                    "kills": 20,
+                                    "shot": 38,
+                                    "numHits": 25
+                                },
+                                "PL-5EII": {
+                                    "hit": 3,
+                                    "kills": 3,
+                                    "shot": 10,
+                                    "numHits": 6
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 9,
+                                    "crash": 10,
+                                    "eject": 1
+                                }
+                            },
+                            "pvp": {
+                                "losses": 5,
+                                "kills": 3
+                            }
+                        },
+                        "J-11A": {
+                            "total": 3519.225,
+                            "inAir": 2065.643,
+                            "weapons": {
+                                "R-27ER (AA-10C)": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1
+                            }
+                        },
+                        "A-10C": {
+                            "total": 8075.452,
+                            "inAir": 3627.559,
+                            "weapons": {
+                                "AGM-65D": {
+                                    "hit": 0,
+                                    "kills": 1,
+                                    "shot": 4,
+                                    "numHits": 1
+                                },
+                                "Mk-82": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 16,
+                                    "numHits": 0
+                                },
+                                "GAU-8": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 284,
+                                    "numHits": 0
+                                },
+                                "kamikaze": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "numHits": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 2,
+                                    "eject": 1
+                                }
+                            },
+                            "kills": {
+                                "Ground Units": {
+                                    "IFVs": 1,
+                                    "total": 1
+                                }
+                            }
+                        },
+                        "F-14B": {
+                            "total": 8479.41,
+                            "weapons": {
+                                "AIM_54A_Mk60": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 12,
+                                    "hit": 0
+                                },
+                                "GBU-16": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                },
+                                "M-61A1": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 39,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 4562.707
+                        },
+                        "F-16C_50": {
+                            "inAir": 0,
+                            "total": 730.709
+                        },
+                        "F-15C": {
+                            "total": 2537.015,
+                            "kills": {
+                                "Planes": {
+                                    "total": 2,
+                                    "Fighters": 2
+                                }
+                            },
+                            "weapons": {
+                                "AIM-120C": {
+                                    "hit": 0,
+                                    "kills": 2,
+                                    "shot": 8,
+                                    "numHits": 2
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 2044.714
+                        },
+                        "Ka-50": {
+                            "total": 995.323,
+                            "inAir": 200.185
+                        }
+                    },
+                    "joinDate": 1592398289,
+                    "lastJoin": 1599488135,
+                    "id": 3,
+                    "names": {
+                        "1": "Sock",
+                        "2": "{TGW} Sock",
+                        "3": "Fox 11 | {TGW} Sock",
+                        "4": "Fox 1-1 | {TGW} Sock",
+                        "5": "Fox 1-1 | Sock"
+                    },
+                    "name": "Fox 1-1 | Sock"
+                },
+                "26": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 72704.763,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 9,
+                                    "total": 9
+                                },
+                                "Buildings": {
+                                    "Static": 3,
+                                    "total": 3
+                                },
+                                "Ground Units": {
+                                    "Arty/MLRS": 2,
+                                    "SAM": 23,
+                                    "Unarmored": 10,
+                                    "APCs": 6,
+                                    "AAA": 5,
+                                    "EWR": 1,
+                                    "Tanks": 4,
+                                    "Infantry": 15,
+                                    "total": 66
+                                }
+                            },
+                            "weapons": {
+                                "GBU-38": {
+                                    "numHits": 74,
+                                    "kills": 63,
+                                    "shot": 59,
+                                    "hit": 27
+                                },
+                                "AIM-120C": {
+                                    "numHits": 10,
+                                    "kills": 8,
+                                    "shot": 20,
+                                    "hit": 4
+                                },
+                                "AGM-88C": {
+                                    "numHits": 10,
+                                    "kills": 6,
+                                    "shot": 17,
+                                    "hit": 3
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "hit": 1,
+                                    "kills": 1,
+                                    "shot": 1,
+                                    "numHits": 1
+                                }
+                            },
+                            "inAir": 53339.972,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 8,
+                                    "crash": 9,
+                                    "eject": 1
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1
+                            }
+                        }
+                    },
+                    "joinDate": 1598521086,
+                    "lastJoin": 1599396145,
+                    "id": 38,
+                    "names": {
+                        "1": "Colt 1-3 | Sponge",
+                        "2": "Rex 1-1 | Sponge"
+                    },
+                    "name": "Rex 1-1 | Sponge"
+                },
+                "27": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 3167.055,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 1,
+                                    "Support": 1,
+                                    "total": 2
+                                }
+                            },
+                            "weapons": {
+                                "AIM-9X": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 4,
+                                    "kills": 2,
+                                    "shot": 8,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 2335.893,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1,
+                                "kills": 1
+                            }
+                        }
+                    },
+                    "joinDate": 1598877336,
+                    "lastJoin": 1598880595,
+                    "id": 77,
+                    "names": {
+                        "1": "Mi Nero"
+                    },
+                    "name": "Mi Nero"
+                },
+                "28": {
+                    "times": {
+                        "A-10C": {
+                            "total": 74961.123,
+                            "weapons": {
+                                "AIM-9M": {
+                                    "numHits": 4,
+                                    "kills": 2,
+                                    "shot": 5,
+                                    "hit": 2
+                                },
+                                "CBU-97/CBU-105 SFW": {
+                                    "numHits": 5,
+                                    "kills": 2,
+                                    "shot": 9,
+                                    "hit": 0
+                                },
+                                "GBU-38": {
+                                    "hit": 6,
+                                    "kills": 19,
+                                    "shot": 38,
+                                    "numHits": 27
+                                },
+                                "AGM-65H": {
+                                    "numHits": 6,
+                                    "kills": 2,
+                                    "shot": 8,
+                                    "hit": 0
+                                },
+                                "AGM-65D": {
+                                    "hit": 9,
+                                    "kills": 29,
+                                    "shot": 58,
+                                    "numHits": 80
+                                },
+                                "HYDRA-70 MK5": {
+                                    "numHits": 1,
+                                    "kills": 0,
+                                    "shot": 42,
+                                    "hit": 1
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "GAU-8": {
+                                    "numHits": 5,
+                                    "kills": 2,
+                                    "shot": 802,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 53201.462,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 4,
+                                    "eject": 4
+                                }
+                            },
+                            "kills": {
+                                "Ground Units": {
+                                    "Arty/MLRS": 10,
+                                    "Infantry": 2,
+                                    "Unarmored": 1,
+                                    "APCs": 6,
+                                    "AAA": 9,
+                                    "IFVs": 6,
+                                    "total": 54,
+                                    "Tanks": 7,
+                                    "SAM": 13
+                                },
+                                "Planes": {
+                                    "total": 2,
+                                    "Fighters": 2
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1598514099,
+                    "lastJoin": 1599555781,
+                    "id": 29,
+                    "names": {
+                        "1": "Myoclonic Jerk"
+                    },
+                    "name": "Myoclonic Jerk"
+                },
+                "29": {
+                    "times": {
+                        "M-2000C": {
+                            "total": 3054.448,
+                            "inAir": 2433.932
+                        }
+                    },
+                    "joinDate": 1598853995,
+                    "lastJoin": 1599485811,
+                    "id": 74,
+                    "names": {
+                        "1": "Ekko"
+                    },
+                    "name": "Ekko"
+                },
+                "30": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "kills": {
+                                "Ground Units": {
+                                    "AAA": 1,
+                                    "total": 6,
+                                    "Unarmored": 1,
+                                    "SAM": 3,
+                                    "Arty/MLRS": 1
+                                },
+                                "Planes": {
+                                    "Fighters": 2,
+                                    "total": 2
+                                }
+                            },
+                            "total": 18892.287,
+                            "weapons": {
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "AGM-88C": {
+                                    "numHits": 3,
+                                    "kills": 3,
+                                    "shot": 5,
+                                    "hit": 0
+                                },
+                                "GBU-38": {
+                                    "numHits": 5,
+                                    "kills": 3,
+                                    "shot": 7,
+                                    "hit": 3
+                                },
+                                "AIM-120C": {
+                                    "numHits": 2,
+                                    "kills": 2,
+                                    "shot": 6,
+                                    "hit": 2
+                                }
+                            },
+                            "inAir": 14002.653,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 2,
+                                    "crash": 2,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1
+                            }
+                        }
+                    },
+                    "joinDate": 1598522899,
+                    "lastJoin": 1599301913,
+                    "id": 39,
+                    "names": {
+                        "1": "Rex 1-3 | Oxygen53"
+                    },
+                    "name": "Rex 1-3 | Oxygen53"
+                },
+                "31": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "kills": {
+                                "Ground Units": {
+                                    "AAA": 3,
+                                    "total": 88,
+                                    "Unarmored": 9,
+                                    "APCs": 1,
+                                    "Infantry": 1,
+                                    "SAM": 69,
+                                    "Arty/MLRS": 5
+                                },
+                                "Planes": {
+                                    "Fighters": 7,
+                                    "total": 7
+                                }
+                            },
+                            "total": 50332.356,
+                            "inAir": 35756.477,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 3,
+                                    "crash": 3,
+                                    "eject": 0
+                                }
+                            },
+                            "weapons": {
+                                "M-61": {
+                                    "numHits": 58,
+                                    "kills": 1,
+                                    "shot": 739,
+                                    "hit": 0
+                                },
+                                "GBU-38": {
+                                    "numHits": 87,
+                                    "kills": 82,
+                                    "shot": 92,
+                                    "hit": 32
+                                },
+                                "AIM-120C": {
+                                    "numHits": 9,
+                                    "kills": 9,
+                                    "shot": 16,
+                                    "hit": 1
+                                },
+                                "AGM-154C": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 8,
+                                    "hit": 0
+                                },
+                                "kamikaze": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "numHits": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 4,
+                                    "kills": 1,
+                                    "shot": 3,
+                                    "hit": 2
+                                },
+                                "AGM-88C": {
+                                    "numHits": 3,
+                                    "kills": 2,
+                                    "shot": 10,
+                                    "hit": 0
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1592476508,
+                    "lastJoin": 1599488794,
+                    "id": 12,
+                    "names": {
+                        "1": "Dodge 2-5 | {TGW} Py",
+                        "2": "{TGW} Py",
+                        "3": "Steak 1-1 | Py"
+                    },
+                    "name": "Steak 1-1 | Py"
+                },
+                "32": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 4742.254,
+                            "inAir": 2055.724,
+                            "weapons": {
+                                "AIM-120C": {
+                                    "hit": 1,
+                                    "kills": 1,
+                                    "shot": 2,
+                                    "numHits": 1
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 2,
+                                    "crash": 2,
+                                    "eject": 0
+                                }
+                            },
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 1,
+                                    "total": 1
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1597569425,
+                    "lastJoin": 1598853898,
+                    "id": 153,
+                    "names": {
+                        "1": "Lone Star 147 \"SEIVAD\"",
+                        "2": "Panther 422 \"SEIVAD\"",
+                        "3": "BOAR 1-1 \"SEIVAD\"",
+                        "4": "PANTHER 1-1 \"SEIVAD\""
+                    },
+                    "name": "PANTHER 1-1 \"SEIVAD\""
+                },
+                "33": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 1974.154,
+                            "weapons": {
+                                "AIM-120C": {
+                                    "hit": 2,
+                                    "kills": 2,
+                                    "shot": 5,
+                                    "numHits": 3
+                                }
+                            },
+                            "inAir": 1332.335,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 2,
+                                    "total": 2
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1598688264,
+                    "lastJoin": 1598690302,
+                    "id": 62,
+                    "names": {
+                        "1": "Alston2003"
+                    },
+                    "name": "Alston2003"
+                },
+                "34": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "kills": {
+                                "Ground Units": {
+                                    "Arty/MLRS": 4,
+                                    "SAM": 46,
+                                    "Unarmored": 2,
+                                    "Infantry": 1,
+                                    "APCs": 1,
+                                    "AAA": 8,
+                                    "total": 70,
+                                    "Tanks": 8
+                                },
+                                "Planes": {
+                                    "total": 22,
+                                    "Fighters": 22
+                                }
+                            },
+                            "inAir": 77413.763,
+                            "weapons": {
+                                "M-61": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 9,
+                                    "hit": 0
+                                },
+                                "AGM-88C": {
+                                    "numHits": 47,
+                                    "kills": 34,
+                                    "shot": 66,
+                                    "hit": 10
+                                },
+                                "AGM-84E SLAM": {
+                                    "numHits": 1,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "AGM-154C": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 12,
+                                    "kills": 6,
+                                    "shot": 12,
+                                    "hit": 7
+                                },
+                                "GBU-16": {
+                                    "numHits": 1,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 24,
+                                    "kills": 16,
+                                    "shot": 51,
+                                    "hit": 4
+                                },
+                                "GBU-12": {
+                                    "hit": 8,
+                                    "kills": 18,
+                                    "shot": 33,
+                                    "numHits": 20
+                                },
+                                "GBU-38": {
+                                    "numHits": 23,
+                                    "kills": 18,
+                                    "shot": 36,
+                                    "hit": 11
+                                },
+                                "kamikaze": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "numHits": 0
+                                },
+                                "AGM-62 Walleye II": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 4,
+                                    "numHits": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 4,
+                                    "crash": 5,
+                                    "eject": 0
+                                }
+                            },
+                            "total": 123834.39
+                        }
+                    },
+                    "joinDate": 1594723181,
+                    "lastJoin": 1599547981,
+                    "id": 42,
+                    "names": {
+                        "1": "AngryPirate",
+                        "2": "Dodge 2-6 | AngryPirate",
+                        "3": "Angry 1-1 | AngryPirate"
+                    },
+                    "name": "Angry 1-1 | AngryPirate"
+                },
+                "35": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "inAir": 0,
+                            "total": 101.053
+                        }
+                    },
+                    "joinDate": 1598619309,
+                    "lastJoin": 1598619425,
+                    "id": 54,
+                    "names": {
+                        "1": "皇姑彭于晏"
+                    },
+                    "name": "皇姑彭于晏"
+                },
+                "36": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 9131.768,
+                            "kills": {
+                                "Planes": {
+                                    "Bombers": 1,
+                                    "total": 1
+                                }
+                            },
+                            "inAir": 6152.219,
+                            "weapons": {
+                                "AIM-9M": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 4,
+                                    "hit": 1
+                                },
+                                "AIM-120C": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 6,
+                                    "numHits": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 4,
+                                    "crash": 3,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 2
+                            }
+                        }
+                    },
+                    "joinDate": 1598509598,
+                    "lastJoin": 1598537183,
+                    "id": 19,
+                    "names": {
+                        "1": "DartMerchant"
+                    },
+                    "name": "DartMerchant"
+                },
+                "37": {
+                    "id": 1,
+                    "times": null,
+                    "joinDate": 1598453099,
+                    "names": {
+                        "1": "host"
+                    },
+                    "name": "host"
+                },
+                "38": {
+                    "times": {
+                        "Ka-50": {
+                            "inAir": 4724.928,
+                            "total": 7656.731
+                        },
+                        "AV8BNA": {
+                            "total": 8035.535,
+                            "kills": {
+                                "Ground Units": {
+                                    "AAA": 2,
+                                    "total": 3,
+                                    "APCs": 1
+                                }
+                            },
+                            "weapons": {
+                                "GBU-12": {
+                                    "hit": 1,
+                                    "kills": 2,
+                                    "shot": 4,
+                                    "numHits": 2
+                                },
+                                "AGM-65G": {
+                                    "hit": 0,
+                                    "kills": 1,
+                                    "shot": 1,
+                                    "numHits": 1
+                                },
+                                "GAU_12": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 7,
+                                    "numHits": 0
+                                },
+                                "AIM-9M": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "numHits": 0
+                                }
+                            },
+                            "inAir": 4608.839
+                        },
+                        "FA-18C_hornet": {
+                            "inAir": 7513.967,
+                            "weapons": {
+                                "AGM-88C": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 4,
+                                    "hit": 0
+                                },
+                                "AGM-154C": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                },
+                                "AGM-154A": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "total": 10147.098
+                        }
+                    },
+                    "joinDate": 1591709192,
+                    "lastJoin": 1599488836,
+                    "id": 2,
+                    "names": {
+                        "1": "Grunty",
+                        "2": "[TGW] Grunty",
+                        "3": "SWORD 2-1 | [TGW] Grunty",
+                        "4": "DODGE 4-3 | Grunty",
+                        "5": "DODGE 4-3 | [TGW] Grunty",
+                        "6": "DEMON 1-3 | Grunty",
+                        "7": "Warrior 1-3 | Grunty",
+                        "8": "Fox 1-3 | Grunty",
+                        "9": "Gecko 1-2 | Grunty",
+                        "10": "Rooster 2-3 | Grunty",
+                        "11": "Dodge 2-3 | Grunty",
+                        "12": "Grunty | Sword 1-1",
+                        "13": "Colt 2-1 |Grunty"
+                    },
+                    "name": "Colt 2-1 |Grunty"
+                },
+                "39": {
+                    "times": {
+                        "Su-25T": {
+                            "total": 872.113,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "inAir": 461.612
+                        },
+                        "F-14B": {
+                            "inAir": 1552.144,
+                            "total": 3494.972
+                        }
+                    },
+                    "joinDate": 1598704937,
+                    "lastJoin": 1598838367,
+                    "id": 63,
+                    "names": {
+                        "1": "John GUZZI"
+                    },
+                    "name": "John GUZZI"
+                },
+                "40": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 13445.599,
+                            "inAir": 8659.934,
+                            "weapons": {
+                                "AIM-9X": {
+                                    "numHits": 1,
+                                    "kills": 1,
+                                    "shot": 2,
+                                    "hit": 1
+                                },
+                                "AIM-120C": {
+                                    "numHits": 3,
+                                    "kills": 2,
+                                    "shot": 12,
+                                    "hit": 1
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 2,
+                                    "eject": 1
+                                }
+                            },
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 3,
+                                    "total": 3
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1596453103,
+                    "lastJoin": 1599460755,
+                    "id": 40,
+                    "names": {
+                        "1": "Side__show",
+                        "2": "Side__show | Crow 1-2",
+                        "3": "Side__show | Crow 1-2"
+                    },
+                    "name": "Side__show | Crow 1-2"
+                },
+                "41": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 38875.81,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 11,
+                                    "total": 11
+                                },
+                                "Helicopters": {
+                                    "Attack": 2,
+                                    "total": 2
+                                },
+                                "Ground Units": {
+                                    "total": 4,
+                                    "SAM": 4
+                                }
+                            },
+                            "weapons": {
+                                "M-61": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 83,
+                                    "numHits": 0
+                                },
+                                "AGM-88C": {
+                                    "numHits": 11,
+                                    "kills": 4,
+                                    "shot": 19,
+                                    "hit": 1
+                                },
+                                "AIM-120C": {
+                                    "numHits": 9,
+                                    "kills": 8,
+                                    "shot": 23,
+                                    "hit": 2
+                                },
+                                "AIM-120B": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 3,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 8,
+                                    "kills": 5,
+                                    "shot": 5,
+                                    "hit": 5
+                                },
+                                "AGM-154C": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 4,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 27909.779,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 8,
+                                    "crash": 9,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1,
+                                "kills": 1
+                            }
+                        },
+                        "Ka-50": {
+                            "total": 3172.965,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 1401.127
+                        }
+                    },
+                    "joinDate": 1591964588,
+                    "lastJoin": 1599485423,
+                    "id": 9,
+                    "names": {
+                        "1": "blackwoodriver",
+                        "2": "bager 1-1 blackwoodriver",
+                        "3": "Sword 2-2 blackwoodriver",
+                        "4": "Badger 1-1 blackwoodriver",
+                        "5": "Badger 1-1 blackwoodriver",
+                        "6": "badger 1-1 blackwoodrive",
+                        "7": "badger 1-1 blackwoodriver"
+                    },
+                    "name": "badger 1-1 blackwoodriver"
+                },
+                "42": {
+                    "times": null,
+                    "joinDate": 1598606407,
+                    "lastJoin": 1598606407,
+                    "id": 47,
+                    "names": {
+                        "1": "{MLC}Slick"
+                    },
+                    "name": "{MLC}Slick"
+                },
+                "43": {
+                    "times": {
+                        "A-10C": {
+                            "total": 33695.092,
+                            "weapons": {
+                                "AIM-9M": {
+                                    "hit": 1,
+                                    "kills": 2,
+                                    "shot": 3,
+                                    "numHits": 3
+                                },
+                                "CBU-97/CBU-105 SFW": {
+                                    "hit": 0,
+                                    "kills": 4,
+                                    "shot": 6,
+                                    "numHits": 10
+                                },
+                                "AGM-65H": {
+                                    "numHits": 3,
+                                    "kills": 3,
+                                    "shot": 15,
+                                    "hit": 2
+                                },
+                                "GAU-8": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 146,
+                                    "hit": 0
+                                },
+                                "Mk-82AIR": {
+                                    "numHits": 4,
+                                    "kills": 1,
+                                    "shot": 3,
+                                    "hit": 1
+                                },
+                                "AGM-65D": {
+                                    "numHits": 11,
+                                    "kills": 5,
+                                    "shot": 11,
+                                    "hit": 2
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "GBU-38": {
+                                    "hit": 1,
+                                    "kills": 3,
+                                    "shot": 16,
+                                    "numHits": 3
+                                }
+                            },
+                            "inAir": 23017.362,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 6,
+                                    "eject": 5
+                                }
+                            },
+                            "kills": {
+                                "Ground Units": {
+                                    "Arty/MLRS": 4,
+                                    "total": 16,
+                                    "Unarmored": 1,
+                                    "IFVs": 5,
+                                    "APCs": 1,
+                                    "Tanks": 4,
+                                    "AAA": 1
+                                },
+                                "Planes": {
+                                    "Fighters": 2,
+                                    "total": 2
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1598161217,
+                    "lastJoin": 1599469134,
+                    "id": 34,
+                    "names": {
+                        "1": "Spadman"
+                    },
+                    "name": "Spadman"
+                },
+                "44": {
+                    "times": {
+                        "J-11A": {
+                            "inAir": 0,
+                            "total": 271.513
+                        },
+                        "Su-33": {
+                            "inAir": 1156.15,
+                            "total": 5018.325
+                        }
+                    },
+                    "joinDate": 1598531719,
+                    "lastJoin": 1598537121,
+                    "id": 45,
+                    "names": {
+                        "1": "Hunter 1-3 | Гекий"
+                    },
+                    "name": "Hunter 1-3 | Гекий"
+                },
+                "45": {
+                    "times": null,
+                    "joinDate": 1598172895,
+                    "lastJoin": 1599222702,
+                    "id": 234,
+                    "names": {
+                        "1": "Hammer"
+                    },
+                    "name": "Hammer"
+                },
+                "46": {
+                    "times": {
+                        "F-14B RIO": {
+                            "total": 12398.015,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 6,
+                                    "Support": 1,
+                                    "total": 7
+                                }
+                            },
+                            "inAir": 8831.653,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "weapons": {
+                                "AIM_54C_Mk47": {
+                                    "hit": 2,
+                                    "kills": 2,
+                                    "shot": 6,
+                                    "numHits": 3
+                                },
+                                "M-61A1": {
+                                    "numHits": 33,
+                                    "kills": 1,
+                                    "shot": 261,
+                                    "hit": 0
+                                },
+                                "AIM-9M": {
+                                    "hit": 1,
+                                    "kills": 1,
+                                    "shot": 2,
+                                    "numHits": 1
+                                },
+                                "AIM_54A_Mk60": {
+                                    "numHits": 5,
+                                    "kills": 3,
+                                    "shot": 8,
+                                    "hit": 2
+                                },
+                                "GBU-16": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                }
+                            }
+                        },
+                        "FA-18C_hornet": {
+                            "kills": {
+                                "Ground Units": {
+                                    "AAA": 1,
+                                    "total": 7,
+                                    "Arty/MLRS": 1,
+                                    "SAM": 5
+                                },
+                                "Planes": {
+                                    "total": 6,
+                                    "Fighters": 6
+                                }
+                            },
+                            "weapons": {
+                                "M-61": {
+                                    "numHits": 85,
+                                    "kills": 2,
+                                    "shot": 397,
+                                    "hit": 0
+                                },
+                                "GBU-38": {
+                                    "numHits": 6,
+                                    "kills": 6,
+                                    "shot": 8,
+                                    "hit": 2
+                                },
+                                "AIM-120C": {
+                                    "numHits": 5,
+                                    "kills": 4,
+                                    "shot": 9,
+                                    "hit": 2
+                                },
+                                "AIM-9X": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 3,
+                                    "hit": 2
+                                },
+                                "AGM-84E SLAM": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 3,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 14766.215,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "total": 18671.591
+                        },
+                        "A-10C": {
+                            "total": 3215.951,
+                            "kills": {
+                                "Ground Units": {
+                                    "AAA": 1,
+                                    "total": 2,
+                                    "SAM": 1
+                                }
+                            },
+                            "weapons": {
+                                "AGM-65D": {
+                                    "hit": 0,
+                                    "kills": 2,
+                                    "shot": 2,
+                                    "numHits": 2
+                                },
+                                "GAU-8": {
+                                    "kills": 0,
+                                    "shot": 14,
+                                    "hit": 0,
+                                    "gun": true,
+                                    "numHits": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "inAir": 1271.447
+                        },
+                        "Ka-50": {
+                            "total": 13962.299,
+                            "inAir": 9464.645,
+                            "weapons": {
+                                "Vikhr M": {
+                                    "numHits": 2,
+                                    "kills": 2,
+                                    "shot": 6,
+                                    "hit": 2
+                                },
+                                "S-8KOM": {
+                                    "numHits": 1,
+                                    "kills": 1,
+                                    "shot": 80,
+                                    "hit": 1
+                                },
+                                "2A42": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 279,
+                                    "hit": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 2,
+                                    "eject": 0
+                                }
+                            },
+                            "kills": {
+                                "Ground Units": {
+                                    "AAA": 1,
+                                    "SAM": 3,
+                                    "total": 4
+                                }
+                            }
+                        },
+                        "F-16C_50": {
+                            "total": 12603.65,
+                            "kills": {
+                                "Planes": {
+                                    "total": 3,
+                                    "Fighters": 2,
+                                    "Attack": 1
+                                }
+                            },
+                            "inAir": 7793.054,
+                            "weapons": {
+                                "CBU-97/CBU-105 SFW": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 3,
+                                    "hit": 0
+                                },
+                                "M-61": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 70,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 3,
+                                    "kills": 3,
+                                    "shot": 8,
+                                    "hit": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 4,
+                                    "crash": 4,
+                                    "eject": 1
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1
+                            }
+                        },
+                        "UH-1H": {
+                            "inAir": 0,
+                            "total": 891.392
+                        }
+                    },
+                    "joinDate": 1595673714,
+                    "lastJoin": 1599487192,
+                    "id": 6,
+                    "names": {
+                        "1": "Warrior 11 | {TGW} Rob G",
+                        "2": "Samurai 13 | {TGW} Rob G",
+                        "3": "Warrior 1-1 | {TGW} Rob G"
+                    },
+                    "name": "Warrior 11 | {TGW} Rob G"
+                },
+                "47": {
+                    "times": {
+                        "JF-17": {
+                            "inAir": 0,
+                            "total": 30.037
+                        },
+                        "FA-18C_hornet": {
+                            "total": 1381.691,
+                            "kills": {
+                                "Ground Units": {
+                                    "total": 2,
+                                    "SAM": 2
+                                }
+                            },
+                            "weapons": {
+                                "AGM-88C": {
+                                    "hit": 0,
+                                    "kills": 2,
+                                    "shot": 2,
+                                    "numHits": 2
+                                }
+                            },
+                            "inAir": 841.364
+                        },
+                        "A-10C": {
+                            "total": 3176.034,
+                            "kills": {
+                                "Ground Units": {
+                                    "AAA": 1,
+                                    "total": 1
+                                }
+                            },
+                            "weapons": {
+                                "AGM-65D": {
+                                    "hit": 0,
+                                    "kills": 1,
+                                    "shot": 1,
+                                    "numHits": 1
+                                },
+                                "AIM-9M": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "numHits": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 1231.424
+                        },
+                        "F-14B": {
+                            "total": 8861.801,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 6,
+                                    "Support": 1,
+                                    "total": 7
+                                }
+                            },
+                            "inAir": 6165.55,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "weapons": {
+                                "AIM_54C_Mk47": {
+                                    "hit": 2,
+                                    "kills": 2,
+                                    "shot": 6,
+                                    "numHits": 3
+                                },
+                                "AIM_54A_Mk60": {
+                                    "numHits": 5,
+                                    "kills": 3,
+                                    "shot": 8,
+                                    "hit": 2
+                                },
+                                "AIM-9M": {
+                                    "hit": 1,
+                                    "kills": 1,
+                                    "shot": 2,
+                                    "numHits": 1
+                                },
+                                "M-61A1": {
+                                    "hit": 0,
+                                    "kills": 1,
+                                    "shot": 222,
+                                    "numHits": 33
+                                }
+                            }
+                        },
+                        "F-16C_50": {
+                            "total": 4584.228,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 5,
+                                    "Support": 1,
+                                    "total": 6
+                                }
+                            },
+                            "weapons": {
+                                "M-61": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 105,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 5,
+                                    "kills": 5,
+                                    "shot": 10,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 3530.046,
+                            "pvp": {
+                                "kills": 2
+                            }
+                        },
+                        "Ka-50": {
+                            "inAir": 1607.777,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "total": 2049.225
+                        }
+                    },
+                    "joinDate": 1593260182,
+                    "lastJoin": 1599487171,
+                    "id": 79,
+                    "names": {
+                        "1": "TGW - Slammer",
+                        "2": "Slammer | Warrior 1-2",
+                        "3": "Warrior 1-2 | Slammer",
+                        "4": "Fox 1-2 | Slammer"
+                    },
+                    "name": "Fox 1-2 | Slammer"
+                },
+                "48": {
+                    "times": null,
+                    "joinDate": 1599535283,
+                    "lastJoin": 1599535283,
+                    "id": 93,
+                    "names": {
+                        "1": "umbreon"
+                    },
+                    "name": "umbreon"
+                },
+                "49": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 1981.179,
+                            "inAir": 1360.803
+                        }
+                    },
+                    "joinDate": 1599257991,
+                    "lastJoin": 1599259986,
+                    "id": 84,
+                    "names": {
+                        "1": "lawnDart-48"
+                    },
+                    "name": "lawnDart-48"
+                },
+                "50": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 6550.759,
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 4,
+                                    "total": 4
+                                }
+                            },
+                            "inAir": 4483.372,
+                            "weapons": {
+                                "AIM-9X": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 1,
+                                    "hit": 1
+                                },
+                                "AIM-120C": {
+                                    "numHits": 3,
+                                    "kills": 3,
+                                    "shot": 5,
+                                    "hit": 1
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 3,
+                                    "crash": 3,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1,
+                                "kills": 2
+                            }
+                        },
+                        "FA-18C_hornet": {
+                            "total": 8355.391,
+                            "kills": {
+                                "Ground Units": {
+                                    "AAA": 2,
+                                    "total": 10,
+                                    "Unarmored": 1,
+                                    "SAM": 6,
+                                    "Tanks": 1
+                                }
+                            },
+                            "inAir": 5274.728,
+                            "weapons": {
+                                "AGM-154C": {
+                                    "numHits": 7,
+                                    "kills": 7,
+                                    "shot": 10,
+                                    "hit": 4
+                                },
+                                "AGM-88C": {
+                                    "numHits": 3,
+                                    "kills": 3,
+                                    "shot": 4,
+                                    "hit": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 3,
+                                    "crash": 4,
+                                    "eject": 1
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1
+                            }
+                        },
+                        "A-10C": {
+                            "total": 2466.448,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "inAir": 221.538
+                        }
+                    },
+                    "joinDate": 1594392046,
+                    "lastJoin": 1598590089,
+                    "id": 4,
+                    "names": {
+                        "1": "Lion 1-1 | ThatAussieKiwi",
+                        "2": "Lion 1-1 | Aussie"
+                    },
+                    "name": "Lion 1-1 | Aussie"
+                },
+                "51": {
+                    "times": {
+                        "F-16C_50": {
+                            "inAir": 0,
+                            "total": 50.183
+                        }
+                    },
+                    "joinDate": 1598872238,
+                    "lastJoin": 1598872299,
+                    "id": 76,
+                    "names": {
+                        "1": "seen"
+                    },
+                    "name": "seen"
+                },
+                "52": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 21343.264,
+                            "kills": {
+                                "Ground Units": {
+                                    "total": 7,
+                                    "SAM": 7
+                                },
+                                "Planes": {
+                                    "total": 3,
+                                    "Fighters": 3
+                                }
+                            },
+                            "inAir": 16745.552,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 0,
+                                    "eject": 0
+                                }
+                            },
+                            "weapons": {
+                                "M-61": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 585,
+                                    "numHits": 0
+                                },
+                                "AGM-88C": {
+                                    "numHits": 9,
+                                    "kills": 7,
+                                    "shot": 17,
+                                    "hit": 1
+                                },
+                                "AIM-120C": {
+                                    "numHits": 9,
+                                    "kills": 2,
+                                    "shot": 9,
+                                    "hit": 4
+                                },
+                                "GBU-12": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "numHits": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 1,
+                                    "kills": 1,
+                                    "shot": 3,
+                                    "hit": 0
+                                },
+                                "kamikaze": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "numHits": 0
+                                }
+                            }
+                        },
+                        "A-10C": {
+                            "total": 4581.08,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "inAir": 3439.211
+                        }
+                    },
+                    "joinDate": 1592651669,
+                    "lastJoin": 1599528497,
+                    "id": 18,
+                    "names": {
+                        "1": "Mini"
+                    },
+                    "name": "Mini"
+                },
+                "53": {
+                    "times": {
+                        "F-14B": {
+                            "total": 993.92,
+                            "inAir": 0
+                        }
+                    },
+                    "joinDate": 1598515102,
+                    "lastJoin": 1598516126,
+                    "id": 31,
+                    "names": {
+                        "1": "jarhead"
+                    },
+                    "name": "jarhead"
+                },
+                "54": {
+                    "times": null,
+                    "joinDate": 1599225396,
+                    "lastJoin": 1599225396,
+                    "id": 83,
+                    "names": {
+                        "1": "Belin"
+                    },
+                    "name": "Belin"
+                },
+                "55": {
+                    "times": {
+                        "F-14B": {
+                            "inAir": 512.802,
+                            "total": 1878.499,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1
+                            }
+                        },
+                        "F-16C_50": {
+                            "inAir": 864.32,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "total": 1678.965
+                        },
+                        "FA-18C_hornet": {
+                            "total": 7728.495,
+                            "inAir": 4180.041,
+                            "weapons": {
+                                "AGM-154C": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 4,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 1,
+                                    "hit": 1
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 2,
+                                    "kills": 2,
+                                    "shot": 8,
+                                    "hit": 1
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "kills": {
+                                "Planes": {
+                                    "Fighters": 3,
+                                    "total": 3
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1595943884,
+                    "lastJoin": 1598965436,
+                    "id": 90,
+                    "names": {
+                        "1": "DEMON 1-2 | {TGW}BooZer",
+                        "2": "{TGW}BooZer | KNIGHT 2-1",
+                        "3": "BooZer | samurai 1-2",
+                        "4": "samurai 1-2 | BooZer",
+                        "5": "Knight 1-2 | BooZer",
+                        "6": "Devil 2-5 | BooZer"
+                    },
+                    "name": "Devil 2-5 | BooZer"
+                },
+                "56": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 70.150000000001,
+                            "inAir": 0
+                        }
+                    },
+                    "joinDate": 1598521042,
+                    "lastJoin": 1598521120,
+                    "id": 37,
+                    "names": {
+                        "1": "BinChook"
+                    },
+                    "name": "BinChook"
+                },
+                "57": {
+                    "times": null,
+                    "joinDate": 1599473968,
+                    "lastJoin": 1599473968,
+                    "id": 91,
+                    "names": {
+                        "1": "Mav"
+                    },
+                    "name": "Mav"
+                },
+                "58": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 7617.574,
+                            "weapons": {
+                                "GBU-38": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 5,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 4582.995,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 1
+                                }
+                            },
+                            "kills": {
+                                "Ground Units": {
+                                    "SAM": 1,
+                                    "total": 1
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1597047770,
+                    "lastJoin": 1599043196,
+                    "id": 116,
+                    "names": {
+                        "1": "MrTANK"
+                    },
+                    "name": "MrTANK"
+                },
+                "59": {
+                    "times": {
+                        "Su-27": {
+                            "total": 851.557,
+                            "inAir": 400.786
+                        }
+                    },
+                    "joinDate": 1598687098,
+                    "lastJoin": 1598687964,
+                    "id": 61,
+                    "names": {
+                        "1": "SB3614"
+                    },
+                    "name": "SB3614"
+                },
+                "60": {
+                    "times": {
+                        "MiG-29S": {
+                            "total": 2114.089,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 1051.867
+                        }
+                    },
+                    "joinDate": 1598639055,
+                    "lastJoin": 1598641505,
+                    "id": 56,
+                    "names": {
+                        "1": "Komrade"
+                    },
+                    "name": "Komrade"
+                },
+                "61": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "inAir": 4409.747,
+                            "weapons": {
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "M-61": {
+                                    "kills": 0,
+                                    "shot": 138,
+                                    "hit": 0,
+                                    "gun": true,
+                                    "numHits": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 0,
+                                    "eject": 0
+                                }
+                            },
+                            "total": 7948.642
+                        }
+                    },
+                    "joinDate": 1598784078,
+                    "lastJoin": 1598792237,
+                    "id": 69,
+                    "names": {
+                        "1": "Devil88"
+                    },
+                    "name": "Devil88"
+                },
+                "62": {
+                    "times": {
+                        "F-14B": {
+                            "inAir": 0,
+                            "total": 90.218000000001
+                        }
+                    },
+                    "joinDate": 1598550111,
+                    "lastJoin": 1599102400,
+                    "id": 46,
+                    "names": {
+                        "1": "Roller2Niner"
+                    },
+                    "name": "Roller2Niner"
+                },
+                "63": {
+                    "times": null,
+                    "joinDate": 1598676727,
+                    "lastJoin": 1598676727,
+                    "id": 60,
+                    "names": {
+                        "1": "poison270"
+                    },
+                    "name": "poison270"
+                },
+                "64": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 7828.59,
+                            "inAir": 5682.678,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 0,
+                                    "eject": 0
+                                }
+                            },
+                            "weapons": {
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1592567175,
+                    "lastJoin": 1598792263,
+                    "id": 24,
+                    "names": {
+                        "1": "Grumpy"
+                    },
+                    "name": "Grumpy"
+                },
+                "65": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 6119.73,
+                            "inAir": 3703.813,
+                            "weapons": {
+                                "AIM-9X": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "numHits": 0
+                                },
+                                "AIM-120C": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 6,
+                                    "numHits": 0
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1
+                            }
+                        },
+                        "UH-1H": {
+                            "total": 10.022000000001,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 0
+                        },
+                        "FA-18C_hornet": {
+                            "kills": {
+                                "Ground Units": {
+                                    "Arty/MLRS": 6,
+                                    "Infantry": 6,
+                                    "APCs": 1,
+                                    "SAM": 5,
+                                    "total": 18
+                                },
+                                "Planes": {
+                                    "Fighters": 8,
+                                    "total": 8
+                                }
+                            },
+                            "weapons": {
+                                "GBU-38": {
+                                    "numHits": 20,
+                                    "kills": 18,
+                                    "shot": 8,
+                                    "hit": 3
+                                },
+                                "AIM-120C": {
+                                    "numHits": 8,
+                                    "kills": 7,
+                                    "shot": 19,
+                                    "hit": 3
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 3,
+                                    "hit": 1
+                                },
+                                "AGM-88C": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 13286.118,
+                            "total": 16552.211,
+                            "pvp": {
+                                "kills": 2
+                            }
+                        }
+                    },
+                    "joinDate": 1594387862,
+                    "lastJoin": 1598794975,
+                    "id": 28,
+                    "names": {
+                        "1": "Warrior 2-1 | Mez",
+                        "2": "Samurai 1-1 | Mez"
+                    },
+                    "name": "Samurai 1-1 | Mez"
+                },
+                "66": {
+                    "times": null,
+                    "joinDate": 1598615734,
+                    "lastJoin": 1598615734,
+                    "id": 50,
+                    "names": {
+                        "1": "locker"
+                    },
+                    "name": "locker"
+                },
+                "67": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "inAir": 1938.865,
+                            "total": 3546.434,
+                            "weapons": {
+                                "AGM-88C": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "AGM-65E": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1593808604,
+                    "lastJoin": 1598528028,
+                    "id": 100,
+                    "names": {
+                        "1": "Col. F. Cassad"
+                    },
+                    "name": "Col. F. Cassad"
+                },
+                "68": {
+                    "times": {
+                        "Su-25T": {
+                            "total": 16493.638,
+                            "weapons": {
+                                "GSh-2-30": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 143,
+                                    "hit": 0
+                                },
+                                "Vikhr M": {
+                                    "hit": 3,
+                                    "kills": 3,
+                                    "shot": 5,
+                                    "numHits": 4
+                                },
+                                "Kh-58U": {
+                                    "numHits": 3,
+                                    "kills": 2,
+                                    "shot": 4,
+                                    "hit": 3
+                                },
+                                "Kh-25MPU": {
+                                    "numHits": 3,
+                                    "kills": 1,
+                                    "shot": 2,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 10867.082,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 2,
+                                    "crash": 6,
+                                    "eject": 4
+                                }
+                            },
+                            "kills": {
+                                "Ground Units": {
+                                    "Arty/MLRS": 1,
+                                    "SAM": 2,
+                                    "EWR": 1,
+                                    "total": 6,
+                                    "AAA": 1,
+                                    "Tanks": 1
+                                }
+                            }
+                        },
+                        "Ka-50": {
+                            "total": 1132.661,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 110.103
+                        }
+                    },
+                    "joinDate": 1598525584,
+                    "lastJoin": 1598785794,
+                    "id": 41,
+                    "names": {
+                        "1": "Diabeetusdan"
+                    },
+                    "name": "Diabeetusdan"
+                },
+                "69": {
+                    "times": null,
+                    "joinDate": 1599223627,
+                    "lastJoin": 1599223728,
+                    "id": 82,
+                    "names": {
+                        "1": "Ouragan99"
+                    },
+                    "name": "Ouragan99"
+                },
+                "70": {
+                    "times": {
+                        "Su-25T": {
+                            "inAir": 0,
+                            "total": 3608.906
+                        }
+                    },
+                    "joinDate": 1599045964,
+                    "lastJoin": 1599049585,
+                    "id": 78,
+                    "names": {
+                        "1": "冷幕"
+                    },
+                    "name": "冷幕"
+                },
+                "71": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 25252.424,
+                            "kills": {
+                                "Planes": {
+                                    "total": 6,
+                                    "Support": 2,
+                                    "Fighters": 4
+                                }
+                            },
+                            "weapons": {
+                                "M-61": {
+                                    "numHits": 92,
+                                    "kills": 1,
+                                    "shot": 478,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 7,
+                                    "kills": 4,
+                                    "shot": 18,
+                                    "hit": 3
+                                },
+                                "AIM-120B": {
+                                    "numHits": 2,
+                                    "kills": 1,
+                                    "shot": 2,
+                                    "hit": 1
+                                },
+                                "kamikaze": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 0,
+                                    "hit": 0
+                                },
+                                "AIM-9X": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 8,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 17342.315,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 3,
+                                    "crash": 3,
+                                    "eject": 0
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1,
+                                "kills": 2
+                            }
+                        }
+                    },
+                    "joinDate": 1594132425,
+                    "lastJoin": 1599221007,
+                    "id": 94,
+                    "names": {
+                        "1": "Meduza"
+                    },
+                    "name": "Meduza"
+                },
+                "72": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 10657.044,
+                            "kills": {
+                                "Planes": {
+                                    "total": 5,
+                                    "Fighters": 5
+                                }
+                            },
+                            "weapons": {
+                                "AIM-9X": {
+                                    "hit": 2,
+                                    "kills": 2,
+                                    "shot": 2,
+                                    "numHits": 4
+                                },
+                                "AGM-88C": {
+                                    "hit": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "numHits": 0
+                                },
+                                "AIM-120C": {
+                                    "hit": 2,
+                                    "kills": 3,
+                                    "shot": 9,
+                                    "numHits": 4
+                                }
+                            },
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 1,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "inAir": 9013.691
+                        }
+                    },
+                    "joinDate": 1599122558,
+                    "lastJoin": 1599474037,
+                    "id": 80,
+                    "names": {
+                        "1": "Rex 1-2 | Hairy",
+                        "2": "Rex | Hairy"
+                    },
+                    "name": "Rex | Hairy"
+                },
+                "73": {
+                    "times": null,
+                    "joinDate": 1598617787,
+                    "lastJoin": 1598617787,
+                    "id": 52,
+                    "names": {
+                        "1": "Blue 1"
+                    },
+                    "name": "Blue 1"
+                },
+                "74": {
+                    "times": null,
+                    "joinDate": 1599149915,
+                    "lastJoin": 1599149915,
+                    "id": 81,
+                    "names": {
+                        "1": "[FR]Lima Quebec 26"
+                    },
+                    "name": "[FR]Lima Quebec 26"
+                },
+                "75": {
+                    "times": {
+                        "F-15C": {
+                            "total": 2533.261,
+                            "kills": {
+                                "Planes": {
+                                    "total": 2,
+                                    "Fighters": 2
+                                }
+                            },
+                            "inAir": 2292.601,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 0,
+                                    "crash": 1,
+                                    "eject": 0
+                                }
+                            },
+                            "weapons": {
+                                "AIM-120B": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "M-61": {
+                                    "numHits": 10,
+                                    "kills": 1,
+                                    "shot": 29,
+                                    "hit": 0
+                                },
+                                "AIM-9M": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 1,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 1,
+                                    "kills": 1,
+                                    "shot": 1,
+                                    "hit": 1
+                                }
+                            }
+                        }
+                    },
+                    "joinDate": 1598767168,
+                    "lastJoin": 1598769719,
+                    "id": 65,
+                    "names": {
+                        "1": "SithLordRevan"
+                    },
+                    "name": "SithLordRevan"
+                },
+                "76": {
+                    "times": {
+                        "FA-18C_hornet": {
+                            "total": 5256.02,
+                            "weapons": {
+                                "M-61": {
+                                    "kills": 0,
+                                    "shot": 373,
+                                    "hit": 0,
+                                    "gun": true,
+                                    "numHits": 0
+                                },
+                                "Mk-82": {
+                                    "numHits": 0,
+                                    "kills": 0,
+                                    "shot": 2,
+                                    "hit": 0
+                                }
+                            },
+                            "inAir": 3955.013
+                        }
+                    },
+                    "joinDate": 1599287053,
+                    "lastJoin": 1599292437,
+                    "id": 86,
+                    "names": {
+                        "1": "Matrixdr"
+                    },
+                    "name": "Matrixdr"
+                },
+                "77": {
+                    "times": {
+                        "F-16C_50": {
+                            "total": 72537.299,
+                            "kills": {
+                                "Planes": {
+                                    "total": 14,
+                                    "Support": 7,
+                                    "Fighters": 7
+                                }
+                            },
+                            "weapons": {
+                                "AIM-9X": {
+                                    "numHits": 1,
+                                    "kills": 1,
+                                    "shot": 2,
+                                    "hit": 0
+                                },
+                                "AIM-120C": {
+                                    "numHits": 21,
+                                    "kills": 13,
+                                    "shot": 35,
+                                    "hit": 3
+                                }
+                            },
+                            "inAir": 48046.543,
+                            "actions": {
+                                "losses": {
+                                    "pilotDeath": 8,
+                                    "crash": 5,
+                                    "eject": 1
+                                }
+                            },
+                            "pvp": {
+                                "losses": 1,
+                                "kills": 5
+                            }
+                        }
+                    },
+                    "joinDate": 1593154217,
+                    "lastJoin": 1599555627,
+                    "id": 70,
+                    "names": {
+                        "1": "ezyd",
+                        "2": "EzyD | Crow 1-1",
+                        "3": "Crow 1-1 | EzyD"
+                    },
+                    "name": "Crow 1-1 | EzyD"
+                }
+            }
+        }
     }
 }
