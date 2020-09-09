@@ -201,6 +201,319 @@
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
 										}
+										// bombs
+										if (i.weapons.hasOwnProperty('GBU-10'))
+										{
+											var weapon = i.weapons["GBU-10"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 28862;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('GBU-12'))
+										{
+											var weapon = i.weapons["GBU-12"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 21862;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('GBU-16'))
+										{
+											var weapon = i.weapons["GBU-16"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 18000;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										
+										if (i.weapons.hasOwnProperty('GBU-31(V)3/B'))
+										{
+											var weapon = i.weapons["GBU-31(V)3/B"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 33245;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);											
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('GBU-38'))
+										{
+											var weapon = i.weapons["GBU-38"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 35245;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);											
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('Mk-82'))
+										{
+											var weapon = i.weapons["Mk-82"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 3651.68;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wvalue = wvalue + (w * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('Mk-82 SnakeEye'))
+										{
+											var weapon = i.weapons["Mk-82 SnakeEye"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 5651.68;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wvalue = wvalue + (w * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										
+										if (i.weapons.hasOwnProperty('Mk-82AIR'))
+										{
+											var weapon = i.weapons["Mk-82AIR"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 5651.68;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wvalue = wvalue + (w * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										
+										if (i.weapons.hasOwnProperty('Mk-83'))
+										{
+											var weapon = i.weapons["Mk-83"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 10000.68;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('Mk-84'))
+										{
+											var weapon = i.weapons["Mk-84"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 16000.68;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										
+										if (i.weapons.hasOwnProperty("BLG-66 Belouga"))
+										{
+											var weapon = i.weapons["BLG-66 Belouga"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 873814.49;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty("CBU-97/CBU-105 SFW"))
+										{
+											var weapon = i.weapons["CBU-97/CBU-105 SFW"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 873814.49;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty("CBU-87/CBU-103 CEM"))
+										{
+											var weapon = i.weapons["CBU-87/CBU-103 CEM"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 14000.49;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty("Mk-20 Rockeye"))
+										{
+											var weapon = i.weapons["Mk-20 Rockeye"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 14000.49;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty("RBK-500 PTAB-10"))
+										{
+											var weapon = i.weapons["RBK-500 PTAB-10"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 114000.49;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty("RBK-500U PTAB-1M"))
+										{
+											var weapon = i.weapons["RBK-500U PTAB-1M"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 214000.49;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty("RBK-250"))
+										{
+											var weapon = i.weapons["RBK-250"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 34000.49;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										
+										if (i.weapons.hasOwnProperty('C802AK'))
+										{
+											var weapon = i.weapons["C802AK"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 1406812.00;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);											
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('GB-6-SFW'))
+										{
+											var weapon = i.weapons["GB-6-SFW"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 575209.60;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('LS-6-500'))
+										{
+											var weapon = i.weapons["LS-6-500"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 225600;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										// Air to air missiles.
 										if (i.weapons.hasOwnProperty('R-27ER (AA-10C)'))
 										{
 											var weapon = i.weapons["R-27ER (AA-10C)"]
@@ -246,6 +559,22 @@
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
 										}
+										
+										if (i.weapons.hasOwnProperty('MMagicII'))
+										{
+											var weapon = i.weapons["MMagicII"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 256160;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
 										if (i.weapons.hasOwnProperty('AIM-9X'))
 										{
 											var weapon = i.weapons["AIM-9X"]
@@ -276,6 +605,22 @@
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
 										}
+										
+										if (i.weapons.hasOwnProperty('AIM-7MH'))
+										{
+											var weapon = i.weapons["AIM-7MH"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 578865.59;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
 										if (i.weapons.hasOwnProperty('AIM-7M'))
 										{
 											var weapon = i.weapons["AIM-7M"]
@@ -283,6 +628,21 @@
 											var kills = weapon.kills;
 											var hits = weapon.numHits;
 											var price = 538865.59;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('Matra_S530D'))
+										{
+											var weapon = i.weapons["Matra_S530D"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 528865.59;
 											var w = shot - hits;
 											if (w < 0 ) 
 											{
@@ -396,68 +756,7 @@
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
 										}
-										if (i.weapons.hasOwnProperty('GBU-12'))
-										{
-											var weapon = i.weapons["GBU-12"]
-											var shot = weapon.shot;
-											var kills = weapon.kills;
-											var hits = weapon.numHits;
-											var price = 21862;
-											var w = shot - hits;
-											if (w < 0 ) 
-											{
-												w = 0;
-											}
-											svalue = svalue + ((shot - w) * price);
-											
-											wpnvalue = wpnvalue + (shot * price);
-										}
-										if (i.weapons.hasOwnProperty('GBU-16'))
-										{
-											var weapon = i.weapons["GBU-16"]
-											var shot = weapon.shot;
-											var kills = weapon.kills;
-											var hits = weapon.numHits;
-											var price = 30000;
-											var w = shot - hits;
-											if (w < 0 ) 
-											{
-												w = 0;
-											}
-											svalue = svalue + ((shot - w) * price);
-											wpnvalue = wpnvalue + (shot * price);
-										}
-										if (i.weapons.hasOwnProperty('GBU-38'))
-										{
-											var weapon = i.weapons["GBU-38"]
-											var shot = weapon.shot;
-											var kills = weapon.kills;
-											var hits = weapon.numHits;
-											var price = 35245;
-											var w = shot - hits;
-											if (w < 0 ) 
-											{
-												w = 0;
-											}
-											svalue = svalue + ((shot - w) * price);											
-											wpnvalue = wpnvalue + (shot * price);
-										}
-										if (i.weapons.hasOwnProperty('Mk-82'))
-										{
-											var weapon = i.weapons["Mk-82"]
-											var shot = weapon.shot;
-											var kills = weapon.kills;
-											var hits = weapon.numHits;
-											var price = 3651.68;
-											var w = shot - hits;
-											if (w < 0 ) 
-											{
-												w = 0;
-											}
-											svalue = svalue + ((shot - w) * price);
-											wvalue = wvalue + (w * price);
-											wpnvalue = wpnvalue + (shot * price);
-										}
+										//rockets
 										if (i.weapons.hasOwnProperty('HYDRA-70 MK5'))
 										{
 											var weapon = i.weapons["HYDRA-70 MK5"]
@@ -465,82 +764,6 @@
 											var kills = weapon.kills;
 											var hits = weapon.numHits;
 											var price = 2799;
-											var w = shot - hits;
-											if (w < 0 ) 
-											{
-												w = 0;
-											}
-											svalue = svalue + ((shot - w) * price);
-											wpnvalue = wpnvalue + (shot * price);
-										}
-										if (i.weapons.hasOwnProperty("CBU-97/CBU-105 SFW"))
-										{
-											var weapon = i.weapons["CBU-97/CBU-105 SFW"]
-											var shot = weapon.shot;
-											var kills = weapon.kills;
-											var hits = weapon.numHits;
-											var price = 873814.49;
-											var w = shot - hits;
-											if (w < 0 ) 
-											{
-												w = 0;
-											}
-											svalue = svalue + ((shot - w) * price);
-											wpnvalue = wpnvalue + (shot * price);
-										}
-										if (i.weapons.hasOwnProperty('Mk-82'))
-										{
-											var weapon = i.weapons["Mk-82"]
-											var shot = weapon.shot;
-											var kills = weapon.kills;
-											var hits = weapon.numHits;
-											var price = 3651.68;
-											var w = shot - hits;
-											if (w < 0 ) 
-											{
-												w = 0;
-											}
-											svalue = svalue + ((shot - w) * price);
-											wpnvalue = wpnvalue + (shot * price);
-										}
-										if (i.weapons.hasOwnProperty('C802AK'))
-										{
-											var weapon = i.weapons["C802AK"]
-											var shot = weapon.shot;
-											var kills = weapon.kills;
-											var hits = weapon.numHits;
-											var price = 1406812.00;
-											var w = shot - hits;
-											if (w < 0 ) 
-											{
-												w = 0;
-											}
-											svalue = svalue + ((shot - w) * price);											
-											wpnvalue = wpnvalue + (shot * price);
-										}
-										if (i.weapons.hasOwnProperty('GB-6-SFW'))
-										{
-											var weapon = i.weapons["GB-6-SFW"]
-											var shot = weapon.shot;
-											var kills = weapon.kills;
-											var hits = weapon.numHits;
-											var price = 575209.60;
-											var w = shot - hits;
-											if (w < 0 ) 
-											{
-												w = 0;
-											}
-											svalue = svalue + ((shot - w) * price);
-											
-											wpnvalue = wpnvalue + (shot * price);
-										}
-										if (i.weapons.hasOwnProperty('LS-6-500'))
-										{
-											var weapon = i.weapons["LS-6-500"]
-											var shot = weapon.shot;
-											var kills = weapon.kills;
-											var hits = weapon.numHits;
-											var price = 225600;
 											var w = shot - hits;
 											if (w < 0 ) 
 											{
@@ -579,7 +802,7 @@
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
 										}
-										
+										// Cannon or Guns.
 										if (i.weapons.hasOwnProperty('M-61'))
 										{
 											var weapon = i.weapons["M-61"]

@@ -41,8 +41,8 @@
 							  <th class="sticky bright text-center">Pilot</th>
 							  <th class="sticky bright text-center">Ejects</th>
                               <th class="sticky bright text-center">Crashes</th>
-							  <th class="sticky text-center">Wpns Hits</th>
-							  <th class="sticky text-center">Wpn Expended</th>
+							  <th class="sticky text-center">Wpns Expended</th>
+							  <th class="sticky text-center">Wpns that Hit</th>
 							  <th class="sticky text-center">Aircraft & Pilot<br>Losses</th>
                               <th class="sticky">Flight Hrs</th>
                             </tr>
@@ -83,8 +83,8 @@
                               <td class="text-center bright">{{pilot.deaths}}</td>
 							  <td class="text-center bright">{{pilot.ejects}}</td>
 							  <td class="text-center bright">{{pilot.crashes}}</td>
-							  <td class="text-center bright">{{pilot.spent}}</td>
 							  <td class="text-center bright">{{pilot.wpncost}}</td>
+							  <td class="text-center bright">{{pilot.spent}}</td>
 							  <td class="text-center bright">{{pilot.wasted}}</td>
                               <td>{{pilot.flightHours_converted}}</td>
                             </tr>
@@ -93,6 +93,7 @@
                 </div>
                 <div class="row text-center">
                     <small class="leaderboard-small" style="margin: 10px auto">Points formula: AA Kills = 1 point, Helicopter = 0.25 Points, AG Kill = 0.25 Point, Ship Kills = 2 points, PvP Kill = 2 points<br>Deaths: Crash = -0.5 Point, Pilot Death = -0.5 Point, Ejection: -0.25 Point, Pvp Death = -1 point.</small>
+					<br>Please be aware that at this time the Costs may not include all ord.
                 </div>
             </div>
         </div>
