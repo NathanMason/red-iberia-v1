@@ -34,6 +34,7 @@
                               <th class="sticky text-center">AA</th>
 							  <th class="sticky text-center">Heli</th>
                               <th class="sticky text-center">AG</th>
+							  <th class="sticky text-center">Blding</th>
 							  <th class="sticky text-center">Ship</th>
                               <th class="sticky text-center">PvP</th>
                               <th class="sticky bright text-center">Total</th>
@@ -41,8 +42,9 @@
 							  <th class="sticky bright text-center">Pilot</th>
 							  <th class="sticky bright text-center">Ejects</th>
                               <th class="sticky bright text-center">Crashes</th>
-							  <th class="sticky text-center">Wpns Expended</th>
-							  <th class="sticky text-center">Wpns that Hit</th>
+							  <th class="sticky text-center">Wpns<br>Expended</th>
+							  <th class="sticky text-center">Wpns<br>that Hit</th>
+							  <th class="sticky text-center">Wpns Cost<br>Effectiveness%</th>
 							  <th class="sticky text-center">Aircraft & Pilot<br>Losses</th>
                               <th class="sticky">Flight Hrs</th>
                             </tr>
@@ -76,6 +78,7 @@
                               <td class="text-center">{{pilot.aaKills}}</td>
 							  <td class="text-center">{{pilot.heliKills}}</td>
                               <td class="text-center">{{pilot.agKills}}</td>
+							  <td class="text-center">{{pilot.buildings}}</td>
 							  <td class="text-center">{{pilot.shipKills}}</td>
                               <td class="text-center">{{pilot.pvpKills}}</td>
                               <td class="text-center bright">{{pilot.kills}}</td>
@@ -85,7 +88,9 @@
 							  <td class="text-center bright">{{pilot.crashes}}</td>
 							  <td class="text-center bright">{{pilot.wpncost}}</td>
 							  <td class="text-center bright">{{pilot.spent}}</td>
+							  <td class="text-center bright">{{pilot.wpneffect}}%</td>
 							  <td class="text-center bright">{{pilot.wasted}}</td>
+
                               <td>{{pilot.flightHours_converted}}</td>
                             </tr>
                           </tbody>

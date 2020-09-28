@@ -29,6 +29,7 @@
 								crashes: 0,
 								ejects: 0,
                                 kills: 0,
+								buildings: 0,
                                 aaKills: 0,
 								heliKills: 0,
                                 agKills: 0,
@@ -40,13 +41,24 @@
 								wasted: 0,
 								spent: 0,
 								wpncost: 0,
+								wpneffect: 0,
                                 ranking: 0,
                                 flightHours_converted: '',
                                 favAircraft: {
                                     flightHours: 0,
                                     frameName: '',
                                     flightHours_converted: ''
-                                }
+                                },
+								favweapon: 'Unknown',
+								lso: {
+									wire1: 0,
+									wire2: 0,
+									wire3: 0,
+									wire4: 0,
+									grades: {
+										
+									}
+								}
 
                         }
 						var cvalue = 0;
@@ -54,10 +66,11 @@
 						var svalue = 0;
 						var wpnvalue = 0;
 						var wvalue = 0;
+						var wused = 0;
 						// just tests
-
-
-                        // make sure the pilot has aircraft stats to loop over
+						
+						var weapons = {Walleye:0};
+						// make sure the pilot has aircraft stats to loop over
                         if (pilot.times != null) {
 
                             // now we loop over the times object to get the pilots stats
@@ -78,6 +91,14 @@
 											}
 											svalue = svalue + ((shot - w) * price);											
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('Walleye') 
+											{
+												weapons.Walleye = weapons.Walleye + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{Walleye: shot});
+											}
 										}
 										if (i.weapons.hasOwnProperty('AGM-84E SLAM'))
 										{
@@ -93,10 +114,17 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('SLAM') 
+											{
+												weapons.SLAM = weapons.SLAM + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{SLAM: shot});
+											}
 										}
 										if (i.weapons.hasOwnProperty('AGM-88C'))
 										{
-											console.log('walleye');
 											var weapon = i.weapons["AGM-88C"]
 											var shot = weapon.shot;
 											var kills = weapon.kills;
@@ -109,6 +137,14 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('HARM') 
+											{
+												weapons.HARM = weapons.HARM + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{HARM: shot});
+											}
 										}
 										if (i.weapons.hasOwnProperty('AGM-65E'))
 										{
@@ -124,6 +160,14 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('Maverick') 
+											{
+												weapons.Maverick = weapons.Maverick + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{Maverick: shot});
+											}
 										}
 										if (i.weapons.hasOwnProperty('AGM-65G'))
 										{
@@ -139,6 +183,14 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('Maverick') 
+											{
+												weapons.Maverick = weapons.Maverick + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{Maverick: shot});
+											}
 										}
 										if (i.weapons.hasOwnProperty('AGM-65D'))
 										{
@@ -154,6 +206,14 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('Maverick') 
+											{
+												weapons.Maverick = weapons.Maverick + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{Maverick: shot});
+											}
 										}
 										if (i.weapons.hasOwnProperty('AGM-65H'))
 										{
@@ -169,6 +229,14 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('Maverick') 
+											{
+												weapons.Maverick = weapons.Maverick + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{Maverick: shot});
+											}
 										}
 										if (i.weapons.hasOwnProperty('AGM-154C'))
 										{
@@ -184,6 +252,15 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('JSOW_C') 
+											{
+												weapons.JSOW_C = weapons.JSOW_C + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{JSOW_C: shot});
+											}
+
 										}
 										if (i.weapons.hasOwnProperty('AGM-154A'))
 										{
@@ -200,6 +277,14 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('JSOW_A') 
+											{
+												weapons.JSOW_A = weapons.JSOW_A + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{JSOW_A: shot});
+											}
 										}
 										// bombs
 										if (i.weapons.hasOwnProperty('GBU-10'))
@@ -215,8 +300,15 @@
 												w = 0;
 											}
 											svalue = svalue + ((shot - w) * price);
-											
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('GBU10') 
+											{
+												weapons.GBU10 = weapons.GBU10 + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{GBU10: shot});
+											}
 										}
 										if (i.weapons.hasOwnProperty('GBU-12'))
 										{
@@ -231,8 +323,15 @@
 												w = 0;
 											}
 											svalue = svalue + ((shot - w) * price);
-											
 											wpnvalue = wpnvalue + (shot * price);
+											if weapons.hasOwnProperty('GBU12') 
+											{
+												weapons.GBU12 = weapons.GBU12 + shot;
+											}
+											else
+											{
+												object.assign({},weapons,{GBU12: shot});
+											}
 										}
 										if (i.weapons.hasOwnProperty('GBU-16'))
 										{
@@ -915,7 +1014,12 @@
 								
                                     // get pilots kills
                                     if (i.hasOwnProperty('kills')) {
-
+											if (i.kills.hasOwnProperty('Buildings'))
+											{
+												currentPilot.kills = currentPilot.kills + ( i.kills["Buildings"].total)
+												cvalue = cvalue + i.kills["Buildings"].total
+												currentPilot.buildings = currentPilot.buildings + i.kills["Buildings"].total
+											}
                                             // get AA kills
                                             if (i.kills.Planes) {
 
@@ -1150,12 +1254,33 @@
                                     if (pilot.name.includes('BooZer')) {
                                         currentPilot.callSign = currentPilot.callSign + '🍺'
                                     }
-									wvalue = wvalue / 1000000;
-									svalue = svalue / 1000000;
-									wpnvalue = wpnvalue / 1000000;
+								wvalue = wvalue / 1000000;
+								svalue = svalue / 1000000;
+								wpnvalue = wpnvalue / 1000000;
 								currentPilot.wasted = wvalue.toFixed(2);
 								currentPilot.spent = svalue.toFixed(2);
 								currentPilot.wpncost = wpnvalue.toFixed(2);
+								var ratio = (currentPilot.spent / currentPilot.wpncost) * 100;
+								currentPilot.wpneffect = ratio.toFixed(2);
+								function sortObject(obj) {
+									var arr = [];
+									var prop;
+									for (prop in obj) {
+										if (obj.hasOwnProperty(prop)) {
+										arr.push({
+											'key': prop,
+											'value': obj[prop]
+											});
+										}
+									}
+									arr.sort(function(b, a) {
+									return a.value - b.value;
+									});
+									return arr; // returns array
+								}
+								var arr = sortObject(weapons);
+								currentPilot.favweapon = arr[0].key;
+								
                                 stats.push(currentPilot)
                                 allPilot_q.resolve();
 
