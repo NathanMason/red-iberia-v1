@@ -6,18 +6,24 @@
 
 do
     -- lets start commenting some of this shit.
-    local PORT = 3001 -- our port
-    local DATA_TIMEOUT_SEC = 3 -- data timeout not that it seems to do much
-	-- initalise and basically make our socket shit really this mint.require isn't needed 
+    local PORT = 3009 -- our port
+    local DATA_TIMEOUT_SEC = 300 -- How often we send data.
+  
     package.path = package.path..";.\\LuaSocket\\?.lua"
     package.cpath = package.cpath..";.\\LuaSocket\\?.dll"
-
-    -- require = mint.require -- we actually don't need this because of how we run our server 
+    
+    
+    
+    if os ~= nil then
+        nowTime = os.time()
+    else
+        nowTime = 000000000
+    end
+     
     local socket = require("socket") -- load in socket
     local JSON = loadfile("Scripts\\JSON.lua")() -- load in json.
     -- require = nil -- really need to delete this i don't like it unseting shit on me will fix later
-	
-	-- dumps out a log file becauseinto dcs.log with whatever message and time, though why it's not using io... 
+  
     local function log(msg)
         env.info("DCS-TCP Link (t=" .. timer.getTime() .. "): " .. msg)
     end
@@ -32,7 +38,7 @@ do
     local bluebulls = coalition.getMainRefPoint(2)
     local rlat,rlon,ralt = coord.LOtoLL(redbulls)
     local blat,blon,balt = coord.LOtoLL(bluebulls)
-    
+    log("DCS-TCP Link Started on Port:".. PORT .. " Time out is:" .. DATA_TIMEOUT_SEC)    
     log("Grabbing Mission Data Mission is now")
     log("Map:".._map)
     log("Mission Date:" .. _missiondate)
@@ -40,14 +46,18 @@ do
     log("Red Bullseye, Lat:" .. rlat .. "/Lon:" .. rlon)
     log("Blue Bullseye, Lat:" .. blat .. "/Lon:" .. blon)
     local cacheDB = {} -- our cachedb, this stores the data below, so if we loose a connection we need to reset this 
-	-- this builds our packet.
+  -- this builds our packet.
     local function getDataMessage()
       local totalunits = 0;
-		  local payload = {} -- This is our actual 'packet' itself the data message
+      local payload = {} -- This is our actual 'packet' itself the data message
       payload.units = {} -- all the units in the packet
       payload.airbases = {} -- updates all our airbases
       payload.missiondata = {} -- updates our mission data 
-      
+      payload.ewintel = {}
+      payload.sams = {}
+      payload.scud = {}
+      payload.iran = {}
+      payload.markers = {}
       -- gets our current in game mission time.
       -- we are doing this here because.. weird things happened when i did it as one big string.
       -- or used the moose item.
@@ -73,9 +83,69 @@ do
          rlat = rlat,
          rlon = rlon,
          blat = blat,
-         blon = blon
+         blon = blon,
+         ntime = nowTime
       }
       payload.missiondata = curmisdata -- update our data.
+      local function updatemarkers()
+		local makers = world.getMarkPanels()
+		for k, v in pairs(makers) do
+		local lat,lon,alt = coord.LOtoLL(v.pos)
+		latlonmarker = {
+			["coalition"]= v.coalition,
+			["idx"] = v.idx,
+			["time"] = v.time,
+			["author"] = v.author,
+			["text"] = v.text,
+			["groupID"] = v.groupID,
+			["lat"] = lat,
+			["lon"] = lon,
+			["alt"] = alt,
+		}
+		table.insert(payload.markers,latlonmarker)
+		end
+	  end
+	  updatemarkers()
+      local function updateintel(g,type)
+        local co = g:GetCoordinate()
+        local lat, lon, alt = coord.LOtoLL(co:GetVec3())
+        local intel = {
+         lat = lat,
+         lon = lon,
+         alt = alt,
+         groupname = g:GetName(),
+         type = type,
+         lupdate = nowTime,
+        }
+        return intel
+      end
+      
+      if RED_EW_SET ~= nil then
+        RED_EW_SET:ForEachGroupAlive(function(g) 
+          table.insert(payload.ewintel,updateintel(g,"ew"))
+        end)
+      end
+      
+      if RED_SAM_SET ~= nil then
+        RED_SAM_SET:ForEachGroupAlive(function(g)
+            table.insert(payload.sams,updateintel(g,"sam"))
+        end)
+      end
+      
+      if RED_SCUD_SET ~= nil then
+        RED_SCUD_SET:ForEachGroupAlive(function(g)  
+          table.insert(payload.scud,updateintel(g,"scud"))
+        end)      
+      end
+      
+      if RED_I_SET ~= nil then
+        RED_I_SET:ForEachStatic(function(g) 
+          if g:IsAlive() == true then
+            table.insert(payload.iran,updateintel(g,"struc"))
+          end
+        end)
+      end
+      
       -- runs through and collects information for the airbases.
       local function updateairbase(airbasename)
         local cab = AIRBASE:FindByName(airbasename)
@@ -116,7 +186,7 @@ do
           for i,item in pairs(AIRBASE.Normandy) do
             updateairbase(item)
           end
-        elseif _map == "Persian Gulf" then
+        elseif _map == "PersianGulf" then
           for i,item in pairs(AIRBASE.PersianGulf) do
             updateairbase(item)
           end
@@ -125,55 +195,55 @@ do
       airbaserunthrough()
       
       local checkDead = {} -- creates the dead table
-		  -- basically runs a function to add a unit into the cache or update it.
-		  local function addUnit(unit, unitID, coalition, lat, lon, alt, action)
+      -- basically runs a function to add a unit into the cache or update it.
+      local function addUnit(unit, unitID, coalition, lat, lon, alt, action)
       -- stores dcs data.
       
-			local curUnit = {
+      local curUnit = {
         action = action,
         unitID = unitID
       }
-			-- far as i can work out here, action c is create action u is update.
+      -- far as i can work out here, action c is create action u is update.
       if action == "C" or action == "U" then
         -- make a entry or find the entry in cachedb with the unit id. then build it
-				cacheDB[unitID] = {}
-				
-				local mooseunit = UNIT:Find(unit) -- this needs to be here moron so that the units actually ALIVE when we request it
+        cacheDB[unitID] = {}
+        
+        local mooseunit = UNIT:Find(unit) -- this needs to be here moron so that the units actually ALIVE when we request it
         cacheDB[unitID].lat = lat
         cacheDB[unitID].lon = lon
-				cacheDB[unitID].alt = alt
-				cacheDB[unitID].speed = mooseunit:GetVelocityKNOTS()
-				cacheDB[unitID].heading = mooseunit:GetHeading()
+        cacheDB[unitID].alt = alt
+        cacheDB[unitID].speed = mooseunit:GetVelocityKNOTS()
+        cacheDB[unitID].heading = mooseunit:GetHeading()
         curUnit.lat = lat
         curUnit.lon = lon
-				curUnit.alt = alt
-				curUnit.heading = mooseunit:GetHeading()
-				curUnit.speed = mooseunit:GetVelocityKNOTS()
+        curUnit.alt = alt
+        curUnit.heading = mooseunit:GetHeading()
+        curUnit.speed = mooseunit:GetVelocityKNOTS()
         -- if we create shit then we get the types and the names and store it 
-				-- we aren't doing this atm 
-				--if action == "C" then
+        -- we aren't doing this atm 
+        --if action == "C" then
           curUnit.type = unit:getTypeName()
           curUnit.coalition = coalition
-					local unitdesc = unit:getDesc()
-					tempcategory = unitdesc.category
-					if tempcategory == Unit.Category.GROUND_UNIT then
-						curUnit.category = "Ground"
-					elseif tempcategory == Unit.Category.AIRPLANE then
-						curUnit.category = "Air"
-					elseif tempcategory == Unit.Category.HELICOPTER then
-						curUnit.category = "Heli"
-					elseif tempcategory == Unit.Category.SHIP then
-						curUnit.category = "Ship"
-					else
-						curUnit.category = "Other"
-					end
-					curUnit.missionname = unit:getName()
-					local unitdisplayname = unitdesc.displayName
-					if unitdisplayname ~= nil then
-						curUnit.displayname = unitdisplayname
-					else
-						curUnit.displayname = ""
-					end
+          local unitdesc = unit:getDesc()
+          tempcategory = unitdesc.category
+          if tempcategory == Unit.Category.GROUND_UNIT then
+            curUnit.category = "Ground"
+          elseif tempcategory == Unit.Category.AIRPLANE then
+            curUnit.category = "Air"
+          elseif tempcategory == Unit.Category.HELICOPTER then
+            curUnit.category = "Heli"
+          elseif tempcategory == Unit.Category.SHIP then
+            curUnit.category = "Ship"
+          else
+            curUnit.category = "Other"
+          end
+          curUnit.missionname = unit:getName()
+          local unitdisplayname = unitdesc.displayName
+          if unitdisplayname ~= nil then
+            curUnit.displayname = unitdisplayname
+          else
+            curUnit.displayname = ""
+          end
           local PlayerName = unit:getPlayerName()
           if PlayerName ~= nil then
              curUnit.playername = PlayerName
@@ -182,11 +252,11 @@ do
           end
        -- end
      end
-			-- insert the unit into the payload table..
+      -- insert the unit into the payload table..
             table.insert(payload.units, curUnit)
         end
-		
-		-- entire group run through
+    
+    -- entire group run through
         local function addGroups(groups, coalition)
             for groupIndex = 1, #groups do
                 local group = groups[groupIndex]
@@ -210,7 +280,7 @@ do
                 end
             end
         end
-		
+    
         local redGroups = coalition.getGroups(coalition.side.RED)
         addGroups(redGroups, 1)
         local blueGroups = coalition.getGroups(coalition.side.BLUE)
@@ -225,22 +295,22 @@ do
             unitCnt = unitCnt + 1
         end
         -- store the unit count
-		    payload.unitCount = unitCnt
-		    -- env.info("Unit Count by Dump is:" .. totalunits)
-		    -- env.info("Unit Count by payload is:" .. payload.unitCount)
+        payload.unitCount = unitCnt
+        -- env.info("Unit Count by Dump is:" .. totalunits)
+        -- env.info("Unit Count by payload is:" .. payload.unitCount)
         return payload -- return the payload.
     end
 
     
-	
-	 -------------------------------- want a clear spacer here ---------------------------------
-	 -- need it for my brain ------------------------------------------
-	 --------------------------------------------------------
-	 --------------------------------------------------------
-	
-	  log("Starting DCS unit data server")
-	  
-	  
+  
+   -------------------------------- want a clear spacer here ---------------------------------
+   -- need it for my brain ------------------------------------------
+   --------------------------------------------------------
+   --------------------------------------------------------
+  
+    log("Starting DCS unit data server")
+    
+    
     local tcp = socket.tcp() -- create a tcp socket.
     local bound, error = tcp:bind('*', PORT) -- bind the tcp socket to the port but all addresses.
     
@@ -251,7 +321,7 @@ do
     end
     
     log("Port " .. PORT .. " bound") -- dump out a message 
-	-- start the server by opening listen if it returns an error spit it out else well just say.
+  -- start the server by opening listen if it returns an error spit it out else well just say.
     local serverStarted, error = tcp:listen(1) 
     if not serverStarted then
         log("Could not start server: " .. error)
@@ -259,7 +329,7 @@ do
     end
     log("Server started")
 
-	-- starts a client, 
+  -- starts a client, 
     local client
     local function step()
 
@@ -280,7 +350,7 @@ do
             local bytes, status, lastbyte = client:send(msg)
             if not bytes then
                 log("Connection lost")
-				cacheDB = {} -- clean out the cache we'll need to resend it because chances are the servers reset.
+        cacheDB = {} -- clean out the cache we'll need to resend it because chances are the servers reset.
                 client = nil
             end
         end
