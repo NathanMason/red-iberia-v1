@@ -69,7 +69,44 @@
 						var wused = 0;
 						// just tests
 						
-						var weapons = {Walleye:0};
+						var weapons = {
+							Walleye:0, 
+							PL5:0, 
+							SD10:0, 
+							SLAM:0, 
+							HARM:0, 
+							Maverick:0, 
+							JSOW_A:0,
+							JSOW_C:0,
+							GBU10:0,
+							GBU12:0,
+							GBU16:0,
+							GBU31:0,
+							GBU38:0,
+							GB6:0,
+							CBU87_103:0,
+							CBU97_105:0,
+							C802AK:0,
+							AIM120A:0,
+							AIM120B:0,
+							AIM7:0,
+							AIM120C:0,
+							AIM9M:0,
+							AIM9X:0,
+							AIM54:0,
+							MK82:0,
+							MK20:0,
+							MK83:0,
+							MK84:0,
+							MAGIC:0,
+							LD10:0,
+							LS6:0,
+							Matra_S530D:0,
+							R27:0,
+							RBK250:0,
+							RBK500:0,
+							Rockeye:0,
+							};
 						// make sure the pilot has aircraft stats to loop over
                         if (pilot.times != null) {
 
@@ -77,6 +114,12 @@
                             angular.forEach(pilot.times, function(i, key, index){
 									// start working out how much each of these fucking pilots cost us ;) 
 									if (i.hasOwnProperty('weapons')){
+										
+										console.log(pilot.name);
+										if (i.weapons == null)
+										{
+											return;
+										}
 										if (i.weapons.hasOwnProperty('AGM-62 Walleye II'))
 										{
 											var weapon = i.weapons["AGM-62 Walleye II"]
@@ -91,14 +134,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);											
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('Walleye') 
-											{
-												weapons.Walleye = weapons.Walleye + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{Walleye: shot});
-											}
+											weapons.Walleye = weapons.Walleye + shot;
 										}
 										if (i.weapons.hasOwnProperty('AGM-84E SLAM'))
 										{
@@ -112,16 +148,7 @@
 											{
 												w = 0;
 											}
-											svalue = svalue + ((shot - w) * price);
-											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('SLAM') 
-											{
 												weapons.SLAM = weapons.SLAM + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{SLAM: shot});
-											}
 										}
 										if (i.weapons.hasOwnProperty('AGM-88C'))
 										{
@@ -137,14 +164,9 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('HARM') 
-											{
-												weapons.HARM = weapons.HARM + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{HARM: shot});
-											}
+											weapons.HARM = weapons.HARM + shot;
+											
+											
 										}
 										if (i.weapons.hasOwnProperty('AGM-65E'))
 										{
@@ -160,14 +182,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('Maverick') 
-											{
-												weapons.Maverick = weapons.Maverick + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{Maverick: shot});
-											}
+											weapons.Maverick = weapons.Maverick + shot;
 										}
 										if (i.weapons.hasOwnProperty('AGM-65G'))
 										{
@@ -183,14 +198,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('Maverick') 
-											{
-												weapons.Maverick = weapons.Maverick + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{Maverick: shot});
-											}
+											weapons.Maverick = weapons.Maverick + shot;
 										}
 										if (i.weapons.hasOwnProperty('AGM-65D'))
 										{
@@ -206,14 +214,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('Maverick') 
-											{
-												weapons.Maverick = weapons.Maverick + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{Maverick: shot});
-											}
+											weapons.Maverick = weapons.Maverick + shot;
 										}
 										if (i.weapons.hasOwnProperty('AGM-65H'))
 										{
@@ -229,14 +230,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('Maverick') 
-											{
-												weapons.Maverick = weapons.Maverick + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{Maverick: shot});
-											}
+											weapons.Maverick = weapons.Maverick + shot;
 										}
 										if (i.weapons.hasOwnProperty('AGM-154C'))
 										{
@@ -252,15 +246,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('JSOW_C') 
-											{
-												weapons.JSOW_C = weapons.JSOW_C + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{JSOW_C: shot});
-											}
-
+											weapons.JSOW_C = weapons.JSOW_C + shot;
 										}
 										if (i.weapons.hasOwnProperty('AGM-154A'))
 										{
@@ -277,14 +263,8 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('JSOW_A') 
-											{
-												weapons.JSOW_A = weapons.JSOW_A + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{JSOW_A: shot});
-											}
+											weapons.JSOW_A = weapons.JSOW_A + shot;
+											
 										}
 										// bombs
 										if (i.weapons.hasOwnProperty('GBU-10'))
@@ -301,14 +281,8 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('GBU10') 
-											{
-												weapons.GBU10 = weapons.GBU10 + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{GBU10: shot});
-											}
+											weapons.GBU10 = weapons.GBU10 + shot;
+											
 										}
 										if (i.weapons.hasOwnProperty('GBU-12'))
 										{
@@ -324,14 +298,9 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
-											if weapons.hasOwnProperty('GBU12') 
-											{
-												weapons.GBU12 = weapons.GBU12 + shot;
-											}
-											else
-											{
-												object.assign({},weapons,{GBU12: shot});
-											}
+											
+											weapons.GBU12 = weapons.GBU12 + shot;
+											
 										}
 										if (i.weapons.hasOwnProperty('GBU-16'))
 										{
@@ -347,6 +316,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.GBU16 = weapons.GBU16 + shot;
 										}
 										
 										if (i.weapons.hasOwnProperty('GBU-31(V)3/B'))
@@ -363,6 +333,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);											
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.GBU31 = weapons.GBU31 + shot;
 										}
 										if (i.weapons.hasOwnProperty('GBU-38'))
 										{
@@ -378,6 +349,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);											
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.GBU38 = weapons.GBU38 + shot;
 										}
 										if (i.weapons.hasOwnProperty('Mk-82'))
 										{
@@ -394,6 +366,7 @@
 											svalue = svalue + ((shot - w) * price);
 											wvalue = wvalue + (w * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.MK82 = weapons.MK82 + shot;
 										}
 										if (i.weapons.hasOwnProperty('Mk-82 SnakeEye'))
 										{
@@ -410,6 +383,7 @@
 											svalue = svalue + ((shot - w) * price);
 											wvalue = wvalue + (w * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.MK82 = weapons.MK82 + shot;
 										}
 										
 										if (i.weapons.hasOwnProperty('Mk-82AIR'))
@@ -427,6 +401,7 @@
 											svalue = svalue + ((shot - w) * price);
 											wvalue = wvalue + (w * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.MK82 = weapons.MK82 + shot;
 										}
 										
 										if (i.weapons.hasOwnProperty('Mk-83'))
@@ -443,6 +418,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.MK83 = weapons.MK83 + shot;
 										}
 										if (i.weapons.hasOwnProperty('Mk-84'))
 										{
@@ -458,6 +434,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.MK84 = weapons.MK84 + shot;
 										}
 										
 										if (i.weapons.hasOwnProperty("BLG-66 Belouga"))
@@ -489,6 +466,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.CBU97_105 = weapons.CBU97_105 + shot;
 										}
 										if (i.weapons.hasOwnProperty("CBU-87/CBU-103 CEM"))
 										{
@@ -504,6 +482,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.CBU87_103 = weapons.CBU87_103 + shot;
 										}
 										if (i.weapons.hasOwnProperty("Mk-20 Rockeye"))
 										{
@@ -519,6 +498,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.MK20 = weapons.MK20 + shot;
 										}
 										if (i.weapons.hasOwnProperty("RBK-500 PTAB-10"))
 										{
@@ -534,6 +514,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.RBK500 = weapons.RBK500 + shot;
 										}
 										if (i.weapons.hasOwnProperty("RBK-500U PTAB-1M"))
 										{
@@ -549,6 +530,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.RBK500 = weapons.RBK500 + shot;
 										}
 										if (i.weapons.hasOwnProperty("RBK-250"))
 										{
@@ -564,6 +546,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.RBK250 = weapons.RBK250 + shot;
 										}
 										
 										if (i.weapons.hasOwnProperty('C802AK'))
@@ -580,6 +563,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);											
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.C802AK = weapons.C802AK + shot;
 										}
 										if (i.weapons.hasOwnProperty('GB-6-SFW'))
 										{
@@ -596,6 +580,7 @@
 											svalue = svalue + ((shot - w) * price);
 											
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.GB6 = weapons.GB6 + shot;
 										}
 										if (i.weapons.hasOwnProperty('LS-6-500'))
 										{
@@ -611,6 +596,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.LS6 = weapons.LS6 + shot;
 										}
 										// Air to air missiles.
 										if (i.weapons.hasOwnProperty('R-27ER (AA-10C)'))
@@ -627,6 +613,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.R27 = weapons.R27 + shot;
 										}
 										if (i.weapons.hasOwnProperty('PL-5EII'))
 										{
@@ -642,6 +629,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.PL5 = weapons.PL5 + shot;
 										}
 										if (i.weapons.hasOwnProperty('SD-10'))
 										{
@@ -657,6 +645,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.SD10 = weapons.SD10 + shot;
 										}
 										
 										if (i.weapons.hasOwnProperty('MMagicII'))
@@ -673,6 +662,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.MAGIC = weapons.MAGIC + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM-9X'))
 										{
@@ -688,6 +678,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM9X = weapons.AIM9X + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM-7F'))
 										{
@@ -703,6 +694,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM7 = weapons.AIM7 + shot;
 										}
 										
 										if (i.weapons.hasOwnProperty('AIM-7MH'))
@@ -719,6 +711,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM7 = weapons.AIM7 + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM-7M'))
 										{
@@ -734,6 +727,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM7 = weapons.AIM7 + shot;
 										}
 										if (i.weapons.hasOwnProperty('Matra_S530D'))
 										{
@@ -749,6 +743,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.Matra_S530D = weapons.Matra_S530D + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM-9M'))
 										{
@@ -764,6 +759,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM9M = weapons.AIM9M + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM-54A_Mk47'))
 										{
@@ -779,6 +775,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM54 = weapons.AIM54 + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM-54A_Mk60'))
 										{
@@ -794,6 +791,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM54 = weapons.AIM54 + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM_54C_Mk47'))
 										{
@@ -809,6 +807,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM54 = weapons.AIM54 + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM-120C'))
 										{
@@ -824,6 +823,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);											
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM120C = weapons.AIM120C + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM-120B'))
 										{
@@ -839,6 +839,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM120B = weapons.AIM120B + shot;
 										}
 										if (i.weapons.hasOwnProperty('AIM-120A'))
 										{
@@ -854,6 +855,7 @@
 											}
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
+											weapons.AIM120A = weapons.AIM120A + shot;
 										}
 										//rockets
 										if (i.weapons.hasOwnProperty('HYDRA-70 MK5'))
