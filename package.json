@@ -39,7 +39,7 @@
     "cors": "^2.8.4",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "jquery": "^1.9.1",
+    "jquery": "^3.5.0",
     "jquery.json-viewer": "^1.4.0",
     "lodash": "^4.17.4",
     "mapbox-gl": "^1.9.1",
