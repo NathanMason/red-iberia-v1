@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/NathanMason/red-iberia#readme",
   "dependencies": {
-    "angular": "^1.7.9",
+    "angular": "^1.8.0",
     "angular-openlayers-directive": "^2.1.0",
     "angular-route": "^1.7.9",
     "angular-websocket": "^2.0.1",
