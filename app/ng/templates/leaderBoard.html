@@ -23,8 +23,8 @@
                               <th class="sticky text-center" scope="col"></th>
                               <th class="sticky"></th>
                               <th class="sticky text-center" colspan =6>Kills</th>
-							  <th class="sticky text-center" colspan =4>Deaths</th>
-                              <th class="sticky text-center" colspan =3>Total Costs of weapons and aircraft<br>in Million's USD</th>
+							  <th class="sticky text-center" colspan =3>Deaths</th>
+                              <th class="sticky text-center" colspan =4>Total Costs of weapons and aircraft<br>in Million's USD</th>
                               <th class="sticky"></th>
                             </tr>
                             <tr>
@@ -36,9 +36,7 @@
                               <th class="sticky text-center">AG</th>
 							  <th class="sticky text-center">Blding</th>
 							  <th class="sticky text-center">Ship</th>
-                              <th class="sticky text-center">PvP</th>
                               <th class="sticky bright text-center">Total</th>
-                              <th class="sticky text-center">PvP</th>
 							  <th class="sticky bright text-center">Pilot</th>
 							  <th class="sticky bright text-center">Ejects</th>
                               <th class="sticky bright text-center">Crashes</th>
@@ -80,9 +78,7 @@
                               <td class="text-center">{{pilot.agKills}}</td>
 							  <td class="text-center">{{pilot.buildings}}</td>
 							  <td class="text-center">{{pilot.shipKills}}</td>
-                              <td class="text-center">{{pilot.pvpKills}}</td>
                               <td class="text-center bright">{{pilot.kills}}</td>
-                              <td class="text-center">{{pilot.pvpLosses}}</td>
                               <td class="text-center bright">{{pilot.deaths}}</td>
 							  <td class="text-center bright">{{pilot.ejects}}</td>
 							  <td class="text-center bright">{{pilot.crashes}}</td>
@@ -97,7 +93,7 @@
                         </table>
                 </div>
                 <div class="row text-center">
-                    <small class="leaderboard-small" style="margin: 10px auto">Points formula: AA Kills = 1 point, Helicopter = 0.25 Points, AG Kill = 0.25 Point, Ship Kills = 2 points, PvP Kill = 2 points<br>Deaths: Crash = -0.5 Point, Pilot Death = -0.5 Point, Ejection: -0.25 Point, Pvp Death = -1 point.</small>
+                    <small class="leaderboard-small" style="margin: 10px auto">Points formula: AA Kills = 5 point, Helicopter = 2 Points, AG Kill = 1 Point, Ship Kills = 10 points.<br>Deaths: Crash = -25 Point, Pilot Death = -75 Points (aircraft) -25points (Helicopter) -5Points (Gunner), Ejection: -10 Point.</small>
 					<br>Please be aware that at this time the Costs may not include all ord.
                 </div>
             </div>

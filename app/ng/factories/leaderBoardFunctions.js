@@ -73,7 +73,9 @@
 							Walleye:0, 
 							PL5:0, 
 							SD10:0, 
-							SLAM:0, 
+							SLAM:0,
+							SALMER: 0,
+							AGM_84: 0,
 							HARM:0, 
 							Maverick:0, 
 							JSOW_A:0,
@@ -94,6 +96,8 @@
 							AIM9M:0,
 							AIM9X:0,
 							AIM54:0,
+							kh58U: 0,
+							kh25MP: 0,
 							MK82:0,
 							MK20:0,
 							MK83:0,
@@ -103,9 +107,13 @@
 							LS6:0,
 							Matra_S530D:0,
 							R27:0,
+							R77:0,
 							RBK250:0,
 							RBK500:0,
 							Rockeye:0,
+							AT6: 0,
+							S8KOM: 0,
+							AP30: 0,
 							};
 						// make sure the pilot has aircraft stats to loop over
                         if (pilot.times != null) {
@@ -114,7 +122,6 @@
                             angular.forEach(pilot.times, function(i, key, index){
 									// start working out how much each of these fucking pilots cost us ;) 
 									if (i.hasOwnProperty('weapons')){
-										
 										console.log(pilot.name);
 										if (i.weapons == null)
 										{
@@ -136,6 +143,20 @@
 											wpnvalue = wpnvalue + (shot * price);
 											weapons.Walleye = weapons.Walleye + shot;
 										}
+										if (i.weapons.hasOwnProperty('AGM-84D'))
+										{
+											var weapon = i.weapons["AGM-84D"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 507520;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+												weapons.AGM_84 = weapons.AGM_84 + shot;
+										}
 										if (i.weapons.hasOwnProperty('AGM-84E SLAM'))
 										{
 											var weapon = i.weapons["AGM-84E SLAM"]
@@ -149,6 +170,22 @@
 												w = 0;
 											}
 												weapons.SLAM = weapons.SLAM + shot;
+										}
+										if (i.weapons.hasOwnProperty('AGM-84H'))
+										{
+											var weapon = i.weapons["AGM-84H"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 3033468;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+											weapons.SALMER = weapons.SALMER + shot;
 										}
 										if (i.weapons.hasOwnProperty('AGM-88C'))
 										{
@@ -265,6 +302,54 @@
 											wpnvalue = wpnvalue + (shot * price);
 											weapons.JSOW_A = weapons.JSOW_A + shot;
 											
+										}
+										if (i.weapons.hasOwnProperty('Kh-58U'))
+										{
+											var weapon = i.weapons["Kh-58U"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 27375;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+											weapons.kh58U = weapons.kh58U + shot;
+										}
+										if (i.weapons.hasOwnProperty('Kh-25MP'))
+										{
+											var weapon = i.weapons["Kh-25MP"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 11080;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+											weapons.kh25MP = weapons.kh25MP + shot;
+										}
+										if (i.weapons.hasOwnProperty('AT-6'))
+										{
+											var weapon = i.weapons["AT-6"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 50000;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+											weapons.AT6 = weapons.AT6 + shot;
 										}
 										// bombs
 										if (i.weapons.hasOwnProperty('GBU-10'))
@@ -615,6 +700,22 @@
 											wpnvalue = wpnvalue + (shot * price);
 											weapons.R27 = weapons.R27 + shot;
 										}
+										if (i.weapons.hasOwnProperty('R-77 (AA-12 Adder)'))
+										{
+											var weapon = i.weapons["R-77 (AA-12 Adder)"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 400000.00;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+											weapons.R77 = weapons.R77 + shot;
+										}
 										if (i.weapons.hasOwnProperty('PL-5EII'))
 										{
 											var weapon = i.weapons["PL-5EII"]
@@ -873,6 +974,36 @@
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
 										}
+										if (i.weapons.hasOwnProperty('HYDRA-70 M154'))
+										{
+											var weapon = i.weapons["HYDRA-70 M154"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 2799;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('HYDRA-70 M154 WP'))
+										{
+											var weapon = i.weapons["HYDRA-70 M154 WP"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 1799;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
 										if (i.weapons.hasOwnProperty('S-8KOM'))
 										{
 											var weapon = i.weapons["S-8KOM"]
@@ -996,6 +1127,36 @@
 											svalue = svalue + ((shot - w) * price);
 											wpnvalue = wpnvalue + (shot * price);
 										}
+										if (i.weapons.hasOwnProperty('AP-30 Plamya'))
+										{
+											var weapon = i.weapons["AP-30 Plamya"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 270;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
+										if (i.weapons.hasOwnProperty('M134 Minigun'))
+										{
+											var weapon = i.weapons["M134 Minigun"]
+											var shot = weapon.shot;
+											var kills = weapon.kills;
+											var hits = weapon.numHits;
+											var price = 150;
+											var w = shot - hits;
+											if (w < 0 ) 
+											{
+												w = 0;
+											}
+											svalue = svalue + ((shot - w) * price);
+											wpnvalue = wpnvalue + (shot * price);
+										}
 										if (i.weapons.hasOwnProperty('DEFA 554'))
 										{
 											var weapon = i.weapons["DEFA 554"]
@@ -1012,8 +1173,6 @@
 											wpnvalue = wpnvalue + (shot * price);
 										}
 									}
-								
-								
                                     // get pilots kills
                                     if (i.hasOwnProperty('kills')) {
 											if (i.kills.hasOwnProperty('Buildings'))
@@ -1027,18 +1186,17 @@
 
                                                 // add to pilots total kills
                                                 currentPilot.kills = currentPilot.kills + i.kills.Planes.total;
-												cvalue = cvalue + i.kills.Planes.total;
+												cvalue = cvalue + (i.kills.Planes.total * 5);
                                                 // add to pilots AA kills
                                                 currentPilot.aaKills = currentPilot.aaKills + i.kills.Planes.total;
 
                                             }
-
                                             // get AG kills
                                             if (i.kills["Ground Units"]) {
 
                                                 // add to pilots total kills
                                                 currentPilot.kills = currentPilot.kills + ( i.kills["Ground Units"].total)
-												cvalue = cvalue + i.kills["Ground Units"].total / 4;
+												cvalue = cvalue + i.kills["Ground Units"].total;
                                                 // add to pilots AG kills
                                                 currentPilot.agKills = currentPilot.agKills + i.kills["Ground Units"].total
 
@@ -1047,20 +1205,19 @@
 
                                                 // add to pilots total kills
                                                 currentPilot.kills = currentPilot.kills + ( i.kills["Ships"].total)
-												cvalue = cvalue + (i.kills["Ships"].total * 2);
+												cvalue = cvalue + (i.kills["Ships"].total * 10);
                                                 // add to pilots AG kills
                                                 currentPilot.shipKills = currentPilot.shipKills + i.kills["Ships"].total
 
                                             }
 											if (i.kills.Helicopters) {
 												currentPilot.kills = (currentPilot.kills + i.kills.Helicopters.total)
-												cvalue = cvalue + i.kills.Helicopters.total / 4;
+												cvalue = cvalue + i.kills.Helicopters.total * 2;
 
 												currentPilot.heliKills = (currentPilot.heliKills + i.kills.Helicopters.total)
 
 											}
                                         }
-
                                     // get PvP stats
                                     if (i.hasOwnProperty('pvp')) {
 
@@ -1074,7 +1231,7 @@
                                             }
                                             if (i.pvp.hasOwnProperty('losses')) {
                                                 // add to pilots total deaths
-                                                dvalue = dvalue + i.pvp.losses
+                                                 dvalue = dvalue + i.pvp.losses
 
                                                 // add to pilots pvp deaths
                                                 currentPilot.pvpLosses = currentPilot.pvpLosses + i.pvp.losses
@@ -1090,8 +1247,47 @@
                                         if (i.actions.losses.hasOwnProperty('pilotDeath'))
                                         {
                                           currentPilot.deaths = currentPilot.deaths + (i.actions.losses.pilotDeath)
-										  wvalue = wvalue + (7500000 * i.actions.losses.pilotDeath); 
-										  dvalue = dvalue + (i.actions.losses.pilotDeath /2 )
+										  wvalue = wvalue + (7500000 * i.actions.losses.pilotDeath);
+										  if (key == "UH-1H") 
+										  {
+											  dvalue = dvalue + (i.actions.losses.pilotDeath * 15 )  
+										  }
+										  else if (key == "Mi-8MT")
+										  {
+											  dvalue = dvalue + (i.actions.losses.pilotDeath * 15 )  
+										  }
+										  else if (key == "Ka-50")
+										  {
+											   dvalue = dvalue + (i.actions.losses.pilotDeath * 15 )  
+										  }
+										  else if (key == "SA342L")
+										  {
+											   dvalue = dvalue + (i.actions.losses.pilotDeath * 15 )  
+										  }
+										  else if (key == "SA342M")
+										  {
+											   dvalue = dvalue + (i.actions.losses.pilotDeath * 15 )  
+										  }
+										  else if (key == "SA342Minigun")
+										  {
+											   dvalue = dvalue + (i.actions.losses.pilotDeath * 15 )  
+										  }
+										  else if (key == "SA342Mistral")
+										  {
+											   dvalue = dvalue + (i.actions.losses.pilotDeath * 15 )  
+										  }
+										  else if (key == "Mi-24P")
+										  {
+											   dvalue = dvalue + (i.actions.losses.pilotDeath * 15 )  
+										  }
+										  else if ((key == "UH-1H LG") || (key == "UH-1H RG"))
+										  {
+											  dvalue = dvalue + (i.actions.losses.pilotDeath * 5 )  
+										  }
+										  else
+										  {
+											dvalue = dvalue + (i.actions.losses.pilotDeath * 75 )  
+										  }
                                         }
                                         if (i.actions.losses.hasOwnProperty('crash'))
                                         {
@@ -1107,6 +1303,10 @@
 										  else if (key == "F-14B") 
 										  {
 											  wvalue = wvalue + (82091405.94 * i.actions.losses.crash);
+										  }
+										  else if (key == "F-14A-135-GR") 
+										  {
+											  wvalue = wvalue + (80091405.94 * i.actions.losses.crash);
 										  }
 										  else if (key == "F-5E-3")
 										  {
@@ -1131,6 +1331,10 @@
 										  else if (key == "A-10C") 
 										  {
 											  wvalue = wvalue + (46300000 * i.actions.losses.crash);
+										  }
+										  else if (key == "A-10C_2") 
+										  {
+											  wvalue = wvalue + (46900000 * i.actions.losses.crash);
 										  }
 										  else if (key == "J-11A") 
 										  {
@@ -1200,13 +1404,16 @@
 										  {
 											  wvalue = wvalue + (1288368.21 * i.actions.losses.crash);
 										  }
-										  
-										  dvalue = dvalue + (i.actions.losses.crash / 2)
+										  else if (key == "Mi-24P") 
+										  {
+											  wvalue = wvalue + (12000000 * i.actions.losses.crash);
+										  }
+										  dvalue = dvalue + (i.actions.losses.crash * 25)
                                         }
                                         if (i.actions.losses.hasOwnProperty('eject'))
                                         {
                                           currentPilot.ejects = currentPilot.ejects + (i.actions.losses.eject)
-										  dvalue = dvalue + (i.actions.losses.eject / 4)
+										  dvalue = dvalue + (i.actions.losses.eject * 10)
                                         }
                                       }
                                     }
@@ -1214,23 +1421,27 @@
                                     if (i.hasOwnProperty('inAir')) {
                                         currentPilot.flightHours = currentPilot.flightHours + i.inAir
                                         currentPilot.flightHours_converted = converterFactory.timeConvert(currentPilot.flightHours)
-
                                         // get fav aircraft
                                         if (i.inAir > currentPilot.favAircraft.flightHours) {
                                             currentPilot.favAircraft.flightHours = i.inAir
                                             currentPilot.favAircraft.flightHours_converted = currentPilot.flightHours_converted
                                             currentPilot.favAircraft.frameName = key
+											if (currentPilot.favAircraft.frameName == "A-10C_2")
+											{
+												currentPilot.favAircraft.frameName = "A-10C"
+											}
+											if (currentPilot.favAircraft.frameName == "F-14A-135-GR")
+											{
+												currentPilot.favAircraft.frameName = "F-14"
+											}
                                         }
 
                                     }
-
-
-
                                     // set pilots rank
                                     //currentPilot.ranking = currentPilot.kills - currentPilot.deaths;
 									currentPilot.ranking = cvalue - dvalue;
                                 })
-
+								
 									if ((currentPilot.allStats == null) || (currentPilot.favAircraft.flightHours == 0) || (currentPilot.flightHours < 60 ) || (currentPilot.flightHours < 0) || (currentPilot.flightHours == null ) ||(currentPilot.flightHours_converted == "")){
 										currentPilot.position = minpos
 										currentPilot.ranking = -2500
@@ -1322,11 +1533,6 @@
 
 
             return LeaderBoardFunctions;
-
-
-
-
-
       });
 
 })();
