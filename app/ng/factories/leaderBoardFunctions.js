@@ -1,6 +1,6 @@
 (function() {
       angular.module("redIberia").factory("LeaderBoardFunctions", function($rootScope, $q, converterFactory, $filter) {
-
+			var timeranked = false;
             var LeaderBoardFunctions = {};
 			var minpos = 999;
 			LeaderBoardFunctions.numberWithCommas = function(x) {
@@ -211,6 +211,8 @@
 								wpncost: 0,
 								wpneffect: 0,
                                 ranking: 0,
+								ppoints: 0,
+								dpoints: 0,
                                 flightHours_converted: '',
                                 favAircraft: {
                                     flightHours: 0,
@@ -1843,9 +1845,32 @@
                                         }
 
                                     }
+									var fh = ((currentPilot.flightHours /60) /60);
+									//console.log("FH is:")
+									//console.log(fh);
+									var tempdvalue = dvalue / fh;
+									if (Number.isNaN(tempdvalue))
+									{
+										tempdvalue = 0;
+									}
+									//console.log("Temp Death Value would be")
+									//console.log(tempdvalue)
                                     // set pilots rank
                                     //currentPilot.ranking = currentPilot.kills - currentPilot.deaths;
-									currentPilot.ranking = cvalue - dvalue;
+									// if we are weighting with time based we use this:
+									if (timeranked == true)
+									{
+										currentPilot.dpoints = tempdvalue.toFixed(0);
+										currentPilot.ppoints = cvalue;
+										currentPilot.ranking = cvalue - tempdvalue;
+									}
+									else
+									{
+									//else we use this t
+										currentPilot.ranking = cvalue - dvalue;
+										currentPilot.dpoints = dvalue;
+										currentPilot.ppoints = cvalue;
+									}
                                 })
 								
 									if ((currentPilot.allStats == null) || (currentPilot.favAircraft.flightHours == 0) || (currentPilot.flightHours < 60 ) || (currentPilot.flightHours < 0) || (currentPilot.flightHours == null ) ||(currentPilot.flightHours_converted == "")){
@@ -1864,7 +1889,7 @@
                                         currentPilot.callSign = '🦕🦕' + currentPilot.callSign + '🦕🦕'
                                     }
                                     //if (pilot.name.includes('Sock')) {
-                                    //    currentPilot.position = 99
+                                    //    currentPilot.position = minpos
                                     //    currentPilot.ranking = -2500
                                     //    currentPilot.pvpLosses = 369
                                     //    currentPilot.aaKills = -69
@@ -1943,6 +1968,7 @@
                             pilot.position = index+1
                             result.push(pilot)
                             sort_q.resolve();
+							pilot.ranking = pilot.ranking.toFixed(0)
                         })
                         $q.all(sortPromise).then(function() {
                             cb(result)
