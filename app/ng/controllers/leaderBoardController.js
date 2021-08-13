@@ -7,6 +7,7 @@
 
                       $rootScope.pilotStatistics = [];
                       $scope.pilot;
+					  $scope.everystat;
                       $rootScope.$route = $route;
                        $.ajax({
                         url: "/api/web/fetch",
@@ -19,23 +20,24 @@
                             console.log('ERROR: Server could not return a valid database object.');
                             return;
                         } else {
-
+							LeaderBoardFunctions.reseteverstat();
                             LeaderBoardFunctions.sortPilotStats(data[0].stats, function(r){
 
                                 $timeout(function(){
-                                    console.log(r);
+                                    //console.log(r);
                                     $rootScope.pilotStatistics = r;
 
                                 }, 1000);
 
-
+							
                             })
-
+							$scope.everystat = LeaderBoardFunctions.everystat;
+							console.log(LeaderBoardFunctions.everystat);
+							console.log($scope.everystat);
                         }
                         }, //end success
                         error: function(err) { console.log(err) }
                       }); //end ajax call
-
 
                       $scope.setPilot = function(i){
                           console.log(i);
