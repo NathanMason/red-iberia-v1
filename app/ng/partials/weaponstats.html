@@ -1,4 +1,4 @@
-<div class="modal fade logBook" id="logBookModal" role="dialog" aria-labelledby="logBookModalLabel" aria-hidden="true">
+<div class="modal fade logBook" id="everyStatModal" role="dialog" aria-labelledby="everyStatModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                   <div class="modal-header">
@@ -25,23 +25,7 @@
                                     <h5 style="font-size: 15px;">{{pilot.favweapon}}</h5>
                               </div>
                         </div>
-                  <div class="modal-body p-0">
 
-                        <div class="row logBook_header">
-                              <div class="col-4 p-3  text-center d-flex align-items-center justify-content-center flex-col">
-                                    <small>WEAPONS USED <br> (Million USD)</small>
-                                    <h5 style="font-size: 15px;">{{pilot.wpncost}}</h5>
-                              </div>
-                              <div class="col-4 p-3  text-center border-left d-flex align-items-center justify-content-center flex-col">
-                                    <small>WEAPONS HIT <br> (Million USD)</small>
-                                    <h5 style="font-size: 15px;" class="m-0 p-o">{{pilot.spent}}</h5>
-                                    <small style="font-size: 12px">{{pilot.wpneffect}}%</small>
-                              </div>
-                              <div class="col-4 p-3 text-center border-left d-flex align-items-center justify-content-center flex-col">
-                                    <small>EQUIPMENT & PILOT COSTS <br> (Million USD)</small>
-                                    <h5 style="font-size: 15px;">{{pilot.wasted}}</h5>
-                              </div>
-                        </div>
                         <div class="row logBook_row p-0">
 
                               <div class="col">
@@ -58,36 +42,7 @@
 
                                           <!-- repeat these tab panes by each aircraft -->
                                           <div class="tab-pane fade" ng-repeat="(key, obj) in pilot.allStats" ng-class="{'show active': $index == 0}" id="{{key}}" role="tabpanel" aria-labelledby="{{key}}-tab">
-												<!-- actions         -->
-                                                <div class="">
-                                                      <table class="table mb-0">
-                                                            <thead>
-                                                                  <tr>
-                                                                        <th scope="col">Actions</th>
-                                                                  </tr>
-                                                            </thead>
-                                                      </table>
-                                                      <table class="table w-100">
-                                                            <tbody>
-                                                                  <tr ng-repeat="(key, value) in obj.actions">
-                                                                        <td>{{key}}</td>
-                                                                        <td>
 
-                                                                             <table class="w-100 text-center">
-                                                                                    <tbody>
-                                                                                          <tr>
-                                                                                                <td ng-repeat="(unit, count) in value">{{unit}} {{count}}</td>
-                                                                                          </tr>
-                                                                                    </tbody>
-                                                                              </table>
-
-                                                                        </td>
-                                                                  </tr>
-                                                            </tbody>
-                                                      </table>
-
-
-                                                </div>
                                                 <!-- KILLS         -->
                                                 <div class="">
                                                       <table class="table mb-0">
@@ -149,6 +104,7 @@
 
 
                                                 </div>
+
 
                                           </div>
 

@@ -1,3 +1,7 @@
+
+
+<ng-include ng-cloak ng-controller="sideBarController" src="'ng/partials/logbook.html'"></ng-include>
+
 <div class="mapWrapper viewWrapper" style="padding: 50px">
 
         <div class="row">
@@ -22,8 +26,8 @@
                               <th class="sticky text-center" scope="col"></th>
                               <th class="sticky text-center" scope="col"></th>
                               <th class="sticky"></th>
-                              <th class="sticky text-center" colspan =6>Kills</th>
-							  <th class="sticky text-center" colspan =4>Deaths</th>
+                              <th class="sticky text-center" colspan =7>Kills</th>
+							  <th class="sticky text-center" colspan =6>Deaths</th>
                               <th class="sticky text-center" colspan =4>Total Costs of weapons and aircraft<br>in Million's USD</th>
                               <th class="sticky"></th>
                             </tr>
@@ -37,10 +41,13 @@
 							  <th class="sticky text-center">Blding</th>
 							  <th class="sticky text-center">Ship</th>
                               <th class="sticky bright text-center">Total</th>
+							  <th class="sticky bright text-center">Points</th>
 							  <th class="sticky bright text-center">Pilot</th>
 							  <th class="sticky bright text-center">Ejects</th>
                               <th class="sticky bright text-center">Crashes</th>
+							  <th class="sticky bright text-center">Crash Landings</th>
 							  <th class="sticky bright text-center">Pilot Error</th>
+							  <th class="sticky bright text-center">Points</th>
 							  <th class="sticky text-center">Wpns<br>Expended</th>
 							  <th class="sticky text-center">Wpns<br>that Hit</th>
 							  <th class="sticky text-center">Wpns Cost<br>Effectiveness%</th>
@@ -80,10 +87,13 @@
 							  <td class="text-center">{{pilot.buildings}}</td>
 							  <td class="text-center">{{pilot.shipKills}}</td>
                               <td class="text-center bright">{{pilot.kills}}</td>
+							  <td class="text-center bright">{{pilot.ppoints}}</td>
                               <td class="text-center bright">{{pilot.deaths}}</td>
 							  <td class="text-center bright">{{pilot.ejects}}</td>
 							  <td class="text-center bright">{{pilot.crashes}}</td>
+							  <td class="text-center bright">{{pilot.crashLanding}}</td>
 							  <td class="text-center bright">{{pilot.pilotError}}</td>
+							  <td class="text-center bright">{{pilot.dpoints}}</td>
 							  <td class="text-center bright">{{pilot.wpncost}}</td>
 							  <td class="text-center bright">{{pilot.spent}}</td>
 							  <td class="text-center bright">{{pilot.wpneffect}}%</td>
@@ -101,6 +111,3 @@
             </div>
         </div>
 </div>
-
-
-<ng-include ng-cloak ng-controller="sideBarController" src="'ng/partials/logbook.html'"></ng-include>

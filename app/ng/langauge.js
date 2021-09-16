@@ -12,7 +12,7 @@
                                 return 'SEAD Mission';
                             break;
                             case 'scud':
-                                return 'Scud Hunting';
+                                return 'Battlefrield Air Interdiction';
                             break;
                             case 'struc':
                                 return 'Strategic Strike';
@@ -32,7 +32,7 @@
                             break;
 
                             case 'scud':
-                                return 'Recon Reports of an Iranian SCUD platform detected within this vicinity';
+                                return 'Recon Reports of an Iranian forces detected within this vicinity';
                             break;
                             case 'struc':
                                 return 'Strategic strike to assist in disabling the Iranian IADs system';
